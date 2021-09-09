@@ -11,7 +11,7 @@ namespace HomeCare
         {
             InitializeComponent();
 
-            //DependencyService.Get<ISendSms>().Send(EntryNumber.Text, EntryMessage.Text); 
+          
             //SMSEvents.OnSMSReceived += OnSMSReceived;
 
             MainPage = new MainPage();

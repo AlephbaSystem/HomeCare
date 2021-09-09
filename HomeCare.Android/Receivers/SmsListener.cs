@@ -44,4 +44,3 @@ namespace HomeCare.Droid.Receivers
         }
     }
 }
-}
