@@ -1,33 +1,41 @@
 {
   "format": 1,
   "restore": {
-    "/Users/soshika/Projects/HomeCare/HomeCare.iOS/HomeCare.iOS.csproj": {}
+    "C:\\Users\\alephba\\Source\\Repos\\soshika\\HomeCare\\HomeCare.iOS\\HomeCare.iOS.csproj": {}
   },
   "projects": {
-    "/Users/soshika/Projects/HomeCare/HomeCare.iOS/HomeCare.iOS.csproj": {
+    "C:\\Users\\alephba\\Source\\Repos\\soshika\\HomeCare\\HomeCare.iOS\\HomeCare.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/soshika/Projects/HomeCare/HomeCare.iOS/HomeCare.iOS.csproj",
+        "projectUniqueName": "C:\\Users\\alephba\\Source\\Repos\\soshika\\HomeCare\\HomeCare.iOS\\HomeCare.iOS.csproj",
         "projectName": "HomeCare.iOS",
-        "projectPath": "/Users/soshika/Projects/HomeCare/HomeCare.iOS/HomeCare.iOS.csproj",
-        "packagesPath": "/Users/soshika/.nuget/packages/",
-        "outputPath": "/Users/soshika/Projects/HomeCare/HomeCare.iOS/obj/",
+        "projectPath": "C:\\Users\\alephba\\Source\\Repos\\soshika\\HomeCare\\HomeCare.iOS\\HomeCare.iOS.csproj",
+        "packagesPath": "C:\\Users\\alephba\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alephba\\Source\\Repos\\soshika\\HomeCare\\HomeCare.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "/Users/soshika/.config/NuGet/NuGet.Config"
+          "C:\\Users\\alephba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "xamarinios10"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "/Users/soshika/Projects/HomeCare/HomeCare/HomeCare.csproj": {
-                "projectPath": "/Users/soshika/Projects/HomeCare/HomeCare/HomeCare.csproj"
+              "C:\\Users\\alephba\\Source\\Repos\\soshika\\HomeCare\\HomeCare\\HomeCare.csproj": {
+                "projectPath": "C:\\Users\\alephba\\Source\\Repos\\soshika\\HomeCare\\HomeCare\\HomeCare.csproj"
               }
             }
           }
@@ -59,22 +67,31 @@
         }
       }
     },
-    "/Users/soshika/Projects/HomeCare/HomeCare/HomeCare.csproj": {
+    "C:\\Users\\alephba\\Source\\Repos\\soshika\\HomeCare\\HomeCare\\HomeCare.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/soshika/Projects/HomeCare/HomeCare/HomeCare.csproj",
+        "projectUniqueName": "C:\\Users\\alephba\\Source\\Repos\\soshika\\HomeCare\\HomeCare\\HomeCare.csproj",
         "projectName": "HomeCare",
-        "projectPath": "/Users/soshika/Projects/HomeCare/HomeCare/HomeCare.csproj",
-        "packagesPath": "/Users/soshika/.nuget/packages/",
-        "outputPath": "/Users/soshika/Projects/HomeCare/HomeCare/obj/",
+        "projectPath": "C:\\Users\\alephba\\Source\\Repos\\soshika\\HomeCare\\HomeCare\\HomeCare.csproj",
+        "packagesPath": "C:\\Users\\alephba\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alephba\\Source\\Repos\\soshika\\HomeCare\\HomeCare\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "/Users/soshika/.config/NuGet/NuGet.Config"
+          "C:\\Users\\alephba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -118,7 +135,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

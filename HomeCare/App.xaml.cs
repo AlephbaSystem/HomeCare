@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HomeCare.Services.SMS;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,6 +10,9 @@ namespace HomeCare
         public App()
         {
             InitializeComponent();
+
+            //DependencyService.Get<ISendSms>().Send(EntryNumber.Text, EntryMessage.Text); 
+            //SMSEvents.OnSMSReceived += OnSMSReceived;
 
             MainPage = new MainPage();
         }
