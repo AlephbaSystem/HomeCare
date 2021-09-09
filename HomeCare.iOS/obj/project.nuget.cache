@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "cAwp7dbJFcRK+Gm0geYPrzPCtkpRc0UioZF+yv27Aaaf8ZmUm2mhWKgODS+hZSf5mPGT/zQ5/NQknkXoiCjIbg==",
+  "dgSpecHash": "kss9HeWuoFtpr7BnWc90r+P8PazoQcs8pDFb8dECtT7aJQv2tdM3YKFi6IqLGCF/DIpXmJcy04LaV2azBeXbMg==",
   "success": true,
-  "projectFilePath": "/Users/soshika/Projects/HomeCare/HomeCare.iOS/HomeCare.iOS.csproj",
+  "projectFilePath": "C:\\Users\\alephba\\Source\\Repos\\soshika\\HomeCare\\HomeCare.iOS\\HomeCare.iOS.csproj",
   "expectedPackageFiles": [
-    "/Users/soshika/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
-    "/Users/soshika/.nuget/packages/xamarin.essentials/1.6.1/xamarin.essentials.1.6.1.nupkg.sha512",
-    "/Users/soshika/.nuget/packages/xamarin.forms/5.0.0.2012/xamarin.forms.5.0.0.2012.nupkg.sha512"
+    "C:\\Users\\alephba\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
   ],
   "logs": []
 }
