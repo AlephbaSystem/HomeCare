@@ -13,6 +13,11 @@ namespace HomeCare
         public MainPage()
         {
             InitializeComponent();
+
+            NavigationPage.SetHasNavigationBar(this, false);
+            //this.BackgroundImageSource = "background.jpg";
+            
+
         }
     }
 }

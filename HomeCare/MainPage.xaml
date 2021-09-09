@@ -3,9 +3,84 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HomeCare.MainPage">
 
-    <StackLayout>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="assets/Styles/Icons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
 
-    </StackLayout>
+        <Image Source="background.jpg" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Aspect="AspectFill" />
+
+        <Grid Grid.Row="0" Margin="0,70,0,0" Grid.Column="0">
+            <Frame HasShadow="True" Margin="5, 10, 5, 25" BackgroundColor="#D6EDFF" BorderColor="#478978">
+
+                <ImageButton Source="connector.png" Margin="-10, -10" />
+
+            </Frame>
+            <Label Margin="0, 10, 0, 0" Text="تنظیمات رله" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontAttributes="Bold" FontSize="Medium"/>
+            
+        </Grid>
+
+        <Grid Grid.Row="0" Margin="0,70,0,0" Grid.Column="1">
+            <Frame HasShadow="True" Margin="5, 10, 5, 25" BackgroundColor="#D6EDFF" BorderColor="#478978">
+                <ImageButton Source="apartments.png" Margin="-15, -15" />
+            </Frame>
+            <Label Text="صفحه اصلی" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontSize="Medium" FontAttributes="Bold"/>
+        </Grid>
+
+        <Grid Grid.Row="0" Margin="0,70,0,0" Grid.Column="2">
+            <Frame HasShadow="True" Margin="5, 10, 5, 25" BackgroundColor="#D6EDFF" BorderColor="#478978">
+                <ImageButton Source="ai.png" Margin="-10, -10" />
+            </Frame>
+            <Label Text="هوشمند سازی" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontAttributes="Bold" FontSize="Medium"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="0,0,0,70" Grid.Column="1">
+            <Frame Margin="5, 10, 5, 25" BackgroundColor="#D6EDFF" BorderColor="#478978">
+                <ImageButton Source="settings.png" />
+            </Frame>
+            <Label Text="تنظیمات" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#BABFD1" FontSize="Medium" FontAttributes="Bold"/>
+        </Grid>
+
+        <Label Grid.Row="2" Grid.Column="0" HorizontalTextAlignment="Center" Grid.ColumnSpan="3" Margin="0,-50,0,0" Text="وضعیت دستگاه" TextColor="#f1faee" FontSize="Title" />
+
+        <Grid Grid.Row="2" Margin="10, 20, 0, 70" Grid.Column="0">
+            <Frame Margin="5, 10, 5, 25" BackgroundColor="#D6EDFF" BorderColor="#478978">
+                <ImageButton Source="unlock.png" Margin="-10, -10" />
+            </Frame>
+            <Label Text="باز" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee"/>
+        </Grid>
+        <Grid Grid.Row="2" Margin="5, 20, 5,70" Grid.Column="1">
+            <Frame Margin="5, 10, 5, 25" BackgroundColor="#D6EDFF" BorderColor="#478978">
+                <ImageButton Source="halflock.png" Margin="-10, -10" />
+            </Frame>
+            <Label Text="نیمه قفل" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="0, 20, 10, 70" Grid.Column="2">
+            <Frame Margin="5, 10, 5, 25" BackgroundColor="#D6EDFF" BorderColor="#478978">
+                <ImageButton Source="lock.png" Margin="-10, -10" />
+            </Frame>
+            <Label Text="قفل" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee"/>
+        </Grid>
+        
+    </Grid>
 
 </ContentPage>

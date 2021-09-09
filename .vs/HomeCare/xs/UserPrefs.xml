@@ -1,6 +1,35 @@
-﻿<Properties StartupConfiguration="{EF92EDEC-DC9D-4CEF-84D5-93A2472B4BF0}|Default">
-  <MonoDevelop.Ide.ItemProperties.HomeCare.Android FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.HomeCare FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.HomeCare.iOS FirstBuild="True" />
+﻿<Properties StartupConfiguration="{EC9697E2-786D-46F5-B32A-09AB968144FD}|Default">
+  <MonoDevelop.Ide.ItemProperties.HomeCare.Android FirstBuild="True" PreferredExecutionTarget="Android.pixel_2_nougat_7_1_-_api_25" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="HomeCare/assets/Styles/Icons.xaml">
+    <Files>
+      <File FileName="HomeCare/MainPage.xaml" Line="36" Column="55" />
+      <File FileName="HomeCare/MainPage.xaml.cs" />
+      <File FileName="HomeCare/assets/Styles/Icons.xaml" Line="7" Column="4" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="HomeCare" expanded="True">
+            <Node name="HomeCare" expanded="True">
+              <Node name="assets" expanded="True">
+                <Node name="Styles" expanded="True">
+                  <Node name="Icons.xaml" selected="True" />
+                </Node>
+              </Node>
+              <Node name="App.xaml" expanded="True" />
+              <Node name="MainPage.xaml" expanded="True" />
+            </Node>
+            <Node name="HomeCare.iOS" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.HomeCare.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.4269DA16-7436-428B-A488-F0B2A44E4DBE" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

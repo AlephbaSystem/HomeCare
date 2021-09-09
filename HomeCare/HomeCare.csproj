@@ -14,4 +14,19 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Forms.Controls.FlexButton" />
+    <None Remove="assets\" />
+    <None Remove="assets\fonts\" />
+    <None Remove="assets\Styles\" />
+    <None Remove="assets\fonts\MaterialIconsRoundRegular.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="assets\" />
+    <Folder Include="assets\fonts\" />
+    <Folder Include="assets\Styles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="assets\fonts\MaterialIconsRoundRegular.otf" />
+  </ItemGroup>
 </Project>

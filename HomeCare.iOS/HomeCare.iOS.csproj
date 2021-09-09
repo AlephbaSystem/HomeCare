@@ -133,4 +133,24 @@
       <Name>HomeCare</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\settings.png" />
+    <BundleResource Include="Resources\connector.png" />
+    <BundleResource Include="Resources\home.png" />
+    <BundleResource Include="Resources\report.png" />
+    <BundleResource Include="Resources\chip.png" />
+    <BundleResource Include="Resources\house.png" />
+    <BundleResource Include="Resources\background.jpg" />
+    <BundleResource Include="Resources\apartments.png" />
+    <BundleResource Include="Resources\ai.png" />
+    <BundleResource Include="Resources\halflock.png" />
+    <BundleResource Include="Resources\lock.png" />
+    <BundleResource Include="Resources\unlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Fonts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Fonts\MaterialIconsRoundRegular.otf" />
+  </ItemGroup>
 </Project>

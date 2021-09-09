@@ -91,5 +91,8 @@
       <Name>HomeCare</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\MaterialIconsRoundRegular.otf" />
+  </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

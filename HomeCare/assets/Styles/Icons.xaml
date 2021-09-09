@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    >
+
+    <FontImageSource x:Key="HomeIcon"
+                     FontFamily="Material"
+                     Glyph="e88a"
+                     Size="42"
+                     Color="White" />
+
+    <Style x:Key="IndicatorsIcon"
+           TargetType="ImageButton">
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+    </Style>
+
+</ResourceDictionary>
