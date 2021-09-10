@@ -3,7 +3,8 @@
 
 # Visual Studio (>=2015) project-specific, machine local files
 .vs/
-
+.vscode/
+ 
 # User-specific files
 *.suo
 *.user
@@ -193,3 +194,31 @@ UpgradeLog*.htm
 FakesAssemblies/
 
 .vscode/settings.json
+HomeCare.Android/obj/HomeCare.Android.csproj.nuget.dgspec.json
+HomeCare.Android/obj/HomeCare.Android.csproj.nuget.dgspec.json
+*.cache
+HomeCare.Android/obj/project.assets.json
+HomeCare.Android/obj/project.nuget.cache
+HomeCare.iOS/obj/HomeCare.iOS.csproj.nuget.dgspec.json
+HomeCare.iOS/obj/iPhoneSimulator/Debug/HomeCare.iOS.csproj.AssemblyReference.cache
+HomeCare.iOS/obj/project.assets.json
+HomeCare.iOS/obj/project.nuget.cache
+HomeCare/obj/Debug/netstandard2.0/HomeCare.assets.cache
+HomeCare/obj/Debug/netstandard2.0/HomeCare.csproj.AssemblyReference.cache
+HomeCare/obj/HomeCare.csproj.nuget.dgspec.json
+HomeCare/obj/project.assets.json
+HomeCare/obj/project.nuget.cache
+HomeCare.Android/obj/HomeCare.Android.csproj.nuget.dgspec.json
+HomeCare.Android/obj/HomeCare.Android.csproj.nuget.dgspec.json
+HomeCare.Android/obj/project.assets.json
+HomeCare.Android/obj/project.nuget.cache
+HomeCare.iOS/obj/HomeCare.iOS.csproj.nuget.dgspec.json
+HomeCare.iOS/obj/iPhoneSimulator/Debug/HomeCare.iOS.csproj.AssemblyReference.cache
+HomeCare.iOS/obj/project.assets.json
+HomeCare.iOS/obj/project.nuget.cache
+HomeCare/obj/Debug/netstandard2.0/HomeCare.assets.cache
+HomeCare/obj/Debug/netstandard2.0/HomeCare.csproj.AssemblyReference.cache
+HomeCare/obj/HomeCare.csproj.nuget.dgspec.json
+HomeCare/obj/project.assets.json
+HomeCare/obj/project.nuget.cache
+*.cache
