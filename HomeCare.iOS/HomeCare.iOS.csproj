@@ -143,5 +143,6 @@
     <BundleResource Include="Resources\lock.png" />
     <BundleResource Include="Resources\settings.png" />
     <BundleResource Include="Resources\unlock.png" />
+    <BundleResource Include="Resources\home.png" />
   </ItemGroup>
 </Project>
