@@ -1,4 +1,5 @@
-﻿using HomeCare.Services.Users;
+﻿using Acr.UserDialogs;
+using HomeCare.Services.Users;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,7 +17,9 @@ namespace HomeCare.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddNewDevice : ContentPage, INotifyPropertyChanged
     {
+#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
         public event PropertyChangedEventHandler PropertyChanged;
+#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
         protected virtual void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -37,6 +40,88 @@ namespace HomeCare.Views
                 }
             }
         }
+        public async void OnEdit(object sender, EventArgs e)
+        {
+            var mi = ((MenuItem)sender);
+            User iUser = ListOfItems.Where(x => x.Name != mi.CommandParameter.ToString()).FirstOrDefault();
+            User Tmp = new User() { Name = iUser.Name, Phone = iUser.Phone };
+            bool cnsl = false;
+            UserDialogs.Instance.ActionSheet(new ActionSheetConfig()
+                           .SetTitle("Edit")
+                           .Add("Name", async () =>
+                           {
+                               var result = await UserDialogs.Instance.PromptAsync(new PromptConfig
+                               {
+                                   Title = $"Editing {iUser.Name}",
+                                   Text = iUser.Name,
+                                   IsCancellable = true
+                               });
+                               if (result.Ok)
+                               {
+                                   cnsl = true;
+                                   Tmp.Name = result.Text;
+                                   ListOfItems.Remove(iUser);
+                                   ListOfItems.Add(Tmp);
+                               }
+                           })
+                           .Add("Phone", async () =>
+                           {
+                               var result = await UserDialogs.Instance.PromptAsync(new PromptConfig
+                               {
+                                   Title = $"Editing {iUser.Phone}",
+                                   Text = iUser.Phone,
+                                   IsCancellable = true
+                               });
+                               if (result.Ok)
+                               {
+                                   cnsl = true;
+                                   Tmp.Phone = result.Text;
+                                   ListOfItems.Remove(iUser);
+                                   ListOfItems.Add(Tmp);
+                               }
+                           })
+                           .SetCancel()
+                       );
+
+            if (cnsl)
+            {
+                UserDialogs.Instance.Toast(new ToastConfig($"{iUser.Name} Changed.")
+                                     .SetDuration(TimeSpan.FromSeconds(5))
+                                     .SetPosition(ToastPosition.Bottom)
+                                     .SetAction(x => x
+                                         .SetText("Undo")
+                                         .SetAction(() =>
+                                         {
+                                             ListOfItems.Remove(Tmp);
+                                             ListOfItems.Add(iUser);
+                                         })
+                                     )
+                                 );
+            }
+
+        }
+
+        public async void OnDelete(object sender, EventArgs e)
+        {
+            var mi = ((MenuItem)sender);
+            User iUser = ListOfItems.Where(x => x.Name != mi.CommandParameter.ToString()).FirstOrDefault();
+            await DisplayAlert("Delete", iUser.Name, "OK");
+            bool answer = await DisplayAlert("Delete item", $"Would you like to remove {iUser.Name} permanently?", "Yes", "No");
+            if (answer)
+            {
+                ListOfItems.Remove(iUser);
+                //ListOfItems = new ObservableCollection<User>(ListOfItems.Where(x => x.Name != iName).ToList());
+
+                UserDialogs.Instance.Toast(new ToastConfig($"{iUser.Name} Deleted.")
+                    .SetDuration(TimeSpan.FromSeconds(5))
+                    .SetPosition(ToastPosition.Bottom)
+                    .SetAction(x => x
+                        .SetText("Undo")
+                        .SetAction(() => ListOfItems.Add(iUser))
+                    )
+                );
+            }
+        }
 
         public AddNewDevice()
         {
@@ -44,46 +129,8 @@ namespace HomeCare.Views
 
             ListOfItems = new ObservableCollection<User>(UserHandler.GetAllUsers());
 
-            this.listView.BindingContext = ListOfItems;
-
-            var moreAction = new MenuItem { Text = "Edit" };
-            moreAction.SetBinding(MenuItem.CommandParameterProperty, new Binding("."));
-            moreAction.Clicked += (sender, e) => {
-                var mi = ((MenuItem)sender); 
-            };
-
-            var deleteAction = new MenuItem { Text = "Delete", IsDestructive = true }; // red background
-            deleteAction.SetBinding(MenuItem.CommandParameterProperty, new Binding("."));
-            deleteAction.Clicked += (sender, e) => {
-                var mi = ((MenuItem)sender);
-             };
-
-            //
-            // add context actions to the cell
-            //
-            //ContextActions.Add(moreAction);
-            //ContextActions.Add(deleteAction);
-
-
+            lstDevices.ItemsSource = ListOfItems;
         }
 
-        private void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            if (e.SelectedItem == null) return; // has been set to null, do not 'process' tapped event
-            DisplayAlert("Tapped", e.SelectedItem + " row was tapped", "OK");
-            ((ListView)sender).SelectedItem = null; // de-select the row
-        }
-        public void OnMore(object sender, EventArgs e)
-        {
-            var mi = ((MenuItem)sender);
-            DisplayAlert("More Context Action", mi.CommandParameter + " more context action", "OK");
-        }
-
-        public void OnDelete(object sender, EventArgs e)
-        {
-            var mi = ((MenuItem)sender); 
-            //DisplayAlert("Delete Context Action", mi.CommandParameter + " delete context action", "OK");
-            ListOfItems.Remove(ListOfItems.Where(x => x.phone == mi.CommandParameter.ToString()).FirstOrDefault());
-        }  
     }
 }
