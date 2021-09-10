@@ -14,7 +14,7 @@ namespace HomeCare
         public MainPage()
         {
             InitializeComponent();
-
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }
