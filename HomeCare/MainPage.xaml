@@ -41,7 +41,7 @@
 
         <Grid Grid.Row="0" Margin="0,70,0,0" Grid.Column="1">
             <Frame HasShadow="True" Margin="5, 10, 5, 25" BackgroundColor="#D6EDFF" BorderColor="#478978">
-                <ImageButton Source="responsive.png" Margin="-2, -2" />
+                <ImageButton Source="responsive.png" Margin="-2, -2" Clicked="AddNewDevice_Clicke" />
             </Frame>
             <Label Text="تنظیمات دستگاه" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontSize="Medium" FontAttributes="Bold"/>
         </Grid>

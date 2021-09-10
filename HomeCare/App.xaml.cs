@@ -11,10 +11,10 @@ namespace HomeCare
         {
             InitializeComponent();
 
-          
+
             //SMSEvents.OnSMSReceived += OnSMSReceived;
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

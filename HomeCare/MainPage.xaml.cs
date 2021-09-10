@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using HomeCare.Views;
 
 namespace HomeCare
 {
@@ -17,5 +18,10 @@ namespace HomeCare
             NavigationPage.SetHasNavigationBar(this, false);
             //this.BackgroundColor = Color.FromHex("a5a58d");
         }
-    }
+
+        void AddNewDevice_Clicke(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new AddNewDevice());
+        }
+}
 }
