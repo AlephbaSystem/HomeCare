@@ -1,5 +1,7 @@
 ﻿using Acr.UserDialogs;
+using HomeCare.Models;
 using HomeCare.Services.Users;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,6 +9,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -24,8 +27,9 @@ namespace HomeCare.Views
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        private ObservableCollection<User> _listOfItems;
-        public ObservableCollection<User> ListOfItems
+        private UserHandler userHandler;
+        private ObservableCollection<Devices> _listOfItems;
+        public ObservableCollection<Devices> ListOfItems
         {
             get
             {
@@ -40,11 +44,11 @@ namespace HomeCare.Views
                 }
             }
         }
-        public async void OnEdit(object sender, EventArgs e)
+        public void OnEdit(object sender, EventArgs e)
         {
             var mi = ((MenuItem)sender);
-            User iUser = ListOfItems.Where(x => x.Name != mi.CommandParameter.ToString()).FirstOrDefault();
-            User Tmp = new User() { Name = iUser.Name, Phone = iUser.Phone };
+            Devices iUser = ListOfItems.Where(x => x.Name == mi.CommandParameter.ToString()).FirstOrDefault();
+            Devices Tmp = new Devices() { Name = iUser.Name, Phone = iUser.Phone };
             bool cnsl = false;
             UserDialogs.Instance.ActionSheet(new ActionSheetConfig()
                            .SetTitle("Edit")
@@ -97,14 +101,13 @@ namespace HomeCare.Views
                                          })
                                      )
                                  );
+                ListOfItems = ListOfItems;
             }
-
         }
-
         public async void OnDelete(object sender, EventArgs e)
         {
             var mi = ((MenuItem)sender);
-            User iUser = ListOfItems.Where(x => x.Name != mi.CommandParameter.ToString()).FirstOrDefault();
+            Devices iUser = ListOfItems.Where(x => x.Name == mi.CommandParameter.ToString()).FirstOrDefault();
             await DisplayAlert("Delete", iUser.Name, "OK");
             bool answer = await DisplayAlert("Delete item", $"Would you like to remove {iUser.Name} permanently?", "Yes", "No");
             if (answer)
@@ -120,17 +123,21 @@ namespace HomeCare.Views
                         .SetAction(() => ListOfItems.Add(iUser))
                     )
                 );
+                ListOfItems = ListOfItems;
             }
         }
-
         public AddNewDevice()
         {
             InitializeComponent();
-
-            ListOfItems = new ObservableCollection<User>(UserHandler.GetAllUsers());
-
+            this.BindingContext = this;
+            userHandler = new UserHandler();
+            ListOfItems = new ObservableCollection<Devices>(userHandler.GetAllUsers());
             lstDevices.ItemsSource = ListOfItems;
         }
-
+         
+        private async void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddDevice());
+        }
     }
 }

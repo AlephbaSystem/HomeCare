@@ -1,26 +1,43 @@
-﻿using System;
+﻿using HomeCare.Models;
+using HomeCare.Services.Database;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using Xamarin.Forms;
 
 namespace HomeCare.Services.Users
 {
     class UserHandler
     {
-        public static User GetCurrentUser()
+        public DevicesDatabase devicesDatabase;
+
+        public UserHandler()
         {
-            var us = new User() { Phone = "", Name = "" };
-            return us;
+            devicesDatabase = new DevicesDatabase();
         }
-        public static User[] GetAllUsers()
+
+        public Devices GetCurrentUser()
         {
-            var us = new User() { Phone = "", Name = "" };
-            User[] ar = { us };
-            return ar;
+            var cr = GetAllUsers();
+            var crr = cr.Where(x => x.Selected == true).FirstOrDefault();
+            if (crr is null)
+            {
+                crr = cr.FirstOrDefault();
+            }
+            return crr;
         }
-    }
-    public struct User
-    {
-        public string Phone;
-        public string Name;
+        public List<Devices> GetAllUsers()
+        {
+            return devicesDatabase.GetDevices().ToList();
+        }
+
+        public string InsertDevice(string Name, string Phone)
+        {
+            Devices devices = new Devices();
+            devices.Name = Name;
+            devices.Phone = Phone;
+            return devicesDatabase.AddDevice(devices);
+        }
     }
 }

@@ -15,27 +15,27 @@ namespace HomeCare.Services.SMS
         public static string ChargeCommand = "شارژ";
         public static void Open()
         {
-            DependencyService.Get<ISendSms>().Send(Users.UserHandler.GetCurrentUser().phone, OpenCommand);
+            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, OpenCommand);
         }
         public static void Close()
         {
-            DependencyService.Get<ISendSms>().Send(Users.UserHandler.GetCurrentUser().phone, CloseCommand);
+            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, CloseCommand);
         }
         public static void PartialOpen()
         {
-            DependencyService.Get<ISendSms>().Send(Users.UserHandler.GetCurrentUser().phone, CloseCommand);
+            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, CloseCommand);
         }
         public static void Wiretapping()
         {
-            DependencyService.Get<ISendSms>().Send(Users.UserHandler.GetCurrentUser().phone, WiretappingCommand);
+            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, WiretappingCommand);
         }
         public static void Status()
         {
-            DependencyService.Get<ISendSms>().Send(Users.UserHandler.GetCurrentUser().phone, StatusCommand);
+            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, StatusCommand);
         }
         public static void Charge()
         {
-            DependencyService.Get<ISendSms>().Send(Users.UserHandler.GetCurrentUser().phone, ChargeCommand);
+            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, ChargeCommand);
         }
     }
 }
