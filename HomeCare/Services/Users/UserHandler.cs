@@ -8,19 +8,19 @@ namespace HomeCare.Services.Users
     {
         public static User GetCurrentUser()
         {
-            var us = new User() { phone = "", name = "" };
+            var us = new User() { Phone = "", Name = "" };
             return us;
         }
         public static User[] GetAllUsers()
         {
-            var us = new User() { phone = "", name = "" };
+            var us = new User() { Phone = "", Name = "" };
             User[] ar = { us };
             return ar;
         }
     }
     public struct User
     {
-        public string phone;
-        public string name;
+        public string Phone;
+        public string Name;
     }
 }

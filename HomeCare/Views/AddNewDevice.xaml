@@ -3,19 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HomeCare.Views.AddNewDevice">
     <ContentPage.Content>
-        <ListView x:Name="listView" ItemSelected="listView_ItemSelected" ItemsSource="{Binding ListOfItems}" >
+        <ListView x:Name="lstDevices">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <ViewCell.ContextActions>
-                            <MenuItem Clicked="OnMore" CommandParameter="{Binding phone}" Text="Edit" />
-                            <MenuItem Clicked="OnDelete" CommandParameter="{Binding phone}" Text="Delete" IsDestructive="True" />
+                            <MenuItem Clicked="OnEdit" CommandParameter="{Binding Name}" Text="Edit"/>
+                            <MenuItem Clicked="OnDelete" CommandParameter="{Binding Name}" Text="Delete" IsDestructive="True" />
                         </ViewCell.ContextActions>
-                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
-                            <StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
-                                <Label Text="{Binding name}" VerticalTextAlignment="Center" FontSize="Medium" />
-                                <Label Text="hint: trigger a context action" VerticalTextAlignment="Center" FontSize="Small" />
-                            </StackLayout>
+                        <StackLayout Padding="15,0">
+                            <Label Text="{Binding Name}" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
