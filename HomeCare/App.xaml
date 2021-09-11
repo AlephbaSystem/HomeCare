@@ -3,6 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HomeCare.App">
     <Application.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontFamily">
+                <Setter.Value>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <OnPlatform.Android>Dirooz.ttf#dirooz</OnPlatform.Android>
+                        <OnPlatform.iOS>Dirooz.ttf#dirooz</OnPlatform.iOS>
+                    </OnPlatform>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
     </Application.Resources>
 </Application>

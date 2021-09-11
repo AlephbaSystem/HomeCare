@@ -5,6 +5,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Icon="" Order="Primary" Clicked="ToolbarItem_Clicked" /> 
     </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <Grid>
             <ListView x:Name="lstDevices" >

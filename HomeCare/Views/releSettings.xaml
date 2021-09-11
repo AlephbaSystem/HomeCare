@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="HomeCare.Views.releSettings">
+
+    <ContentPage.Resources>
+        <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+            <Setter Property="BackgroundColor" Value="#E9F1F7" />
+        </Style>
+    </ContentPage.Resources>
+
+
+    <ContentPage.Content>
+        <StackLayout Margin="30, 10">
+
+            <Frame Margin="15, 0" Padding="0" HasShadow="False" BorderColor="#B8C5D6" CornerRadius="10" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="2*" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="مدت زمان رله لحظه ای" HorizontalTextAlignment="Center" Margin="0, 10, 0, 0" />
+                    <Slider Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"  Maximum="100" Margin="20, 0" MaximumTrackColor="#D6EDFF" />
+                    <Button Grid.Row="2" Grid.Column="0" Margin="30, 10, 5, 10" Text="استعلام" BackgroundColor="#083D77" TextColor="White" FontAttributes="bold"/>
+                    <Button Grid.Row="2" Grid.Column="1" Margin="5, 10, 30, 10" Text="ارسال" BackgroundColor="#04724d" TextColor="White" FontAttributes="bold"/>
+                </Grid>
+            </Frame>
+
+            <Frame Margin="20, 10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="2*" /> 
+                    </Grid.ColumnDefinitions>
+
+                    <RadioButton Grid.Row="1" Grid.Column="0" Content="غیر فعال" HorizontalOptions="End" />
+                    <RadioButton Grid.Row="1" Grid.Column="1" Content="فعال" HorizontalOptions="Center"/>
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="خروجی out-تلفن کننده" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                </Grid>
+            </Frame>
+
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Frame Grid.Row="0" Grid.Column="0" Margin="10, 0, 0, 0" Padding="0">
+                    <Entry Placeholder="رله۳" HorizontalTextAlignment="Center" />
+                </Frame>
+                <Label Grid.Row="0" Grid.Column="1" Text="نام رله ۱:" HorizontalTextAlignment="End" />
+
+                <Frame Grid.Row="1" Grid.Column="0" Margin="10, 0, 0, 0" Padding="0">
+                    <Entry Placeholder="رله۳" HorizontalTextAlignment="Center" />
+                </Frame>
+                <Label Grid.Row="1" Grid.Column="1" Text="نام رله۲:" HorizontalTextAlignment="End" />
+
+                <Frame Grid.Row="2" Grid.Column="0" Margin="10, 0, 0, 0" Padding="0">
+                    <Entry Placeholder="رله۳" HorizontalTextAlignment="Center" />
+                </Frame>
+                <Label Grid.Row="2" Grid.Column="1" Text="نام رله ۳:" HorizontalTextAlignment="End" />
+            </Grid>
+
+            <Grid Margin="40, 100, 40, 60" Padding="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Frame Grid.Column="0" BackgroundColor="#04724d">
+                    <Button Text="ذخیره" TextColor="#fcfffc" FontAttributes="Bold"  />
+                </Frame>
+
+                <Frame Grid.Column="1" BackgroundColor="#e5383b">
+                    <Button Grid.Column="0" Text="بازگشت" TextColor="#fcfffc" FontAttributes="Bold" />
+                </Frame>
+            </Grid>
+
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

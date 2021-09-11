@@ -32,5 +32,10 @@ namespace HomeCare
         {
             Navigation.PushAsync(new Settings());
         }
+
+        void releSettingsImageButton_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new releSettings());
+        }
     }
 }
