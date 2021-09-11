@@ -20,6 +20,10 @@ namespace HomeCare.Views
         {
             InitializeComponent();
             userHandler = new UserHandler();
+            NavigationPage.SetHasNavigationBar(this, true);
+            NavigationPage.SetHasBackButton(this, true);
+            NavigationPage.SetBackButtonTitle(this, "Back");
+            this.Title = "Add Device";
         }
         public void InsertDevice(object o, EventArgs e)
         {

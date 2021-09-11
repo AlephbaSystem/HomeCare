@@ -2,17 +2,36 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HomeCare.Views.AddDevice">
+
+    <ContentPage.Resources>
+        <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+            <Setter Property="BackgroundColor" Value="#E9F1F7" />
+        </Style>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
         <StackLayout Padding="20">
-            <Label Text="Name" FontSize="25"/>
-            <Entry x:Name="deviceName" Placeholder="Enter Name"></Entry>
-            <Label Text="Phone" FontSize="25"/>
-            <Entry x:Name="devicePhone" Placeholder="Enter Phone" Keyboard="Telephone"></Entry>
+            <Label Text="نام دستگاه" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="0, 0, 10, 0"/>
+            <Entry x:Name="deviceName" Placeholder="دستگاه مدل 7X2020" HorizontalTextAlignment="Center" Margin="40, 0, 40, 0"></Entry>
+            <Label Text="شماره همراه" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="0, 10, 10, 0"/>
+            <Entry x:Name="devicePhone" Placeholder="09........." HorizontalTextAlignment="Center" Keyboard="Telephone" Margin="40, 0, 40, 0"></Entry>
 
-            <StackLayout Orientation="Horizontal">
-                <Button Text="Add Device" BackgroundColor="Gray" TextColor="White" Clicked="InsertDevice"/>
-                <Button Text="Show Devices" BackgroundColor="Maroon" TextColor="White" Clicked="ShowDevices"/>
-            </StackLayout>
+            <Grid Margin="40, 20, 40, 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Text="افزودن دستگاه" Grid.Row="0" Grid.Column="0"  BackgroundColor="#04724d" TextColor="White" Clicked="InsertDevice"/>
+                <Button Text="لیست دستگاه ها" BackgroundColor="#083D77" Grid.Row="0" Grid.Column="1" TextColor="#D6D1B1" Clicked="ShowDevices"/>
+            </Grid>
+            
+                
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
