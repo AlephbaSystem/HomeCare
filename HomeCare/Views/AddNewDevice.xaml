@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HomeCare.Views.AddNewDevice">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Icon="MySearchIcon.png" Order="Primary" Clicked="ToolbarItem_Clicked" /> 
+        <ToolbarItem Text="Add" Icon="" Order="Primary" Clicked="ToolbarItem_Clicked" /> 
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid>

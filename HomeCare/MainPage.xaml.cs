@@ -23,5 +23,5 @@ namespace HomeCare
         {
             Navigation.PushAsync(new AddNewDevice());
         }
-}
+    }
 }

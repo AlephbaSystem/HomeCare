@@ -129,6 +129,7 @@ namespace HomeCare.Views
         public AddNewDevice()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, true);
             this.BindingContext = this;
             userHandler = new UserHandler();
             ListOfItems = new ObservableCollection<Devices>(userHandler.GetAllUsers());
