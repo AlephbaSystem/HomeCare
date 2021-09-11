@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HomeCare.Views.Timing">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame CornerRadius="25" Margin="30">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Frame CornerRadius="50" Grid.Row="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="0,-100,0,0">
+                        <Label Text="تعریف زمان بندی" />
+                    </Frame>
+
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" Text="روز" />
+                        <Label Grid.Row="1" Grid.Column="0" Text="20" />
+
+                        <Label Grid.Row="0" Grid.Column="1" Text="ساعت" />
+                        <Label Grid.Row="1" Grid.Column="1" Text="11" />
+
+                        <Label Grid.Row="0" Grid.Column="2" Text="دقیقه" />
+                        <Label Grid.Row="1" Grid.Column="2" Text="30" />
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0" Text="رله 1" />
+                        <Label Grid.Column="1" Text="غیر فعال" />
+                    </Grid>
+
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Frame Grid.Column="0">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="یک بار" />
+                                <CheckBox />
+                            </StackLayout>
+                        </Frame>
+                        <Frame Grid.Column="1">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="روزانه" />
+                                <CheckBox />
+                            </StackLayout>
+                        </Frame>
+                        <Frame Grid.Column="2">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="هفتگی" />
+                                <CheckBox />
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                </Grid>
+            </Frame>
+
+            <Button CornerRadius="25" Text="ذخیره زمان بندی" />
+
+            <Frame CornerRadius="25">
+
+            </Frame>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Text="استعلام زمانبندی ها" Grid.Column="0" />
+                <Button Text="ارسال زمانبندی ها" Grid.Column="1" />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
