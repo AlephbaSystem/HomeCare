@@ -6,8 +6,7 @@
 <!--<ContentPage.Resources>
     <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
         <Setter Property="BackgroundColor" Value="#a8dadc" />
-    </Style>
-
+    </Style> 
 </ContentPage.Resources>-->
 
 
@@ -48,7 +47,7 @@
 
         <Grid Grid.Row="0" Margin="0,70,0,0" Grid.Column="2">
             <Frame HasShadow="True" Margin="5, 10, 5, 25" BackgroundColor="#D6EDFF" BorderColor="#478978">
-                <ImageButton Source="ai.png" Margin="-5, -5" />
+                <ImageButton Source="ai.png" Margin="-5, -5" Clicked="Timing_Clicke" />
             </Frame>
             <Label Text="هوشمند سازی" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontAttributes="Bold" FontSize="Medium"/>
         </Grid>

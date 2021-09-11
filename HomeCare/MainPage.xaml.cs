@@ -23,5 +23,9 @@ namespace HomeCare
         {
             Navigation.PushAsync(new AddNewDevice());
         }
+        void Timing_Clicke(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new Timing ());
+        }
     }
 }
