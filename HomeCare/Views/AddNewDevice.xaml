@@ -15,9 +15,31 @@
                                 <MenuItem Clicked="OnEdit" CommandParameter="{Binding Name}" Text="Edit"/>
                                 <MenuItem Clicked="OnDelete" CommandParameter="{Binding Name}" Text="Delete" IsDestructive="True" />
                             </ViewCell.ContextActions>
-                            <StackLayout Padding="15,0">
-                                <Label Text="{Binding Name}" TextColor="Black" />
-                            </StackLayout>
+                            
+                            <Grid Padding="3">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Phone}" TextColor="Black" />
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" TextColor="Black" />
+
+                            </Grid>
+                            
+                            <!--<StackLayout>
+                                <Frame HasShadow="True">
+                                    <Label Text="{Binding Phone}" TextColor="Black" />
+                                </Frame>
+                                <Frame HasShadow="True">
+                                    <Label Text="{Binding Name}" TextColor="Black" />
+                                </Frame>
+                                
+                            </StackLayout>-->
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

@@ -2,22 +2,37 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HomeCare.Views.Timing">
+    <ContentPage.Resources>
+        <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+            <Setter Property="BackgroundColor" Value="#E9F1F7" />
+        </Style>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Frame CornerRadius="25" Margin="30">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+
+
+            <Frame Grid.Row="0" HasShadow="False" CornerRadius="5" Margin="20, 50, 20, 0">
                 <Grid>
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="3*" />
                     </Grid.RowDefinitions>
 
-                    <Frame CornerRadius="50" Grid.Row="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="0,-100,0,0">
-                        <Label Text="تعریف زمان بندی" />
+                    <Frame HasShadow="True" CornerRadius="10" Grid.Row="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="0,-100,0,0" BorderColor="#B8C5D6">
+                        <Label Text="تعریف زمان بندی" FontAttributes="Bold" FontSize="Medium" />
                     </Frame>
 
-                    <Grid Grid.Row="1">
+                    <Grid Grid.Row="1" Margin="0, -40, 0, 0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
                             <RowDefinition Height="*" />
@@ -28,68 +43,113 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
-                        <Label Grid.Row="0" Grid.Column="0" Text="روز" />
-                        <Label Grid.Row="1" Grid.Column="0" Text="20" />
+                        
+                        <Label Grid.Row="0" Grid.Column="0" Text="روز" HorizontalTextAlignment="Center" />
+                        <Label Grid.Row="1" Grid.Column="0" Text="20" HorizontalTextAlignment="Center" />
 
-                        <Label Grid.Row="0" Grid.Column="1" Text="ساعت" />
-                        <Label Grid.Row="1" Grid.Column="1" Text="11" />
+                        <Label Grid.Row="0" Grid.Column="1" Text="ساعت" HorizontalTextAlignment="Center" />
+                        <Label Grid.Row="1" Grid.Column="1" Text="11" HorizontalTextAlignment="Center" />
 
-                        <Label Grid.Row="0" Grid.Column="2" Text="دقیقه" />
-                        <Label Grid.Row="1" Grid.Column="2" Text="30" />
+                       
+                         <Label Grid.Row="0" Grid.Column="2"  Text="دقیقه" HorizontalTextAlignment="Center" />
+                        <Label  Grid.Row="1" Grid.Column="2" Text="30" HorizontalTextAlignment="Center" />
+                        
                     </Grid>
 
-                    <Grid Grid.Row="2">
+                    <Grid Grid.Row="2" Margin="0, 0, 0, -5" Padding="0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
-                        <Label Grid.Column="0" Text="رله 1" />
-                        <Label Grid.Column="1" Text="غیر فعال" />
+                        <Label Grid.Column="1" Text="رله 1" HorizontalTextAlignment="Center" />
+                        <Frame Grid.Column="1" HasShadow="True" Padding="0" HeightRequest="10" CornerRadius="5" BorderColor="White">
+                            <Picker HorizontalOptions="FillAndExpand" Title="رله ۱" TitleColor="#191919" HorizontalTextAlignment="Center" BackgroundColor="#eef4ed" x:Name="rele_Picker" TextColor="#002e3d">
+                                <Picker.Items>
+                                    <x:String>رله ۱</x:String> 
+                                    <x:String>رله ۲</x:String>
+                                    <x:String>رله ۳</x:String>
+                                    <x:String>رله ۴</x:String>
+                                    <x:String>رله ۵</x:String>
+                                    <x:String>رله ۶</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </Frame>
+
+                        <Label  Text="غیر فعال" HorizontalTextAlignment="Center" />
+                        <Frame Grid.Column="0" HasShadow="True" BackgroundColor="#C2E1C2" Padding="1" HeightRequest="50" CornerRadius="5" BorderColor="White">
+                            <Picker HorizontalOptions="FillAndExpand" Title="غیر فعال" TitleColor="#191919" HorizontalTextAlignment="Center" BackgroundColor="#eef4ed" x:Name="status_Picker" TextColor="#002e3d">
+                                <Picker.Items>
+                                    <x:String>فعال</x:String> 
+                                    <x:String>نیمه فعال</x:String>
+                                    <x:String>غیر فعال</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </Frame>
+                        
+                        
                     </Grid>
 
-                    <Grid Grid.Row="3">
+                    <Grid Grid.Row="3" Margin="0, 20, 0, 0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Frame Grid.Column="0">
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="یک بار" />
-                                <CheckBox />
-                            </StackLayout>
+
+                        <Frame Grid.Column="0" Padding="0">
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Column="0" Text="یک بار" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
+                                <CheckBox Grid.Column="1"/>
+                            </Grid>
+                            
                         </Frame>
-                        <Frame Grid.Column="1">
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="روزانه" />
-                                <CheckBox />
-                            </StackLayout>
+                        <Frame Grid.Column="1" Padding="0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Column="0" Text="روزانه" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
+                                <CheckBox Grid.Column="1" />
+                            </Grid>
                         </Frame>
-                        <Frame Grid.Column="2">
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="هفتگی" />
-                                <CheckBox />
-                            </StackLayout>
+                        <Frame Grid.Column="2" Padding="0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Column="0" Text="هفتگی" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
+                                <CheckBox Grid.Column="1" />
+                            </Grid>
                         </Frame>
                     </Grid>
                 </Grid>
             </Frame>
 
-            <Button CornerRadius="25" Text="ذخیره زمان بندی" />
-
-            <Frame CornerRadius="25">
+            <Button Grid.Row="1" Margin="70, 5, 70, 5" BackgroundColor="#083D77" TextColor="White" CornerRadius="5" Text="ذخیره زمان بندی" />
+            <Frame Grid.Row="2" Margin="10, 5, 10, 5" HasShadow="False">
 
             </Frame>
 
-            <Grid>
+            <Grid Grid.Row="3" Margin="40, 5, 40, 50">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Text="استعلام زمانبندی ها" Grid.Column="0" />
-                <Button Text="ارسال زمانبندی ها" Grid.Column="1" />
+                <Button BackgroundColor="#04724d" TextColor="White" Text="استعلام زمانبندی ها" Grid.Column="0" />
+                <Button BackgroundColor="#083D77" TextColor="White" Text="ارسال زمانبندی ها" Grid.Column="1" />
             </Grid>
-        </StackLayout>
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

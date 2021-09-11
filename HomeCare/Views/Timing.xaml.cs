@@ -15,6 +15,17 @@ namespace HomeCare.Views
         public Timing()
         {
             InitializeComponent();
+
+            // back button in iOS
+
+            NavigationPage.SetHasBackButton(this, true);
+            NavigationPage.SetBackButtonTitle(this, "Back");
+
+            // NavigationPage Title
+
+            NavigationPage.SetHasNavigationBar(this, true);
+            this.Title = "هوشمند سازی";
+            
         }
     }
 }

@@ -30,8 +30,6 @@
                 <Button Text="لیست دستگاه ها" BackgroundColor="#083D77" Grid.Row="0" Grid.Column="1" TextColor="#D6D1B1" Clicked="ShowDevices"/>
             </Grid>
             
-                
-            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
