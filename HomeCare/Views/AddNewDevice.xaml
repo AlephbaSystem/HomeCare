@@ -9,11 +9,23 @@
         <Grid>
             <ListView x:Name="lstDevices" >
                 <ListView.Header>
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="Header"
-                               TextColor="Olive"
-                               BackgroundColor="Red" />
-                    </StackLayout>
+                    <Grid Margin="5, 15, 5, 5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="4*" />
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Text="شماره همراه" TextColor="#161a1d"  FontAttributes="Bold" />
+                        <Label Grid.Row="0" Grid.Column="1" Text="نام دستگاه" TextColor="#161a1d" FontAttributes="Bold" />
+                        <Label Grid.Row="0" Grid.Column="2" Text="ردیف" TextColor="#161a1d" FontAttributes="Bold" HorizontalTextAlignment="Start" />
+                        <Line Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" X1="10" X2="1000" Y1="0" Y2="0" Stroke="#e5383b" StrokeDashArray="1,5" StrokeDashOffset="6" />
+                    </Grid>
+                    
                 </ListView.Header>
                 <ListView.ItemTemplate>
                     <DataTemplate>
