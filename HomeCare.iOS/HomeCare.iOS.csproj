@@ -143,7 +143,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\ai.png" />
-    <BundleResource Include="Resources\apartments.png" />
     <BundleResource Include="Resources\background.jpg" />
     <BundleResource Include="Resources\connector.png" />
     <BundleResource Include="Resources\halflock.png" />

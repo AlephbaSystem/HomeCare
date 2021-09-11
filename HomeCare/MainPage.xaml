@@ -54,7 +54,7 @@
             <Frame Margin="5, 10, 5, 25" BackgroundColor="#D6EDFF" BorderColor="#478978">
                 <ImageButton Source="settings.png" Clicked="SettingsImageButton_Clicked"/>
             </Frame>
-            <Label Text="تنظیمات" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#BABFD1" FontSize="Medium" FontAttributes="Bold"/>
+            <Label Text="تنظیمات" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontSize="Medium" FontAttributes="Bold"/>
         </Grid>
 
         <Label Grid.Row="2" Grid.Column="0" HorizontalTextAlignment="Center" Grid.ColumnSpan="3" Margin="0,-50,0,0" Text="وضعیت دستگاه" TextColor="#f1faee" FontSize="Title" />
