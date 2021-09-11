@@ -54,7 +54,7 @@
 
         <Grid Grid.Row="1" Margin="0,0,0,70" Grid.Column="1">
             <Frame Margin="5, 10, 5, 25" BackgroundColor="#D6EDFF" BorderColor="#478978">
-                <ImageButton Source="settings.png" />
+                <ImageButton Source="settings.png" Clicked="SettingsImageButton_Clicked"/>
             </Frame>
             <Label Text="تنظیمات" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#BABFD1" FontSize="Medium" FontAttributes="Bold"/>
         </Grid>

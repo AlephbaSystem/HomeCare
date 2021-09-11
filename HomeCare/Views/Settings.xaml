@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="HomeCare.Views.Settings">
+
+    <ContentPage.Resources>
+        <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+            <Setter Property="BackgroundColor" Value="#E9F1F7" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Margin="40, 3" Text="شماره سیمکارت دستگاه" HorizontalTextAlignment="Center" />
+            <Entry Margin="40, 2" Placeholder="09155125672" HorizontalTextAlignment="Center" Background="#eef4ed" PlaceholderColor="#191919" IsReadOnly="True" />
+            <Button Margin="40, 2" Text="مدیریت شماره تلفن ها" BackgroundColor="#083D77" TextColor="#eef4ed" />
+            <Button Margin="40, 2" Text="مدیریت هشدار های صوتی" BackgroundColor="#083D77" TextColor="#eef4ed" />
+            <Button Margin="40, 2" Text="تنظیمات زون" BackgroundColor="#083D77" TextColor="#eef4ed"/>
+            <Button Margin="40, 2" Text="تنظیمات رله" BackgroundColor="#083D77" TextColor="#eef4ed" />
+            <Button Margin="40, 2" Text="تنظیمات ریموت" BackgroundColor="#083D77" TextColor="#eef4ed"/>
+            <Button Margin="40, 2" Text="تنظیمات جانبی" BackgroundColor="#083D77" TextColor="#eef4ed" />
+            <Button Margin="40, 2" Text="ویرایش/افزودن دستگاه" BackgroundColor="#083D77" TextColor="#eef4ed" />
+            <Button Margin="40, 2" Text="تعریف/تغییر رمز عبور" BackgroundColor="#083D77" TextColor="#eef4ed"/>
+            <Grid Margin="40, 20, 40, 30" Padding="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Frame Grid.Column="0" BackgroundColor="#04724d">
+                    <Button Text="ذخیره" TextColor="#fcfffc" FontAttributes="Bold"  />
+                </Frame>
+
+                <Frame Grid.Column="1" BackgroundColor="#e5383b">
+                    <Button Grid.Column="0" Text="بازگشت" TextColor="#fcfffc" FontAttributes="Bold" />
+                </Frame>
+            </Grid>
+            
+
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

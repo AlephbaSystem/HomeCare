@@ -27,5 +27,10 @@ namespace HomeCare
         {
             Navigation.PushAsync(new Timing ());
         }
+
+        void SettingsImageButton_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new Settings());
+        }
     }
 }

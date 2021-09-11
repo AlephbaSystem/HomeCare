@@ -7,7 +7,14 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid>
-            <ListView x:Name="lstDevices">
+            <ListView x:Name="lstDevices" >
+                <ListView.Header>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Header"
+                               TextColor="Olive"
+                               BackgroundColor="Red" />
+                    </StackLayout>
+                </ListView.Header>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -16,30 +23,23 @@
                                 <MenuItem Clicked="OnDelete" CommandParameter="{Binding Name}" Text="Delete" IsDestructive="True" />
                             </ViewCell.ContextActions>
                             
-                            <Grid Padding="3">
+                            <Grid Margin="10">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
 
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="4*" />
+                                    <ColumnDefinition Width="2*" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
 
-                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Phone}" TextColor="Black" />
-                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" TextColor="Black" />
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Phone}" TextColor="Black"  />
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}" TextColor="Black" />
+                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding Id}" TextColor="Black" HorizontalTextAlignment="End" />
+                                <Button />
 
                             </Grid>
-                            
-                            <!--<StackLayout>
-                                <Frame HasShadow="True">
-                                    <Label Text="{Binding Phone}" TextColor="Black" />
-                                </Frame>
-                                <Frame HasShadow="True">
-                                    <Label Text="{Binding Name}" TextColor="Black" />
-                                </Frame>
-                                
-                            </StackLayout>-->
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
