@@ -50,6 +50,27 @@
             <Label Text="هوشمند سازی" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontAttributes="Bold" FontSize="Medium"/>
         </Grid>
 
+        <Grid Grid.Row="1" Margin="0,0,0,70" Grid.Column="0">
+            <Frame HasShadow="True" Margin="5, 10, 5, 25" BackgroundColor="#D6EDFF" BorderColor="#478978">
+                <ImageButton Source="remotecontrol.png" Margin="-2, -2" Clicked="AddNewDevice_Clicke" />
+            </Frame>
+            <Label Text="تنظیمات ریموت" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontSize="Medium" FontAttributes="Bold"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="0,0,0,70" Grid.Column="2">
+            <Frame HasShadow="True" Margin="5, 10, 5, 25" BackgroundColor="#D6EDFF" BorderColor="#478978">
+                <ImageButton Source="danger.png" Margin="-2, -2" Clicked="AddNewDevice_Clicke" />
+            </Frame>
+            <Label Text=" هشدارها" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontSize="Medium" FontAttributes="Bold"/>
+        </Grid>
+
+        <Grid Grid.Row="0" Margin="0,70,0,0" Grid.Column="2">
+            <Frame HasShadow="True" Margin="5, 10, 5, 25" BackgroundColor="#D6EDFF" BorderColor="#478978">
+                <ImageButton Source="ai.png" Margin="-5, -5" Clicked="Timing_Clicke" />
+            </Frame>
+            <Label Text="هوشمند سازی" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontAttributes="Bold" FontSize="Medium"/>
+        </Grid>
+
         <Grid Grid.Row="1" Margin="0,0,0,70" Grid.Column="1">
             <Frame Margin="5, 10, 5, 25" BackgroundColor="#D6EDFF" BorderColor="#478978">
                 <ImageButton Source="settings.png" Clicked="SettingsImageButton_Clicked"/>

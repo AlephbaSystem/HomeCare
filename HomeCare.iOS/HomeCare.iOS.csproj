@@ -151,5 +151,7 @@
     <BundleResource Include="Resources\unlock.png" />
     <BundleResource Include="Resources\home.png" />
     <BundleResource Include="Resources\responsive.png" />
+    <BundleResource Include="Resources\remotecontrol.png" />
+    <BundleResource Include="Resources\danger.png" />
   </ItemGroup>
 </Project>
