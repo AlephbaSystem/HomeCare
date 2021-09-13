@@ -1,4 +1,5 @@
 ﻿using HomeCare.Services.SMS;
+using HomeCare.Views.Controls;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -14,7 +15,7 @@ namespace HomeCare
 
             //SMSEvents.OnSMSReceived += OnSMSReceived;
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new SliderPage());
         }
 
         protected override void OnStart()

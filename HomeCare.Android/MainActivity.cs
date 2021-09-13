@@ -4,6 +4,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using CarouselView.FormsPlugin.Android;
 
 namespace HomeCare.Droid
 {
@@ -16,7 +17,8 @@ namespace HomeCare.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            Acr.UserDialogs.UserDialogs.Init(this); 
+            Acr.UserDialogs.UserDialogs.Init(this);
+            CarouselViewRenderer.Init(); 
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
