@@ -20,11 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Fonts\Dirooz.ttf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Fonts\irsans.ttf" />
-    <EmbeddedResource Include="Resources\Fonts\irsansb.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\IRANSansWeb.ttf" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Views\AddDevice.xaml">
@@ -52,9 +48,7 @@
   <ItemGroup>
     <None Remove="Resources\" />
     <None Remove="Resources\Fonts\" />
-    <None Remove="Resources\Fonts\Dirooz.ttf" />
-    <None Remove="Resources\Fonts\irsans.ttf" />
-    <None Remove="Resources\Fonts\irsansb.ttf" />
+    <None Remove="Resources\Fonts\IRANSansWeb.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Views\Slider\SliderPage.xaml.cs">

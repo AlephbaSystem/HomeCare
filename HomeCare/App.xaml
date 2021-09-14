@@ -4,15 +4,21 @@
              x:Class="HomeCare.App">
     <Application.Resources>
         <Style TargetType="Label">
-            <Setter Property="FontFamily">
-                <Setter.Value>
-                    <OnPlatform x:TypeArguments="x:String">
-                        <OnPlatform.Android>Dirooz.ttf#dirooz</OnPlatform.Android>
-                        <OnPlatform.iOS>Dirooz.ttf#dirooz</OnPlatform.iOS>
-                    </OnPlatform>
-                </Setter.Value>
+            <Setter Property="FontFamily" Value="ISans">
             </Setter>
         </Style>
+
+        <Style TargetType="ImageButton">
+            <Setter Property="BackgroundColor" Value="Transparent" />
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="ISans" />
+        </Style>
+
+        <!--<Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Transparent" />
+        </Style>-->
 
     </Application.Resources>
 </Application>

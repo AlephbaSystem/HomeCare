@@ -12,12 +12,12 @@
 
 
     <ContentPage.Content>
-        <StackLayout Margin="30, 10">
+        <StackLayout Margin="20, 5">
 
-            <Frame Margin="15, 0" Padding="0" HasShadow="False" BorderColor="#B8C5D6" CornerRadius="10" >
+            <Frame Margin="5, 0" Padding="0" HasShadow="False" BorderColor="#B8C5D6" CornerRadius="10" >
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="1.5*" />
                         <RowDefinition Height="*" />
                         <RowDefinition Height="2*" />
                     </Grid.RowDefinitions>
@@ -34,16 +34,16 @@
                 </Grid>
             </Frame>
 
-            <Frame Margin="20, 10">
+            <Frame Margin="20, 5">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="1.3*" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
 
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2*" />
-                        <ColumnDefinition Width="2*" /> 
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" /> 
                     </Grid.ColumnDefinitions>
 
                     <RadioButton Grid.Row="1" Grid.Column="0" Content="غیر فعال" HorizontalOptions="End" />
@@ -52,7 +52,7 @@
                 </Grid>
             </Frame>
 
-            <Grid Margin="10">
+            <Grid Margin="10, 5, 10, 5">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
@@ -60,7 +60,7 @@
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="3*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
@@ -80,18 +80,18 @@
                 <Label Grid.Row="2" Grid.Column="1" Text="نام رله ۳:" HorizontalTextAlignment="End" />
             </Grid>
 
-            <Grid Margin="40, 100, 40, 60" Padding="0">
+            <Grid Margin="40, 40, 40, 40" Padding="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
                 <Frame Grid.Column="0" BackgroundColor="#04724d">
-                    <Button Text="ذخیره" TextColor="#fcfffc" FontAttributes="Bold"  />
+                    <Button Text="ذخیره" TextColor="#fcfffc" FontAttributes="Bold" BackgroundColor="Transparent"  />
                 </Frame>
 
                 <Frame Grid.Column="1" BackgroundColor="#e5383b">
-                    <Button Grid.Column="0" Text="بازگشت" TextColor="#fcfffc" FontAttributes="Bold" />
+                    <Button Grid.Column="0" Text="بازگشت" TextColor="#fcfffc" BackgroundColor="Transparent" FontAttributes="Bold" />
                 </Frame>
             </Grid>
 

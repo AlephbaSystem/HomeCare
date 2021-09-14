@@ -52,14 +52,14 @@
 
         <Grid Grid.Row="1" Margin="0,0,0,70" Grid.Column="0">
             <Frame HasShadow="True" Margin="5, 10, 5, 25" BackgroundColor="#D6EDFF" BorderColor="#478978">
-                <ImageButton Source="remotecontrol.png" Margin="-2, -2" Clicked="AddNewDevice_Clicke" />
+                <ImageButton Source="remotecontrol.png" Margin="-2, -2" />
             </Frame>
             <Label Text="تنظیمات ریموت" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontSize="Medium" FontAttributes="Bold"/>
         </Grid>
 
         <Grid Grid.Row="1" Margin="0,0,0,70" Grid.Column="2">
             <Frame HasShadow="True" Margin="5, 10, 5, 25" BackgroundColor="#D6EDFF" BorderColor="#478978">
-                <ImageButton Source="danger.png" Margin="-2, -2" Clicked="AddNewDevice_Clicke" />
+                <ImageButton Source="danger.png" Margin="-2, -2" />
             </Frame>
             <Label Text=" هشدارها" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontSize="Medium" FontAttributes="Bold"/>
         </Grid>
@@ -78,7 +78,7 @@
             <Label Text="تنظیمات" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontSize="Medium" FontAttributes="Bold"/>
         </Grid>
 
-        <Label Grid.Row="2" Grid.Column="0" FontFamily="dirooz" HorizontalTextAlignment="Center" Grid.ColumnSpan="3" Margin="0,-50,0,0" Text="وضعیت دستگاه" TextColor="#f1faee" FontSize="Title" />
+        <Label Grid.Row="2" Grid.Column="0" HorizontalTextAlignment="Center" Grid.ColumnSpan="3" Margin="0,-50,0,0" Text="وضعیت دستگاه" TextColor="#f1faee" FontSize="Title" />
         
 
         <Grid Grid.Row="2" Margin="10, 20, 0, 70" Grid.Column="0">

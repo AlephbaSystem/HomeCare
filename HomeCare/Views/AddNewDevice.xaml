@@ -47,9 +47,9 @@
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
 
-                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Phone}" TextColor="Black"  />
-                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}" TextColor="Black" />
-                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding Id}" TextColor="Black" HorizontalTextAlignment="End" />
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Phone}" TextColor="Black" HorizontalOptions="Center"  />
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}" TextColor="Black" HorizontalOptions="Center" />
+                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding Id}" TextColor="Black" HorizontalTextAlignment="Center" />
                                 <Button />
 
                             </Grid>

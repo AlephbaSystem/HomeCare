@@ -28,7 +28,7 @@
                         <RowDefinition Height="3*" />
                     </Grid.RowDefinitions>
 
-                    <Frame HasShadow="True" CornerRadius="10" Grid.Row="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="0,-100,0,0" BorderColor="#B8C5D6">
+                    <Frame HasShadow="True" CornerRadius="10" Grid.Row="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="0, -50, 0, 40" BorderColor="#B8C5D6">
                         <Label Text="تعریف زمان بندی" FontAttributes="Bold" FontSize="Medium" />
                     </Frame>
 
