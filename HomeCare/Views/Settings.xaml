@@ -23,7 +23,7 @@
             <Button Margin="40, 2" Text="تنظیمات جانبی" BackgroundColor="#083D77" TextColor="#eef4ed" />
             <Button Margin="40, 2" Text="ویرایش/افزودن دستگاه" BackgroundColor="#083D77" TextColor="#eef4ed" />
             <Button Margin="40, 2" Text="تعریف/تغییر رمز عبور" BackgroundColor="#083D77" TextColor="#eef4ed"/>
-            <Grid Margin="40, 20, 40, 30" Padding="0">
+            <Grid Margin="40, 20, 40, 20" Padding="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />

@@ -15,7 +15,7 @@ namespace HomeCare
 
             //SMSEvents.OnSMSReceived += OnSMSReceived;
 
-            MainPage = new NavigationPage(new SliderPage());
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
