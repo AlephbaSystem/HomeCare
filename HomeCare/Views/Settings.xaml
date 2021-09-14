@@ -11,7 +11,7 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <ScrollView>
+        
             <StackLayout>
                 <Label Margin="40, 3" Text="شماره سیمکارت دستگاه" HorizontalTextAlignment="Center" />
                 <Entry Margin="40, 2" Placeholder="09155125672" HorizontalTextAlignment="Center" Background="#eef4ed" PlaceholderColor="#191919" IsReadOnly="True" />
@@ -22,7 +22,7 @@
                 <Button Margin="40, 2" Text="تنظیمات ریموت" BackgroundColor="#083D77" TextColor="#eef4ed"/>
                 <Button Margin="40, 2" Text="تنظیمات جانبی" BackgroundColor="#083D77" TextColor="#eef4ed" />
                 <Button Margin="40, 2" Text="ویرایش/افزودن دستگاه" BackgroundColor="#083D77" TextColor="#eef4ed" />
-                <Button Margin="40, 2" Text="تعریف/تغییر رمز عبور" BackgroundColor="#083D77" TextColor="#eef4ed"/>
+                <Button Margin="40, 2, 40, 5" Text="تعریف/تغییر رمز عبور" BackgroundColor="#083D77" TextColor="#eef4ed" />
                 <Grid Margin="40, 20, 40, 20" Padding="0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
@@ -38,6 +38,6 @@
                     </Frame>
                 </Grid>
             </StackLayout>
-        </ScrollView>
+        
     </ContentPage.Content>
 </ContentPage>
