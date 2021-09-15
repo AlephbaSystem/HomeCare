@@ -19,23 +19,51 @@ namespace HomeCare
             //this.BackgroundColor = Color.FromHex("a5a58d");
         }
 
-        void AddNewDevice_Clicke(System.Object sender, System.EventArgs e)
+        async void AddNewDevice_Clicke(System.Object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new AddNewDevice());
+            DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess(); 
+            ImageButton s = (ImageButton)sender;
+            await Task.Delay(200);
+            await s.FadeTo(0, 250);
+            await Task.Delay(200);
+            await s.FadeTo(1, 250);
+
+            await Navigation.PushAsync(new AddNewDevice());
         }
-        void Timing_Clicke(System.Object sender, System.EventArgs e)
+        async void Timing_Clicke(System.Object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new Timing ());
+            DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
+            ImageButton s = (ImageButton)sender;
+            await Task.Delay(200);
+            await s.FadeTo(0, 250);
+            await Task.Delay(200);
+            await s.FadeTo(1, 250);
+
+            await Navigation.PushAsync(new Timing());
         }
 
-        void SettingsImageButton_Clicked(System.Object sender, System.EventArgs e)
+      async  void SettingsImageButton_Clicked(System.Object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new Settings());
+            DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
+            ImageButton s = (ImageButton)sender;
+            await Task.Delay(200);
+            await s.FadeTo(0, 250);
+            await Task.Delay(200);
+            await s.FadeTo(1, 250);
+
+            await Navigation.PushAsync(new Settings());
         }
 
-        void releSettingsImageButton_Clicked(System.Object sender, System.EventArgs e)
+        async void releSettingsImageButton_Clicked(System.Object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new releSettings());
+            DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
+            ImageButton s = (ImageButton)sender;
+            await Task.Delay(200);
+            await s.FadeTo(0, 250);
+            await Task.Delay(200);
+            await s.FadeTo(1, 250);
+
+            await Navigation.PushAsync(new releSettings());
         }
     }
 }

@@ -69,6 +69,7 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Audio\AudioService.cs" />
     <Compile Include="Database\Android_SQLite.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Receivers\SendSms.cs" />

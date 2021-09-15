@@ -25,8 +25,15 @@ namespace HomeCare.Views
             NavigationPage.SetBackButtonTitle(this, "Back");
             this.Title = "Add Device";
         }
-        public void InsertDevice(object o, EventArgs e)
+        public async void InsertDevice(object o, EventArgs e)
         {
+            DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
+            Button s = (Button)o;
+            await Task.Delay(200);
+            await s.FadeTo(0, 250);
+            await Task.Delay(200);
+            await s.FadeTo(1, 250);
+
             if (IsValidPhone(devicePhone.Text))
             {
                 if (devicePhone.Text.StartsWith("0"))
@@ -57,6 +64,13 @@ namespace HomeCare.Views
         }
         public async void ShowDevices(object o, EventArgs e)
         {
+            DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
+            Button s = (Button)o;
+            await Task.Delay(200);
+            await s.FadeTo(0, 250);
+            await Task.Delay(200);
+            await s.FadeTo(1, 250);
+
             await Navigation.PushAsync(new AddNewDevice());
         }
 

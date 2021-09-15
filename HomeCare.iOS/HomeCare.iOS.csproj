@@ -63,6 +63,7 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Audio\AudioService.cs" />
     <Compile Include="Database\IOS_SQLite.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
