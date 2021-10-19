@@ -9,28 +9,30 @@
     <ContentPage.Content>
         <Grid>
             <ListView x:Name="lstDevices" >
-                <ListView.Header>
-                    <Frame HasShadow="True" Margin="30, 5" BorderColor="Red">
-                        <Grid Margin="5, 15, 5, 5">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="2*" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
+                <!--<ListView.Header>
+                    <Frame HasShadow="False" Margin="30, 5">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
 
-                        <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="4*" />
-                                    <ColumnDefinition Width="2*" />
-                                    <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Label Grid.Row="0" Grid.Column="0" Text="شماره همراه" TextColor="#161a1d"  FontAttributes="Bold" HorizontalTextAlignment="Center"  />
-                        <Label Grid.Row="0" Grid.Column="1" Text="نام دستگاه" TextColor="#161a1d" FontAttributes="Bold" />
-                        <Label Grid.Row="0" Grid.Column="2" Text="ردیف" TextColor="#161a1d" FontAttributes="Bold" HorizontalTextAlignment="Start" />
-                        <Line Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" X1="10" X2="1000" Y1="0" Y2="0" Stroke="#e5383b" StrokeDashArray="1,5" StrokeDashOffset="6" />
-                    </Grid>
+                            <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="4*" />
+                                        <ColumnDefinition Width="2*" />
+                                        <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0" Text="شماره همراه" TextColor="#161a1d"  FontAttributes="Bold" HorizontalTextAlignment="Center"  />
+                            <Label Grid.Row="0" Grid.Column="1" Text="نام دستگاه" TextColor="#161a1d" FontAttributes="Bold" />
+                            <Label Grid.Row="0" Grid.Column="2" Text="ردیف" TextColor="#161a1d" FontAttributes="Bold" HorizontalTextAlignment="Start" />
+
+                            <Line Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" X1="0" X2="10000" Y1="0" Y2="0" Stroke="#e5383b" StrokeDashArray="1,5" StrokeDashOffset="6" />
+                        </Grid>
                     </Frame>
                     
                     
-                </ListView.Header>
+                </ListView.Header>-->
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

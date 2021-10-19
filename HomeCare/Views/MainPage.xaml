@@ -3,13 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HomeCare.MainPage">
 
-<!--<ContentPage.Resources>
-    <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
-        <Setter Property="BackgroundColor" Value="#a8dadc" />
-    </Style> 
-</ContentPage.Resources>-->
-
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*" />
@@ -87,8 +80,6 @@
                 <ImageButton Margin="0, 0, 0, 30" Grid.Row="1" HorizontalOptions="Center" Source="status.png" Command="{Binding StatusDeviceCommand}" />
             </Grid>
         </Frame>
-
-        
 
         <Grid Grid.Row="5" Grid.Column="0" Margin="5, 10, 5, 5">
             <Frame Margin="5, 10, 5, 25" BackgroundColor="#fefae0" BorderColor="#478978">

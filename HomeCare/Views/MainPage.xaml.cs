@@ -23,10 +23,10 @@ namespace HomeCare
         {
             DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess(); 
             ImageButton s = (ImageButton)sender;
-            await Task.Delay(200);
-            await s.FadeTo(0, 250);
-            await Task.Delay(200);
-            await s.FadeTo(1, 250);
+            await Task.Delay(100);
+            await s.FadeTo(0, 100);
+            await Task.Delay(100);
+            await s.FadeTo(1, 100);
 
             await Navigation.PushAsync(new AddNewDevice());
         }
@@ -34,10 +34,10 @@ namespace HomeCare
         {
             DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
             ImageButton s = (ImageButton)sender;
-            await Task.Delay(200);
-            await s.FadeTo(0, 250);
-            await Task.Delay(200);
-            await s.FadeTo(1, 250);
+            await Task.Delay(100);
+            await s.FadeTo(0, 100);
+            await Task.Delay(100);
+            await s.FadeTo(1, 100);
 
             await Navigation.PushAsync(new Timing());
         }
@@ -46,10 +46,10 @@ namespace HomeCare
         {
             DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
             ImageButton s = (ImageButton)sender;
-            await Task.Delay(200);
-            await s.FadeTo(0, 250);
-            await Task.Delay(200);
-            await s.FadeTo(1, 250);
+            await Task.Delay(100);
+            await s.FadeTo(0, 100);
+            await Task.Delay(100);
+            await s.FadeTo(1, 100);
 
             await Navigation.PushAsync(new Settings());
         }
@@ -58,10 +58,10 @@ namespace HomeCare
         {
             DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
             ImageButton s = (ImageButton)sender;
-            await Task.Delay(200);
-            await s.FadeTo(0, 250);
-            await Task.Delay(200);
-            await s.FadeTo(1, 250);
+            await Task.Delay(100);
+            await s.FadeTo(0, 100);
+            await Task.Delay(100);
+            await s.FadeTo(1, 100);
 
             await Navigation.PushAsync(new releSettings());
         }
