@@ -16,6 +16,7 @@ namespace HomeCare
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+            BindingContext = new ViewModels.MainPageViewModel();
             //this.BackgroundColor = Color.FromHex("a5a58d");
         }
 

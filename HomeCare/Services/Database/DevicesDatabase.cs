@@ -33,9 +33,14 @@ namespace HomeCare.Services.Database
             return "success";
         }
         //DELETE  
-        public string DeleteMember(int id)
+        public string DeleteDevice(Devices device)
         {
-            conn.Delete<Devices>(id);
+            conn.Delete(device);
+            return "success";
+        }
+        public string UpdateDevice(Devices device)
+        {
+            conn.Update(device);
             return "success";
         }
 

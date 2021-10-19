@@ -13,7 +13,7 @@ namespace HomeCare.Droid.Receivers
         public void Send(string address, string message)
         {
             var pendingIntent = PendingIntent.GetActivity(Android.App.Application.Context, 0, new Intent(Android.App.Application.Context, typeof(MainActivity)).AddFlags(ActivityFlags.ClearTop | ActivityFlags.NewTask), PendingIntentFlags.NoCreate);
-
+            // updated......
             SmsManager smsM = SmsManager.Default;
             smsM.SendTextMessage(address, null, message, pendingIntent, null);
         }

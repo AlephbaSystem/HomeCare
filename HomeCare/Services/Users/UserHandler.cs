@@ -19,6 +19,7 @@ namespace HomeCare.Services.Users
 
         public Devices GetCurrentUser()
         {
+
             var cr = GetAllUsers();
             var crr = cr.Where(x => x.Selected == true).FirstOrDefault();
             if (crr is null)
@@ -38,6 +39,14 @@ namespace HomeCare.Services.Users
             devices.Name = Name;
             devices.Phone = Phone;
             return devicesDatabase.AddDevice(devices);
+        }
+        public string RemoveDevice(Devices devices)
+        {
+            return devicesDatabase.DeleteDevice(devices);
+        }
+        public string UpdateDevice(Devices devices)
+        {
+            return devicesDatabase.DeleteDevice(devices);
         }
     }
 }

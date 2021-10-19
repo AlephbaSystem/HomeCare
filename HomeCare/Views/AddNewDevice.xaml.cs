@@ -48,7 +48,7 @@ namespace HomeCare.Views
         {
             var mi = ((MenuItem)sender);
             Devices iUser = ListOfItems.Where(x => x.Name == mi.CommandParameter.ToString()).FirstOrDefault();
-            Devices Tmp = new Devices() { Name = iUser.Name, Phone = iUser.Phone };
+            Devices Tmp = iUser;
             bool cnsl = false;
             UserDialogs.Instance.ActionSheet(new ActionSheetConfig()
                            .SetTitle("Edit")
@@ -66,6 +66,8 @@ namespace HomeCare.Views
                                    Tmp.Name = result.Text;
                                    ListOfItems.Remove(iUser);
                                    ListOfItems.Add(Tmp);
+                                   this._UpdateDevic(Tmp);
+
                                }
                            })
                            .Add("Phone", async () =>
@@ -82,6 +84,7 @@ namespace HomeCare.Views
                                    Tmp.Phone = result.Text;
                                    ListOfItems.Remove(iUser);
                                    ListOfItems.Add(Tmp);
+                                   this._UpdateDevic(Tmp);
                                }
                            })
                            .SetCancel()
@@ -98,10 +101,69 @@ namespace HomeCare.Views
                                          {
                                              ListOfItems.Remove(Tmp);
                                              ListOfItems.Add(iUser);
+                                             this._UpdateDevic(iUser);
                                          })
                                      )
                                  );
                 ListOfItems = ListOfItems;
+            }
+        }
+        public bool IsValidPhone(string Phone)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(Phone))
+                    return false;
+                var r = new Regex(@"^(?:0|98|\+98|\+980|0098|098|00980)?(9\d{9})$");
+                return r.IsMatch(Phone);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        private void _AddDDevic(string devicePhoneText, string deviceNameText)
+        {
+            if (IsValidPhone(devicePhoneText))
+            {
+                if (devicePhoneText.StartsWith("0"))
+                {
+                    devicePhoneText = "+98" + devicePhoneText.Substring(1);
+                }
+                if (devicePhoneText.StartsWith("98"))
+                {
+                    devicePhoneText = "+98" + devicePhoneText.Substring(2);
+                }
+                if (devicePhoneText.StartsWith("00"))
+                {
+                    devicePhoneText = "+98" + devicePhoneText.Substring(2);
+                }
+                if (userHandler.InsertDevice(deviceNameText, devicePhoneText) == "success")
+                {
+                    UserDialogs.Instance.Toast(new ToastConfig($"device {deviceNameText} with {devicePhoneText} phone number has been added.")
+                                       .SetDuration(TimeSpan.FromSeconds(5)));
+                }
+            }
+            else
+            {
+                UserDialogs.Instance.Toast(new ToastConfig($"{devicePhoneText} is invalid phone number.")
+                                   .SetDuration(TimeSpan.FromSeconds(5)));
+            }
+        }
+        private void _RemoveDevic(Devices device)
+        {
+            if (userHandler.RemoveDevice(device) == "success")
+            {
+                UserDialogs.Instance.Toast(new ToastConfig($"device {device.Name} with {device.Phone} phone number has been removed.")
+                                   .SetDuration(TimeSpan.FromSeconds(5)));
+            }
+        }
+        private void _UpdateDevic(Devices device)
+        {
+            if (userHandler.UpdateDevice(device) == "success")
+            {
+                UserDialogs.Instance.Toast(new ToastConfig($"device {device.Name} with {device.Phone} phone number has been updated.")
+                                   .SetDuration(TimeSpan.FromSeconds(5)));
             }
         }
         public async void OnDelete(object sender, EventArgs e)
@@ -113,14 +175,20 @@ namespace HomeCare.Views
             if (answer)
             {
                 ListOfItems.Remove(iUser);
-                //ListOfItems = new ObservableCollection<User>(ListOfItems.Where(x => x.Name != iName).ToList());
+                //ListOfItems = new ObservableCollection<User>(ListOfItems.Where(x => x.Name != iName).ToList()); 
+                this._RemoveDevic(iUser);
+
 
                 UserDialogs.Instance.Toast(new ToastConfig($"{iUser.Name} Deleted.")
                     .SetDuration(TimeSpan.FromSeconds(5))
                     .SetPosition(ToastPosition.Bottom)
                     .SetAction(x => x
                         .SetText("Undo")
-                        .SetAction(() => ListOfItems.Add(iUser))
+                        .SetAction(() =>
+                        {
+                            ListOfItems.Add(iUser);
+                            this._AddDDevic(iUser.Phone, iUser.Name);
+                        })
                     )
                 );
                 ListOfItems = ListOfItems;
@@ -135,7 +203,7 @@ namespace HomeCare.Views
             ListOfItems = new ObservableCollection<Devices>(userHandler.GetAllUsers());
             lstDevices.ItemsSource = ListOfItems;
         }
-         
+
         private async void ToolbarItem_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AddDevice());
