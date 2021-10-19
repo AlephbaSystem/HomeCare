@@ -10,7 +10,8 @@
         <Grid>
             <ListView x:Name="lstDevices" >
                 <ListView.Header>
-                    <Grid Margin="5, 15, 5, 5">
+                    <Frame HasShadow="True" Margin="30, 5" BorderColor="Red">
+                        <Grid Margin="5, 15, 5, 5">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="2*" />
                             <RowDefinition Height="*" />
@@ -26,6 +27,8 @@
                         <Label Grid.Row="0" Grid.Column="2" Text="ردیف" TextColor="#161a1d" FontAttributes="Bold" HorizontalTextAlignment="Start" />
                         <Line Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" X1="10" X2="1000" Y1="0" Y2="0" Stroke="#e5383b" StrokeDashArray="1,5" StrokeDashOffset="6" />
                     </Grid>
+                    </Frame>
+                    
                     
                 </ListView.Header>
                 <ListView.ItemTemplate>

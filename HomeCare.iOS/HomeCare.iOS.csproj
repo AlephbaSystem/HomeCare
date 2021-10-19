@@ -160,5 +160,6 @@
     <BundleResource Include="Resources\responsive.png" />
     <BundleResource Include="Resources\remotecontrol.png" />
     <BundleResource Include="Resources\danger.png" />
+    <BundleResource Include="Resources\status.png" />
   </ItemGroup>
 </Project>

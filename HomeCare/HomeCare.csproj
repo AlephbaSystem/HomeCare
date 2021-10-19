@@ -49,10 +49,14 @@
     <None Remove="Resources\" />
     <None Remove="Resources\Fonts\" />
     <None Remove="Resources\Fonts\IRANSansWeb.ttf" />
+    <None Remove="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Views\Slider\SliderPage.xaml.cs">
       <DependentUpon>SliderPage.xaml</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
   </ItemGroup>
 </Project>
