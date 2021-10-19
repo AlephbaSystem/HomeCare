@@ -83,20 +83,20 @@
 
         <Grid Grid.Row="5" Grid.Column="0" Margin="5, 10, 5, 5">
             <Frame Margin="5, 10, 5, 25" BackgroundColor="#fefae0" BorderColor="#478978">
-                <ImageButton Source="unlock.png" Margin="-10, -10" />
+                <ImageButton Source="unlock.png" Margin="-10, -10" Command="{Binding UnLockDeviceCommand}" />
             </Frame>
             <Label Text="باز" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee"/>
         </Grid>
         <Grid Grid.Row="5"  Grid.Column="1" Margin="5, 10, 5, 5">
             <Frame Margin="5, 10, 5, 25" BackgroundColor="#fefae0" BorderColor="#478978">
-                <ImageButton Source="halflock.png" Margin="-10, -10" />
+                <ImageButton Source="halflock.png" Margin="-10, -10" Command="{Binding HalfLockDeviceCommand }" />
             </Frame>
             <Label Text="نیمه باز" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee"/>
         </Grid>
 
         <Grid Grid.Row="5" Grid.Column="2" Margin="5, 10, 5, 5">
             <Frame Margin="5, 10, 5, 25" BackgroundColor="#fefae0" BorderColor="#478978">
-                <ImageButton Source="lock.png" Margin="-10, -10" />
+                <ImageButton Source="lock.png" Margin="-10, -10" Command="{Binding LockDeviceCommand}" />
             </Frame>
             <Label Text="قفل" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee"/>
         </Grid>
