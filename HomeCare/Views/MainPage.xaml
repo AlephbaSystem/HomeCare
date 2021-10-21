@@ -3,8 +3,177 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HomeCare.MainPage">
 
+    <ContentPage.Resources>
+        <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+            <Setter Property="BackgroundColor" Value="#e9ecef" />
+        </Style>
+    </ContentPage.Resources>
+
+
     <Grid>
+
         <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2.2*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="0.5*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="5, 10, 5, 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="5*" />
+                </Grid.ColumnDefinitions>
+
+                <ImageButton Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Source="add.png" Margin="15, 0, 0, 0" VerticalOptions="Center" />
+                <Label Grid.Row="0" Grid.Column="1" Text="مدیریت دستگاه ها" Margin="0, 30, 10, 0" HorizontalTextAlignment="End" FontSize="24" FontAttributes="Bold" TextColor="#1d3557" />
+                <Label Grid.Row="1" Grid.Column="1" Text="دستگاه انبار فعال است" Margin="0, 0, 10, 20" HorizontalTextAlignment="End" FontSize="18" TextColor="#4a4e69" />
+        </Grid>
+
+        <Frame Grid.Row="1" HasShadow="False" Margin="10" BackgroundColor="#eff7f6" BorderColor="#a8dadc" CornerRadius="15">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.5*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="1.5*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="1.5*" />
+                    <RowDefinition Height="1.5*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2" Source="calender.png" HorizontalOptions="StartAndExpand" />
+                <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"  Text="۱۴۰۰/۰۷/۲۰" FontAttributes="Bold" HorizontalOptions="Start" Margin="0, 0, 40, 0" />
+                <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Text="۱۰:۲۴" FontAttributes="Bold" HorizontalOptions="Start" Margin="0, 0, 40, 0" />
+                <Label Grid.Row="0" Grid.Column="3" Text="ورژن نرم افزار" HorizontalTextAlignment="End" />
+                <Label Grid.Row="1" Grid.Column="3" Text="۱۱" HorizontalTextAlignment="End" />
+                <Image Grid.Row="2" Grid.Column="0" Margin="0, 5, 0, 0" Source="antenna.png" />
+                <Label Grid.Row="2" Grid.Column="1" Margin="0, 5, 0, 0" Text="۳۱ ٪" />
+                <Label Grid.Row="2" Grid.Column="3" Text="شارژ سیمکارت" HorizontalTextAlignment="End" />
+                <Label Grid.Row="3" Grid.Column="3" Text="۱۵۴۳۵" HorizontalTextAlignment="End" />
+                <Ellipse Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Stroke="#e63946" Fill="#e63946" StrokeThickness="2" WidthRequest="20" HeightRequest="10" HorizontalOptions="Start" />
+                <Ellipse Grid.Row="4" Grid.Column="2" Stroke="#2dc653" Fill="#2dc653" StrokeThickness="2" WidthRequest="20" HeightRequest="10" HorizontalOptions="Center"/>
+                <Ellipse Grid.Row="4" Grid.Column="3" Stroke="#e63946" Fill="#e63946" StrokeThickness="2" WidthRequest="20" HeightRequest="10" HorizontalOptions="End"/>
+                <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="رله ۱" />
+                <Label Grid.Row="5" Grid.Column="2" Text="رله ۲" HorizontalTextAlignment="Center" />
+                <Label Grid.Row="5" Grid.Column="3" Text="رله ۳" HorizontalTextAlignment="End" />
+                <Label Grid.Row="6" Grid.Column="0" Text="IMEI:" />
+                <Label Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" Text="865826048581435" />
+                <Button Grid.Row="6" Grid.Column="3" Text="بروز رسانی" BackgroundColor="#1d3557" TextColor="#f1faee" />
+            </Grid>
+        </Frame>
+
+        <!--<CarouselView x:Name="onMenuCarousel"  ItemsSource="{Binding Items}">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <ContentView>
+                            
+                        </ContentView>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+        </CarouselView>-->
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Frame Grid.Column="0" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#a8dadc" Padding="0" Margin="10, 0, 5, 0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Source="ai.png" HorizontalOptions="Center" Aspect="AspectFit" />
+                    <Button Grid.Row="1" Text="هوشمند" HorizontalOptions="Center" TextColor="#1d3557" />
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Column="1" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#a8dadc" Padding="0" Margin="5, 0, 5, 0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Source="relle.png" HorizontalOptions="Center" Aspect="AspectFit" />
+                    <Button Grid.Row="1" Text="رله ها" HorizontalOptions="Center" TextColor="#1d3557" />
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Column="2" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#a8dadc" Padding="0" Margin="5, 0, 10, 0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Source="settings.png" HorizontalOptions="Center" Aspect="AspectFit" />
+                    <Button Grid.Row="1" Text="تنظیمات" HorizontalOptions="Center" TextColor="#1d3557" />
+                </Grid>
+            </Frame>
+        </Grid>
+
+
+        <Grid Grid.Row="3" Margin="5, 20, 5, 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Frame Grid.Column="0" HasShadow="False" Margin="30, 10, 15, 10" Padding="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <ImageButton Grid.Row="0" Source="lock.png" HorizontalOptions="Center" />
+                    <Label Grid.Row="1" Text="بسته" HorizontalTextAlignment="Center" />
+                </Grid>
+                
+            </Frame>
+
+            <Frame Grid.Column="1" HasShadow="False" Margin="15, 10, 15, 10" Padding="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <ImageButton Grid.Row="0" Source="halflock.png" HorizontalOptions="Center" />
+                    <Label Grid.Row="1" Text="نیمه باز" HorizontalTextAlignment="Center" />
+                </Grid>
+                
+            </Frame>
+
+            <Frame Grid.Column="2" HasShadow="False" Margin="15, 10, 30, 10" Padding="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <ImageButton Grid.Row="0" Source="unlock.png" HorizontalOptions="Center" />
+                    <Label Grid.Row="1" Text="باز" HorizontalTextAlignment="Center" />
+                </Grid>
+            </Frame>
+        </Grid>
+
+        <Label Grid.Row="4" Margin="0, 35, 0, 0" Text="Hymax burglar" HorizontalTextAlignment="Center" BackgroundColor="#1d3557" TextColor="#f1faee"/>
+
+        <!--<Grid.RowDefinitions>
             <RowDefinition Height="0.2*" />
             <RowDefinition Height="0.3*" />
             <RowDefinition Height="2*" />
@@ -18,90 +187,87 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Image Source="background.jpg" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="7" Aspect="AspectFill" />
+        <Image Source="background.jpg" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="6" Grid.RowSpan="7" Aspect="AspectFill" />
 
-        <Label Grid.Row="1" Grid.Column="0" Margin="0, 0, 0, 0" Grid.ColumnSpan="3" Text="ردیاب خانه" HorizontalTextAlignment="Center" BackgroundColor="#a7cced" TextColor="Black" />
+        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Text="ردیاب خانه" HorizontalTextAlignment="Center" BackgroundColor="#a7cced" TextColor="Black" />
 
-        <Grid Grid.Row="2"  Grid.Column="0" Margin="5, 20, 5, 0">
-            <Frame HasShadow="True" Margin="5, 10, 5, 25" BackgroundColor="#D6EDFF" BorderColor="#478978">
+        <Grid Grid.Row="2"  Grid.Column="0">
+            <Frame HasShadow="True"  BackgroundColor="#D6EDFF" BorderColor="#478978">
 
                 <ImageButton Source="connector.png" Margin="-10, -10" Clicked="releSettingsImageButton_Clicked" />
 
             </Frame>
-            <Label Margin="0, 10, 0, 0" Text="تنظیمات رله" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontAttributes="Bold" FontSize="Micro"/>
+            <Label Text="تنظیمات رله" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontAttributes="Bold" FontSize="Micro"/>
             
         </Grid>
 
-        <Grid Grid.Row="2"  Grid.Column="1" Margin="5, 20, 5, 0">
-            <Frame HasShadow="True" Margin="5, 10, 5, 25" BackgroundColor="#D6EDFF" BorderColor="#478978">
+        <Grid Grid.Row="2"  Grid.Column="2" >
+            <Frame HasShadow="True" BackgroundColor="#D6EDFF" BorderColor="#478978">
                 <ImageButton Source="responsive.png" Margin="-2, -2" Clicked="AddNewDevice_Clicke" />
             </Frame>
-            <Label Margin="0, 10, 0, 0" Text="تنظیمات دستگاه" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontSize="Micro" FontAttributes="Bold"/>
+            <Label Text="تنظیمات دستگاه" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontSize="Micro" FontAttributes="Bold"/>
         </Grid>
 
-        <Grid Grid.Row="2"  Grid.Column="2" Margin="5, 20, 5, 0">
-            <Frame HasShadow="True" Margin="5, 10, 5, 25" BackgroundColor="#D6EDFF" BorderColor="#478978">
+        <Grid Grid.Row="2"  Grid.Column="4">
+            <Frame HasShadow="True" BackgroundColor="#D6EDFF" BorderColor="#478978">
                 <ImageButton Source="ai.png" Margin="-5, -5" Clicked="Timing_Clicke" />
             </Frame>
-            <Label Margin="0, 10, 0, 0" Text="هوشمند سازی" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontAttributes="Bold" FontSize="Micro"/>
+            <Label Text="هوشمند سازی" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontAttributes="Bold" FontSize="Micro"/>
         </Grid>
 
-        <Grid Grid.Row="3"  Grid.Column="0" Margin="5, 20, 5, 20">
-            <Frame HasShadow="True" Margin="5, 10, 5, 25" BackgroundColor="#D6EDFF" BorderColor="#478978">
+        <Grid Grid.Row="3"  Grid.Column="0">
+            <Frame HasShadow="True" BackgroundColor="#D6EDFF" BorderColor="#478978">
                 <ImageButton Source="remotecontrol.png" Margin="-2, -2" />
             </Frame>
-            <Label Margin="0, 10, 0, 0" Text="تنظیمات ریموت" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontSize="Micro" FontAttributes="Bold"/>
+            <Label Text="تنظیمات ریموت" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontSize="Micro" FontAttributes="Bold"/>
         </Grid>
 
-        <Grid Grid.Row="3" Grid.Column="1" Margin="5, 20, 5, 20">
-            <Frame Margin="5, 10, 5, 25" BackgroundColor="#D6EDFF" BorderColor="#478978">
+        <Grid Grid.Row="3" Grid.Column="2">
+            <Frame HasShadow="True" BackgroundColor="#D6EDFF" BorderColor="#478978">
                 <ImageButton Source="settings.png" Clicked="SettingsImageButton_Clicked"/>
             </Frame>
-            <Label Margin="0, 10, 0, 0" Text="تنظیمات" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontSize="Micro" FontAttributes="Bold"/>
+            <Label Text="تنظیمات" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontSize="Micro" FontAttributes="Bold"/>
         </Grid>
 
-        <Grid Grid.Row="3" Grid.Column="2" Margin="5, 20, 5, 20">
-            <Frame HasShadow="True" Margin="5, 10, 5, 25" BackgroundColor="#D6EDFF" BorderColor="#478978">
-                <ImageButton Source="danger.png" Margin="-2, -2" />
+        <Grid Grid.Row="3" Grid.Column="4">
+            <Frame HasShadow="True" BackgroundColor="#D6EDFF" BorderColor="#478978">
+                <ImageButton Source="danger.png"/>
             </Frame>
-            <Label Margin="0, 10, 0, 0" Text=" هشدارها" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontSize="Micro" FontAttributes="Bold"/>
+            <Label Text=" هشدارها" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontSize="Micro" FontAttributes="Bold"/>
         </Grid>
 
-        <Frame Grid.Row="4" Grid.Column="1" Margin="5, 10" BackgroundColor="#D6EDFF" BorderColor="#478978" Padding="0">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
+        <Grid Grid.Row="4" Grid.Column="2">
+            <Frame HasShadow="True" BackgroundColor="#D6EDFF" BorderColor="#478978">
+                <ImageButton Margin="0, 0, 0, 30" HorizontalOptions="Center" Source="status.png" Command="{Binding StatusDeviceCommand}" />
+            </Frame>
+            <Label VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontSize="Micro" FontAttributes="Bold" Text="وضعیت" />
+        </Grid>
 
-                <Label Grid.Row="0" Margin="0, 30, 0, 0" HorizontalTextAlignment="Center"  Text="وضعیت" TextColor="Black" FontSize="Medium" />
-                <ImageButton Margin="0, 0, 0, 30" Grid.Row="1" HorizontalOptions="Center" Source="status.png" Command="{Binding StatusDeviceCommand}" />
-            </Grid>
-        </Frame>
-
-        <Grid Grid.Row="5" Grid.Column="0" Margin="5, 10, 5, 5">
-            <Frame Margin="5, 10, 5, 25" BackgroundColor="#fefae0" BorderColor="#478978">
-                <ImageButton Source="unlock.png" Margin="-10, -10" Command="{Binding UnLockDeviceCommand}" />
+        <Grid Grid.Row="5" Grid.Column="0">
+            <Frame HasShadow="True" BackgroundColor="#fefae0" BorderColor="#478978">
+                <ImageButton Source="unlock.png" Command="{Binding UnLockDeviceCommand}" />
             </Frame>
             <Label Text="باز" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee"/>
         </Grid>
-        <Grid Grid.Row="5"  Grid.Column="1" Margin="5, 10, 5, 5">
-            <Frame Margin="5, 10, 5, 25" BackgroundColor="#fefae0" BorderColor="#478978">
-                <ImageButton Source="halflock.png" Margin="-10, -10" Command="{Binding HalfLockDeviceCommand }" />
+        <Grid Grid.Row="5"  Grid.Column="2">
+            <Frame BackgroundColor="#fefae0" BorderColor="#478978">
+                <ImageButton Source="halflock.png" Command="{Binding HalfLockDeviceCommand }" />
             </Frame>
             <Label Text="نیمه باز" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee"/>
         </Grid>
 
-        <Grid Grid.Row="5" Grid.Column="2" Margin="5, 10, 5, 5">
-            <Frame Margin="5, 10, 5, 25" BackgroundColor="#fefae0" BorderColor="#478978">
-                <ImageButton Source="lock.png" Margin="-10, -10" Command="{Binding LockDeviceCommand}" />
+        <Grid Grid.Row="5" Grid.Column="4">
+            <Frame HasShadow="True" BackgroundColor="#fefae0" BorderColor="#478978">
+                <ImageButton Source="lock.png" Command="{Binding LockDeviceCommand}" />
             </Frame>
-            <Label Text="قفل" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee"/>
+            <Label Text="قفل" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="Black"/>
         </Grid>
 
-        <Label Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" Text="Hymax burgla" HorizontalTextAlignment="Center" BackgroundColor="#a7cced" TextColor="Black" />
+        <Label Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="6" Text="Hymax burgla" HorizontalTextAlignment="Center" BackgroundColor="#a7cced" TextColor="Black" />-->
         
     </Grid>
 

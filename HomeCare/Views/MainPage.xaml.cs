@@ -66,5 +66,11 @@ namespace HomeCare
 
             await Navigation.PushAsync(new releSettings());
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            
+        }
     }
 }
