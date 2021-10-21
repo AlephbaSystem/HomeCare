@@ -115,7 +115,6 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <InterfaceDefinition Include="Launch.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -160,5 +159,8 @@
     <BundleResource Include="Resources\halflock.png" />
     <BundleResource Include="Resources\lock.png" />
     <BundleResource Include="Resources\unlock.png" />
+    <BundleResource Include="Resources\Tutorial1.jpg" />
+    <BundleResource Include="Resources\tutorial2.jpg" />
+    <BundleResource Include="Resources\tutorial3.jpg" />
   </ItemGroup>
 </Project>

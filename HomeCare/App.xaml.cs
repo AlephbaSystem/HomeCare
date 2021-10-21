@@ -4,6 +4,9 @@ using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using HomeCare.Views;
+using Xamarin.Essentials;
+
 namespace HomeCare
 {
     public partial class App : Application
@@ -15,7 +18,16 @@ namespace HomeCare
 
             //SMSEvents.OnSMSReceived += OnSMSReceived;
             SMSEvents.OnSMSReceived += c_ThresholdReached;
-            MainPage = new NavigationPage(new MainPage());
+
+            if (VersionTracking.IsFirstLaunchEver)
+            {
+                MainPage = new NavigationPage(new Tutorial());
+            }
+            else
+            {
+                MainPage = new NavigationPage(new MainPage());
+            }
+            
         }
 
         static   void c_ThresholdReached(object sender, SMSEventArgs e)
@@ -24,6 +36,7 @@ namespace HomeCare
         }
         protected override void OnStart()
         {
+            VersionTracking.Track();
         }
 
         protected override void OnSleep()
