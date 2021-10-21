@@ -15,10 +15,8 @@ namespace HomeCare
         {
             InitializeComponent();
 
-
-            //SMSEvents.OnSMSReceived += OnSMSReceived;
-            SMSEvents.OnSMSReceived += c_ThresholdReached;
-
+            SMSEvents.OnSMSReceived += ReciveSMSFromDevice;
+       
             if (VersionTracking.IsFirstLaunchEver)
             {
                 MainPage = new NavigationPage(new Tutorial());
@@ -30,7 +28,7 @@ namespace HomeCare
             
         }
 
-        static   void c_ThresholdReached(object sender, SMSEventArgs e)
+        static   void ReciveSMSFromDevice(object sender, SMSEventArgs e)
         {
               Acr.UserDialogs.UserDialogs.Instance.Alert(e.Message, "", "باشه");
         }
