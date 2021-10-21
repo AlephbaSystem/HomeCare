@@ -73,7 +73,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
@@ -149,17 +148,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Resources\add.png" />
+    <BundleResource Include="Resources\antenna.png" />
+    <BundleResource Include="Resources\calender.png" />
     <BundleResource Include="Resources\ai.png" />
-    <BundleResource Include="Resources\background.jpg" />
-    <BundleResource Include="Resources\connector.png" />
+    <BundleResource Include="Resources\relle.png" />
+    <BundleResource Include="Resources\remote.png" />
+    <BundleResource Include="Resources\settings.png" />
+    <BundleResource Include="Resources\key.png" />
     <BundleResource Include="Resources\halflock.png" />
     <BundleResource Include="Resources\lock.png" />
-    <BundleResource Include="Resources\settings.png" />
     <BundleResource Include="Resources\unlock.png" />
-    <BundleResource Include="Resources\home.png" />
-    <BundleResource Include="Resources\responsive.png" />
-    <BundleResource Include="Resources\remotecontrol.png" />
-    <BundleResource Include="Resources\danger.png" />
-    <BundleResource Include="Resources\status.png" />
+    <BundleResource Include="Resources\Tutorial1.jpg" />
+    <BundleResource Include="Resources\tutorial2.jpg" />
+    <BundleResource Include="Resources\tutorial3.jpg" />
   </ItemGroup>
 </Project>

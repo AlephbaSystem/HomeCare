@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
@@ -9,7 +9,7 @@ namespace HomeCare.Services.SMS
     {
         public static string OpenCommand = "باز";
         public static string CloseCommand = "بسته";
-        public static string PartialOpenCommand = "نیمه فعال";
+        public static string PartialOpenCommand = "نیمه باز";
         public static string WiretappingCommand = "شنود";
         public static string StatusCommand = "وضعیت";
         public static string ChargeCommand = "شارژ";
@@ -47,7 +47,7 @@ namespace HomeCare.Services.SMS
         /// <returns>Bool</returns>
         public static bool PartialOpen()
         {
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, CloseCommand);
+            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, PartialOpenCommand);
             return true;
         }
 

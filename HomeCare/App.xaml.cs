@@ -4,6 +4,9 @@ using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using HomeCare.Views;
+using Xamarin.Essentials;
+
 namespace HomeCare
 {
     public partial class App : Application
@@ -12,10 +15,17 @@ namespace HomeCare
         {
             InitializeComponent();
 
-
-            //SMSEvents.OnSMSReceived += OnSMSReceived;
             SMSEvents.OnSMSReceived += ReciveSMSFromDevice;
-            MainPage = new NavigationPage(new MainPage());
+       
+            if (VersionTracking.IsFirstLaunchEver)
+            {
+                MainPage = new NavigationPage(new Tutorial());
+            }
+            else
+            {
+                MainPage = new NavigationPage(new MainPage());
+            }
+            
         }
 
         static   void ReciveSMSFromDevice(object sender, SMSEventArgs e)
@@ -24,6 +34,7 @@ namespace HomeCare
         }
         protected override void OnStart()
         {
+            VersionTracking.Track();
         }
 
         protected override void OnSleep()
