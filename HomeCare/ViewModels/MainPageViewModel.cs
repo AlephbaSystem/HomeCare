@@ -60,6 +60,7 @@ namespace HomeCare.ViewModels
                 OnPropertyChanged(nameof(SelectDevice));
             }
         }
+
         public ObservableCollection<Models.Menu> Items
         {
             get

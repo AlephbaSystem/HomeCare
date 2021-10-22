@@ -40,11 +40,8 @@
                                 <MenuItem Clicked="OnEdit" CommandParameter="{Binding Name}" Text="Edit"/>
                                 <MenuItem Clicked="OnDelete" CommandParameter="{Binding Name}" Text="Delete" IsDestructive="True" />
                             </ViewCell.ContextActions>
-                            
-                            <Grid Margin="10">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
+
+                            <Grid BackgroundColor="#94d2bd" Padding="0" Margin="5, 0">
 
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="4*" />
@@ -52,12 +49,12 @@
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
 
-                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Phone}" TextColor="Black" HorizontalOptions="Center"  />
-                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}" TextColor="Black" HorizontalOptions="Center" />
-                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding Id}" TextColor="Black" HorizontalTextAlignment="Center" />
-                                <Button />
+                                <Label Grid.Column="0" Text="{Binding Phone}" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                                <Label Grid.Column="1" Text="{Binding Name}" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                                <Label Grid.Column="2" Text="{Binding Id}" TextColor="Black" HorizontalTextAlignment="Center" VerticalOptions="Center" />
 
                             </Grid>
+                            
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
