@@ -3,9 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HomeCare.App">
     <Application.Resources>
-        <Style TargetType="Label">
-            <Setter Property="FontFamily" Value="ISans">
-            </Setter>
+        <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+            <Setter Property="BackgroundColor" Value="#E9F1F7" />
+        </Style>
+        <Style TargetType="Label" ApplyToDerivedTypes="True">
+            <Setter Property="FontFamily" Value="ISans" />
+            <Setter Property="TextColor" Value="Black" />
+        </Style>
+        <Style TargetType="Entry" ApplyToDerivedTypes="True">
+            <Setter Property="FontFamily" Value="ISans" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="PlaceholderColor" Value="Black" />
+            <Setter Property="BackgroundColor" Value="#a8dadc" />
         </Style>
 
         <Style TargetType="ImageButton">

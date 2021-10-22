@@ -3,6 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:ob1="clr-namespace:HomeCare.Models"
+    BackgroundColor="White"
     x:Class="HomeCare.Views.Tutorial">
 
     <ContentPage.Resources>
@@ -76,6 +77,8 @@
                         Margin="15, 30, 15, 30"
                         BackgroundColor="#e63946"
                         TextColor="#f1faee"
+                        CornerRadius="14"
+                        VerticalOptions="Center"
                         Text="رد کن"
                         Command="{Binding SkipCommand}"/>
 
@@ -84,6 +87,8 @@
                         FontSize="18"
                         Margin="15, 30, 15, 30"
                         FontAttributes="Bold"
+                        CornerRadius="14"
+                        VerticalOptions="Center"
                         BackgroundColor="#1d3557"
                         TextColor="#f1faee"
                         Text="بعدی"

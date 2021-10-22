@@ -203,7 +203,12 @@ namespace HomeCare.Views
             ListOfItems = new ObservableCollection<Devices>(userHandler.GetAllUsers());
             lstDevices.ItemsSource = ListOfItems;
         }
-
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            userHandler = new UserHandler();
+            ListOfItems = new ObservableCollection<Devices>(userHandler.GetAllUsers());
+        }
         private async void ToolbarItem_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AddDevice());

@@ -16,7 +16,7 @@ namespace HomeCare
             InitializeComponent();
 
             SMSEvents.OnSMSReceived += ReciveSMSFromDevice;
-       
+
             if (VersionTracking.IsFirstLaunchEver)
             {
                 MainPage = new NavigationPage(new Tutorial());
@@ -25,12 +25,12 @@ namespace HomeCare
             {
                 MainPage = new NavigationPage(new MainPage());
             }
-            
+
         }
 
-        static   void ReciveSMSFromDevice(object sender, SMSEventArgs e)
+        static void ReciveSMSFromDevice(object sender, SMSEventArgs e)
         {
-              Acr.UserDialogs.UserDialogs.Instance.Alert(e.Message, "", "باشه");
+            Acr.UserDialogs.UserDialogs.Instance.Alert(e.Message, "", "باشه");
         }
         protected override void OnStart()
         {

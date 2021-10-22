@@ -4,9 +4,9 @@
     <color android:color="#a7cced"/>
   </item>
   <item>
-    <bitmap
+    <bitmap 
         android:src="@drawable/lunch"
         android:tileMode="disabled"
-        android:gravity="center"/>
+        android:gravity="fill"/>
   </item>
 </layer-list>
