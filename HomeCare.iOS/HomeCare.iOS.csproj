@@ -163,4 +163,7 @@
     <BundleResource Include="Resources\tutorial2.jpg" />
     <BundleResource Include="Resources\tutorial3.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+  </ItemGroup>
 </Project>
