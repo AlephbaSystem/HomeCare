@@ -1,9 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:HomeCare.Converter"
              x:Class="HomeCare.MainPage">
 
     <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:RELConverter x:Key="relConverter" />
+        </ResourceDictionary>
     </ContentPage.Resources>
 
 
@@ -24,7 +27,7 @@
                 <ColumnDefinition Width="5*" />
             </Grid.ColumnDefinitions>
             <ImageButton Grid.Column="0" Source="add.png" Margin="15, 0, 0, 0" VerticalOptions="Center" Clicked="AddNewDevice_Clicke" />
-            <CarouselView Grid.Column="1" x:Name="onMenuCarousel"  ItemsSource="{Binding SelectDevice}" Loop="{Binding IsLoopDevice}">
+            <CarouselView Grid.Column="1" x:Name="onMenuCarousel"  ItemsSource="{Binding SelectDevice}" Loop="{Binding IsLoopDevice}" CurrentItemChanged="onMenuCarousel_CurrentItemChanged">
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -59,26 +62,26 @@
                 </Grid.ColumnDefinitions>
  
                 <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2" Source="calender.png" HorizontalOptions="StartAndExpand" />
-                <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"  Text="۱۴۰۰/۰۷/۲۰" FontAttributes="Bold" HorizontalOptions="Start" Margin="0, 0, 40, 0" />
-                <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Text="۱۰:۲۴" FontAttributes="Bold" HorizontalOptions="Start" Margin="0, 0, 40, 0" />
+                <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"  Text="{Binding StatusDevice.DATE}" FontAttributes="Bold" HorizontalOptions="Start" Margin="0, 0, 40, 0" />
+                <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding StatusDevice.TIME}" FontAttributes="Bold" HorizontalOptions="Start" Margin="0, 0, 40, 0" />
                 <Label Grid.Row="0" Grid.Column="3" Text="ورژن نرم افزار" HorizontalOptions="End" />
-                <Label Grid.Row="1" Grid.Column="3" Text="۱۱" HorizontalTextAlignment="End" />
+                <Label Grid.Row="1" Grid.Column="3" Text="{Binding StatusDevice.CSQ}" HorizontalTextAlignment="End" />
                 <Image Grid.Row="2" Grid.Column="0" Margin="0, 5, 0, 0" Source="antenna.png" />
-                <Label Grid.Row="2" Grid.Column="1" Margin="0, 5, 0, 0" Text="۳۱ ٪" />
+                <Label Grid.Row="2" Grid.Column="1" Margin="0, 5, 0, 0" Text="{Binding StatusDevice.SV}" />
                 <Label Grid.Row="2" Grid.Column="3" Text="شارژ سیمکارت" HorizontalOptions="End" />
-                <Label Grid.Row="3" Grid.Column="3" Text="۱۵۴۳۵" HorizontalTextAlignment="End" />
-                <Ellipse Grid.Row="4" Grid.Column="0"  Stroke="#e63946" Fill="#e63946" StrokeThickness="2" WidthRequest="20" HeightRequest="10" HorizontalOptions="Start" />
-                <Ellipse Grid.Row="4" Grid.Column="2" Stroke="#2dc653" Fill="#2dc653" StrokeThickness="2" WidthRequest="20" HeightRequest="10" HorizontalOptions="Center"/>
-                <Ellipse Grid.Row="4" Grid.Column="3" Stroke="#e63946" Fill="#e63946" StrokeThickness="2" WidthRequest="20" HeightRequest="10" HorizontalOptions="End"/>
+                <Label Grid.Row="3" Grid.Column="3" Text="{Binding StatusDevice.MoneyCharge}" HorizontalTextAlignment="End" />
+                <Ellipse Grid.Row="4" Grid.Column="0"  Stroke="{Binding StatusDevice.REL1, Converter={StaticResource relConverter}}" Fill="{Binding StatusDevice.REL1, Converter={StaticResource relConverter}}" StrokeThickness="2" WidthRequest="20" HeightRequest="10" HorizontalOptions="Start" />
+                <Ellipse Grid.Row="4" Grid.Column="2" Stroke="{Binding StatusDevice.REL2, Converter={StaticResource relConverter}}" Fill="{Binding StatusDevice.REL2, Converter={StaticResource relConverter}}" StrokeThickness="2" WidthRequest="20" HeightRequest="10" HorizontalOptions="Center"/>
+                <Ellipse Grid.Row="4" Grid.Column="3" Stroke="{Binding StatusDevice.REL3, Converter={StaticResource relConverter}}" Fill="{Binding StatusDevice.REL3, Converter={StaticResource relConverter}}" StrokeThickness="2" WidthRequest="20" HeightRequest="10" HorizontalOptions="End"/>
                 <Label Grid.Row="5" Grid.Column="0"  Text="رله ۱" HorizontalOptions="Start" />
                 <Label Grid.Row="5" Grid.Column="2" Text="رله ۲" HorizontalTextAlignment="Center" />
                 <Label Grid.Row="5" Grid.Column="3" Text="رله ۳" HorizontalTextAlignment="Start" />
                 <Label Grid.Row="6" Grid.Column="0" Text="IMEI:" VerticalTextAlignment="Center" />
-                <Label Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" Text="865826048581435" VerticalTextAlignment="Center" />
-                <Button Grid.Row="6" Grid.Column="3" Text="بروز رسانی" BackgroundColor="#1d3557" TextColor="#f1faee" Clicked="DeviceStatus_Clicked" />
+                <Label Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding StatusDevice.IMEI}" VerticalTextAlignment="Center" />
+                <!--<Button Grid.Row="6" Grid.Column="3" Text="بروز رسانی" BackgroundColor="#1d3557" TextColor="#f1faee" Clicked="DeviceStatus_Clicked" />-->
             </Grid>
         </Frame>
-        <Button  Grid.Row="1" Text="وضعیت دستگاه" Opacity="0.9" BackgroundColor="#eff7f6" TextColor="Black" Clicked="DeviceStatus_Clicked" />
+        <Button x:Name="DeviceStatusButton" Grid.Row="1" Text="وضعیت دستگاه" Opacity="{Binding StatusDevice.op}" BackgroundColor="#eff7f6" TextColor="Black" Clicked="DeviceStatus_Clicked" />
 
         <!--<CarouselView x:Name="onMenuCarousel"  ItemsSource="{Binding Items}">
                 <CarouselView.ItemTemplate>

@@ -46,7 +46,7 @@ namespace HomeCare.Services.Users
         }
         public string UpdateDevice(Devices devices)
         {
-            return devicesDatabase.DeleteDevice(devices);
+            return devicesDatabase.UpdateDevice(devices);
         }
     }
 }
