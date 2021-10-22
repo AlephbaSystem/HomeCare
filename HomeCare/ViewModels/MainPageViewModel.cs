@@ -4,9 +4,10 @@ using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
-
+using System.Linq;
 using HomeCare.Models;
 using System.Collections.ObjectModel;
+using HomeCare.Services.SMS;
 
 namespace HomeCare.ViewModels
 {
@@ -14,7 +15,20 @@ namespace HomeCare.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private ObservableCollection<Models.Menu> _items;
-
+        private ObservableCollection<Models.Devices> _selectDevice;
+        private bool _isLoopDevice;
+        public bool IsLoopDevice
+        {
+            get
+            {
+                return _isLoopDevice;
+            }
+            set
+            {
+                _isLoopDevice = value;
+                OnPropertyChanged(nameof(IsLoopDevice));
+            }
+        }
         public MainPageViewModel()
         {
             StatusDeviceCommand = new Command(GetStatus);
@@ -22,10 +36,30 @@ namespace HomeCare.ViewModels
             UnLockDeviceCommand = new Command(SetToUnLockDevice);
             HalfLockDeviceCommand = new Command(SetToHalfLockDevice);
 
+            SMSEvents.OnSMSReceived += ReciveSMSFromDevice;
             OnMenu();
-
+            
         }
 
+        static void ReciveSMSFromDevice(object sender, SMSEventArgs e)
+        {
+           if (e.Message.Length > 2)
+            {
+
+            }
+        }
+        public ObservableCollection<Models.Devices> SelectDevice
+        {
+            get
+            {
+                return _selectDevice;
+            }
+            set
+            {
+                _selectDevice = value;
+                OnPropertyChanged(nameof(SelectDevice));
+            }
+        }
         public ObservableCollection<Models.Menu> Items
         {
             get
@@ -74,8 +108,20 @@ namespace HomeCare.ViewModels
                 handler(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private void OnMenu()
-        {
+        public void OnMenu()
+        { 
+            SelectDevice = new ObservableCollection<Devices>(new Services.Users.UserHandler().GetAllUsers().OrderByDescending(x => x.Selected));
+            if (SelectDevice.Count <=0)
+            {
+                SelectDevice.Add(new Devices() { Name = "مدیریت دستگاه ها", Phone = "دستگاه فعال نیست" }); 
+            }
+            if (SelectDevice.Count <= 1)
+            { 
+                IsLoopDevice = false;
+            } else
+            { 
+                IsLoopDevice = true;
+            }
             Items = new ObservableCollection<Models.Menu>
             {
                 new Models.Menu

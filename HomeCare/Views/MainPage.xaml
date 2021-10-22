@@ -1,12 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="HomeCare.MainPage">
 
     <ContentPage.Resources>
-        <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
-            <Setter Property="BackgroundColor" Value="#e9ecef" />
-        </Style>
     </ContentPage.Resources>
 
 
@@ -20,20 +17,27 @@
             <RowDefinition Height="0.5*" />
         </Grid.RowDefinitions>
 
+
         <Grid Grid.Row="0" Margin="5, 10, 5, 0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="5*" />
-                </Grid.ColumnDefinitions>
-
-                <ImageButton Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Source="add.png" Margin="15, 0, 0, 0" VerticalOptions="Center" />
-                <Label Grid.Row="0" Grid.Column="1" Text="مدیریت دستگاه ها" Margin="0, 30, 10, 0" HorizontalTextAlignment="End" FontSize="24" FontAttributes="Bold" TextColor="#1d3557" />
-                <Label Grid.Row="1" Grid.Column="1" Text="دستگاه انبار فعال است" Margin="0, 0, 10, 20" HorizontalTextAlignment="End" FontSize="18" TextColor="#4a4e69" />
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="5*" />
+            </Grid.ColumnDefinitions>
+            <ImageButton Grid.Column="0" Source="add.png" Margin="15, 0, 0, 0" VerticalOptions="Center" Clicked="AddNewDevice_Clicke" />
+            <CarouselView Grid.Column="1" x:Name="onMenuCarousel"  ItemsSource="{Binding SelectDevice}" Loop="{Binding IsLoopDevice}">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Text="{Binding Name}" Margin="0, 20, 10, 0" HorizontalOptions="End" FontSize="24" FontAttributes="Bold" TextColor="#1d3557" />
+                            <Label Grid.Row="1" Text="{Binding Phone}" Margin="0, 0, 10, 20" HorizontalOptions="End" FontSize="18" TextColor="#4a4e69" />
+                        </Grid>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
         </Grid>
 
         <Frame Grid.Row="1" HasShadow="False" Margin="10" BackgroundColor="#eff7f6" BorderColor="#a8dadc" CornerRadius="15">
@@ -45,7 +49,7 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="1.5*" />
-                    <RowDefinition Height="1.5*" />
+                    <RowDefinition Height="2*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -53,27 +57,28 @@
                     <ColumnDefinition Width="2*" />
                     <ColumnDefinition Width="2*" />
                 </Grid.ColumnDefinitions>
-
+ 
                 <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2" Source="calender.png" HorizontalOptions="StartAndExpand" />
                 <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"  Text="۱۴۰۰/۰۷/۲۰" FontAttributes="Bold" HorizontalOptions="Start" Margin="0, 0, 40, 0" />
                 <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Text="۱۰:۲۴" FontAttributes="Bold" HorizontalOptions="Start" Margin="0, 0, 40, 0" />
-                <Label Grid.Row="0" Grid.Column="3" Text="ورژن نرم افزار" HorizontalTextAlignment="End" />
+                <Label Grid.Row="0" Grid.Column="3" Text="ورژن نرم افزار" HorizontalOptions="End" />
                 <Label Grid.Row="1" Grid.Column="3" Text="۱۱" HorizontalTextAlignment="End" />
                 <Image Grid.Row="2" Grid.Column="0" Margin="0, 5, 0, 0" Source="antenna.png" />
                 <Label Grid.Row="2" Grid.Column="1" Margin="0, 5, 0, 0" Text="۳۱ ٪" />
-                <Label Grid.Row="2" Grid.Column="3" Text="شارژ سیمکارت" HorizontalTextAlignment="End" />
+                <Label Grid.Row="2" Grid.Column="3" Text="شارژ سیمکارت" HorizontalOptions="End" />
                 <Label Grid.Row="3" Grid.Column="3" Text="۱۵۴۳۵" HorizontalTextAlignment="End" />
-                <Ellipse Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Stroke="#e63946" Fill="#e63946" StrokeThickness="2" WidthRequest="20" HeightRequest="10" HorizontalOptions="Start" />
+                <Ellipse Grid.Row="4" Grid.Column="0"  Stroke="#e63946" Fill="#e63946" StrokeThickness="2" WidthRequest="20" HeightRequest="10" HorizontalOptions="Start" />
                 <Ellipse Grid.Row="4" Grid.Column="2" Stroke="#2dc653" Fill="#2dc653" StrokeThickness="2" WidthRequest="20" HeightRequest="10" HorizontalOptions="Center"/>
                 <Ellipse Grid.Row="4" Grid.Column="3" Stroke="#e63946" Fill="#e63946" StrokeThickness="2" WidthRequest="20" HeightRequest="10" HorizontalOptions="End"/>
-                <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="رله ۱" />
+                <Label Grid.Row="5" Grid.Column="0"  Text="رله ۱" HorizontalOptions="Start" />
                 <Label Grid.Row="5" Grid.Column="2" Text="رله ۲" HorizontalTextAlignment="Center" />
-                <Label Grid.Row="5" Grid.Column="3" Text="رله ۳" HorizontalTextAlignment="End" />
-                <Label Grid.Row="6" Grid.Column="0" Text="IMEI:" />
-                <Label Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" Text="865826048581435" />
-                <Button Grid.Row="6" Grid.Column="3" Text="بروز رسانی" BackgroundColor="#1d3557" TextColor="#f1faee" />
+                <Label Grid.Row="5" Grid.Column="3" Text="رله ۳" HorizontalTextAlignment="Start" />
+                <Label Grid.Row="6" Grid.Column="0" Text="IMEI:" VerticalTextAlignment="Center" />
+                <Label Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" Text="865826048581435" VerticalTextAlignment="Center" />
+                <Button Grid.Row="6" Grid.Column="3" Text="بروز رسانی" BackgroundColor="#1d3557" TextColor="#f1faee" Clicked="DeviceStatus_Clicked" />
             </Grid>
         </Frame>
+        <Button  Grid.Row="1" Text="وضعیت دستگاه" Opacity="0.9" BackgroundColor="#eff7f6" TextColor="Black" Clicked="DeviceStatus_Clicked" />
 
         <!--<CarouselView x:Name="onMenuCarousel"  ItemsSource="{Binding Items}">
                 <CarouselView.ItemTemplate>
@@ -93,35 +98,44 @@
             </Grid.ColumnDefinitions>
 
             <Frame Grid.Column="0" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#a8dadc" Padding="0" Margin="10, 0, 5, 0">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="AI_Tapped" />
+                </Frame.GestureRecognizers>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="2*" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Image Grid.Row="0" Source="ai.png" HorizontalOptions="Center" Aspect="AspectFit" />
-                    <Button Grid.Row="1" Text="هوشمند" HorizontalOptions="Center" TextColor="#1d3557" />
+                    <Button BackgroundColor="Transparent" Grid.Row="1" Text="هوشمند" HorizontalOptions="Center" TextColor="#1d3557" />
                 </Grid>
             </Frame>
 
             <Frame Grid.Column="1" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#a8dadc" Padding="0" Margin="5, 0, 5, 0">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="RELE_Tapped" />
+                </Frame.GestureRecognizers>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="2*" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Image Grid.Row="0" Source="relle.png" HorizontalOptions="Center" Aspect="AspectFit" />
-                    <Button Grid.Row="1" Text="رله ها" HorizontalOptions="Center" TextColor="#1d3557" />
+                    <Button BackgroundColor="Transparent" Grid.Row="1" Text="رله ها" HorizontalOptions="Center" TextColor="#1d3557" />
                 </Grid>
             </Frame>
 
             <Frame Grid.Column="2" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#a8dadc" Padding="0" Margin="5, 0, 10, 0">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Settings_Tapped" />
+                </Frame.GestureRecognizers>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="2*" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Image Grid.Row="0" Source="settings.png" HorizontalOptions="Center" Aspect="AspectFit" />
-                    <Button Grid.Row="1" Text="تنظیمات" HorizontalOptions="Center" TextColor="#1d3557" />
+                    <Button BackgroundColor="Transparent" Grid.Row="1" Text="تنظیمات" HorizontalOptions="Center" TextColor="#1d3557" />
                 </Grid>
             </Frame>
         </Grid>
@@ -134,7 +148,10 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Frame Grid.Column="0" HasShadow="False" Margin="30, 10, 15, 10" Padding="0">
+            <Frame Grid.Column="0" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#a8dadc" Margin="30, 10, 15, 10" Padding="0">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Close_Tapped" />
+                </Frame.GestureRecognizers>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="2*" />
@@ -144,10 +161,13 @@
                     <ImageButton Grid.Row="0" Source="lock.png" HorizontalOptions="Center" />
                     <Label Grid.Row="1" Text="بسته" HorizontalTextAlignment="Center" />
                 </Grid>
-                
+
             </Frame>
 
-            <Frame Grid.Column="1" HasShadow="False" Margin="15, 10, 15, 10" Padding="0">
+            <Frame Grid.Column="1" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#a8dadc" Margin="15, 10, 15, 10" Padding="0">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Partial_Tapped" />
+                </Frame.GestureRecognizers>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="2*" />
@@ -156,10 +176,13 @@
                     <ImageButton Grid.Row="0" Source="halflock.png" HorizontalOptions="Center" />
                     <Label Grid.Row="1" Text="نیمه باز" HorizontalTextAlignment="Center" />
                 </Grid>
-                
+
             </Frame>
 
-            <Frame Grid.Column="2" HasShadow="False" Margin="15, 10, 30, 10" Padding="0">
+            <Frame Grid.Column="2" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#a8dadc" Margin="15, 10, 30, 10" Padding="0">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Open_Tapped" />
+                </Frame.GestureRecognizers>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="2*" />
@@ -268,7 +291,7 @@
         </Grid>
 
         <Label Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="6" Text="Hymax burgla" HorizontalTextAlignment="Center" BackgroundColor="#a7cced" TextColor="Black" />-->
-        
+
     </Grid>
 
 </ContentPage>

@@ -21,4 +21,6 @@ namespace HomeCare.Models
             p.Add(new Remote() { Code = "C", Text = "فعال در شیفت 1 و 2" });
             return p;
         }
+    }
+}
   
