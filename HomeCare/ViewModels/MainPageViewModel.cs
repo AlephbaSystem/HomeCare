@@ -16,6 +16,7 @@ namespace HomeCare.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
         private ObservableCollection<Models.Menu> _items;
         private ObservableCollection<Models.Devices> _selectDevice;
+        private Models.Status _statusDevice;
         private bool _isLoopDevice;
         public bool IsLoopDevice
         {
@@ -29,6 +30,18 @@ namespace HomeCare.ViewModels
                 OnPropertyChanged(nameof(IsLoopDevice));
             }
         }
+        public Status StatusDevice
+        {
+            get
+            {
+                return _statusDevice;
+            }
+            set
+            {
+                _statusDevice = value;
+                OnPropertyChanged(nameof(StatusDevice));
+            }
+        }
         public MainPageViewModel()
         {
             StatusDeviceCommand = new Command(GetStatus);
@@ -38,14 +51,56 @@ namespace HomeCare.ViewModels
 
             SMSEvents.OnSMSReceived += ReciveSMSFromDevice;
             OnMenu();
-            
+
         }
 
-        static void ReciveSMSFromDevice(object sender, SMSEventArgs e)
+        private void ReciveSMSFromDevice(object sender, SMSEventArgs e)
         {
-           if (e.Message.Length > 2)
+            var x = 0;
+            try
+            {
+                x = e.Message.Split('\n').Length;
+            }
+            catch
             {
 
+            }
+            if (x == 12)
+            {
+                var y = e.Message.Split('\n');
+                Status stat = new Status();
+                try
+                {
+                    stat.SV = y[1].Split('\n')[1] + " ٪";
+                    stat.IMEI = y[2].Split('\n')[1];
+                    stat.CSQ = y[3].Split('\n')[1];
+                    stat.MoneyCharge = y[4];
+                    stat.DATE = y[5].Split('\n')[1];
+                    stat.TIME = y[6].Split('\n')[1];
+                    stat.DiARM = y[7];
+                    stat.No = y[8];
+                    stat.REL1 = y[9].Split('\n')[1];
+                    stat.REL2 = y[10].Split('\n')[1];
+                    stat.REL3 = y[11].Split('\n')[1];
+                    stat.op = 0.0;
+                }
+                catch
+                { 
+                    stat.SV = "0 ٪";
+                    stat.IMEI = "0";
+                    stat.CSQ = "0";
+                    stat.MoneyCharge = "0";
+                    stat.DATE = "0";
+                    stat.TIME = "0";
+                    stat.DiARM = "0";
+                    stat.No = "0";
+                    stat.REL1 = "Off";
+                    stat.REL2 = "Off";
+                    stat.REL3 = "Off";
+                    stat.op = 0.9;  
+
+                }
+                StatusDevice = stat; 
             }
         }
         public ObservableCollection<Models.Devices> SelectDevice
@@ -110,16 +165,31 @@ namespace HomeCare.ViewModels
 
         public void OnMenu()
         { 
+            Status stat = new Status();
+            stat.SV = "0 ٪";
+            stat.IMEI = "0";
+            stat.CSQ = "0";
+            stat.MoneyCharge = "0";
+            stat.DATE = "0";
+            stat.TIME = "0";
+            stat.DiARM = "0";
+            stat.No = "0";
+            stat.REL1 = "Off";
+            stat.REL2 = "Off";
+            stat.REL3 = "Off";
+            stat.op = 0.9;
+            StatusDevice = stat;
             SelectDevice = new ObservableCollection<Devices>(new Services.Users.UserHandler().GetAllUsers().OrderByDescending(x => x.Selected));
-            if (SelectDevice.Count <=0)
+            if (SelectDevice.Count <= 0)
             {
-                SelectDevice.Add(new Devices() { Name = "مدیریت دستگاه ها", Phone = "دستگاه فعال نیست" }); 
+                SelectDevice.Add(new Devices() { Name = "مدیریت دستگاه ها", Phone = "دستگاه فعال نیست" });
             }
             if (SelectDevice.Count <= 1)
-            { 
+            {
                 IsLoopDevice = false;
-            } else
-            { 
+            }
+            else
+            {
                 IsLoopDevice = true;
             }
             Items = new ObservableCollection<Models.Menu>
@@ -148,8 +218,8 @@ namespace HomeCare.ViewModels
         }
 
         public ICommand StatusDeviceCommand { get; }
-        public ICommand LockDeviceCommand { get;}
-        public ICommand UnLockDeviceCommand { get;}
-        public ICommand HalfLockDeviceCommand { get;}
+        public ICommand LockDeviceCommand { get; }
+        public ICommand UnLockDeviceCommand { get; }
+        public ICommand HalfLockDeviceCommand { get; }
     }
 }

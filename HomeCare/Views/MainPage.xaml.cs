@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using HomeCare.Views;
 using Acr.UserDialogs;
+using HomeCare.Models;
 
 namespace HomeCare
 {
@@ -23,7 +24,7 @@ namespace HomeCare
 
         async void AddNewDevice_Clicke(System.Object sender, System.EventArgs e)
         {
-            DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess(); 
+            DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
             ImageButton s = (ImageButton)sender;
             await Task.Delay(100);
             await s.FadeTo(0, 100);
@@ -44,7 +45,7 @@ namespace HomeCare
             await Navigation.PushAsync(new Timing());
         }
 
-      async  void SettingsImageButton_Clicked(System.Object sender, System.EventArgs e)
+        async void SettingsImageButton_Clicked(System.Object sender, System.EventArgs e)
         {
             DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
             ImageButton s = (ImageButton)sender;
@@ -83,7 +84,7 @@ namespace HomeCare
             await s.FadeTo(0, 100);
             await Task.Delay(100);
             await s.FadeTo(1, 100);
-             
+
             Services.SMS.Commands.Status();
             UserDialogs.Instance.Toast("درخواست وضعیت با موفقیت ارصال شد.");
         }
@@ -156,6 +157,23 @@ namespace HomeCare
             await s.FadeTo(1, 100);
 
             await Navigation.PushAsync(new Timing());
+        }
+
+        private async void onMenuCarousel_CurrentItemChanged(Xamarin.Forms.CarouselView sender, CurrentItemChangedEventArgs e)
+        {
+            await Task.Delay(100);
+            var userHandler = new Services.Users.UserHandler();
+            var citem = ((Devices)sender.CurrentItem);
+            foreach (Devices item in sender.ItemsSource)
+            {
+                if (item.Selected)
+                {
+                    item.Selected = false;
+                    userHandler.UpdateDevice(citem);
+                }
+            }
+            citem.Selected = true;
+            userHandler.UpdateDevice(citem);
         }
     }
 }

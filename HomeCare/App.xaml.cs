@@ -30,6 +30,19 @@ namespace HomeCare
 
         static void ReciveSMSFromDevice(object sender, SMSEventArgs e)
         {
+            var x = 0;
+            try
+            {
+                x = e.Message.Split('\n').Length;
+            }
+            catch
+            {
+
+            }
+            if (x == 12)
+            {
+                return;
+            }
             Acr.UserDialogs.UserDialogs.Instance.Alert(e.Message, "", "باشه");
         }
         protected override void OnStart()
