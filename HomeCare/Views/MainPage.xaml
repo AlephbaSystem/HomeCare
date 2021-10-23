@@ -110,7 +110,7 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Image Grid.Row="0" Source="ai.png" HorizontalOptions="Center" Aspect="AspectFit" />
-                    <Button BackgroundColor="Transparent" Grid.Row="1" Text="هوشمند" HorizontalOptions="Center" TextColor="#1d3557" />
+                    <Button BackgroundColor="Transparent" Grid.Row="1" Text="هوشمند سازی" HorizontalOptions="Center" TextColor="#1d3557" />
                 </Grid>
             </Frame>
 
@@ -124,7 +124,7 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Image Grid.Row="0" Source="relle.png" HorizontalOptions="Center" Aspect="AspectFit" />
-                    <Button BackgroundColor="Transparent" Grid.Row="1" Text="رله ها" HorizontalOptions="Center" TextColor="#1d3557" />
+                    <Button BackgroundColor="Transparent" Grid.Row="1" Text="کنترل رله ها" HorizontalOptions="Center" TextColor="#1d3557" />
                 </Grid>
             </Frame>
 

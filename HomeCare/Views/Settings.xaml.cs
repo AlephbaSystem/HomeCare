@@ -18,5 +18,21 @@ namespace HomeCare.Views
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("E9F1F7");
             //((NavigationPage)Application.Current.MainPage).BarTextColor = Color.OrangeRed;
         }
+
+        void BackButton_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PopToRootAsync();
+            Navigation.PushAsync(new MainPage());
+        }
+
+        void RelleButton_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new releSettings());
+        }
+
+        void AddNewDevice_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new AddNewDevice());
+        }
     }
 }
