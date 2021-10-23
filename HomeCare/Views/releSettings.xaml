@@ -34,7 +34,7 @@
                 </Grid>
             </Frame>
 
-            <Frame Margin="20, 5">
+            <Frame Margin="5, 5" HasShadow="False" BorderColor="#B8C5D6" CornerRadius="10">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1.3*" />
@@ -52,7 +52,7 @@
                 </Grid>
             </Frame>
 
-            <Grid Margin="10, 5, 10, 5">
+            <Grid Margin="5, 5">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
@@ -86,14 +86,18 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Frame Grid.Column="0" BackgroundColor="#04724d">
+                <Frame Grid.Column="0" BackgroundColor="#04724d" Padding="0" HeightRequest="50">
                     <Button Text="ذخیره" TextColor="#fcfffc" FontAttributes="Bold" BackgroundColor="Transparent"  />
                 </Frame>
 
-                <Frame Grid.Column="1" BackgroundColor="#e5383b">
+                <Frame Grid.Column="1" BackgroundColor="#e5383b" Padding="0" HeightRequest="50">
                     <Button Grid.Column="0" Text="بازگشت" TextColor="#fcfffc" BackgroundColor="Transparent" FontAttributes="Bold" />
                 </Frame>
             </Grid>
+
+            <Label/>
+            <Label/>
+            <Label/>
 
         </StackLayout>
         

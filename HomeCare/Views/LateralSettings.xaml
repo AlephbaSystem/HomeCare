@@ -117,12 +117,12 @@
                     <Label Grid.Row="0" Grid.Column="0" Text="۱۲۰" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="5, 0, 10, 0" />
                     <Label Grid.Row="0" Grid.Column="1" Text="مدت زمان آژیر (ثانیه)" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Margin="5, 0, 10, 0"/>
                     <Slider Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Maximum="120" Minimum="0" HorizontalOptions="CenterAndExpand" WidthRequest="120" />
-                    <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="ارسال" BackgroundColor="#04724d" TextColor="White" HorizontalOptions="CenterAndExpand" WidthRequest="100" Margin="10" />
+                    <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="ارسال" BackgroundColor="#06d6a0" TextColor="White" HorizontalOptions="CenterAndExpand" WidthRequest="100" Margin="10" />
                 </Grid>
             </Frame>
 
-            <Frame Grid.Row="7" HasShadow="False" Background="#EBF6FF" BorderColor="#ADDAFF" Padding="0" Margin="70, 5">
-                <Button Text="تغییر رمز عبور" BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="Center" />
+            <Frame Grid.Row="7" HasShadow="False" Background="#1F9AFF" BorderColor="#1F9AFF" Padding="0" Margin="50, 5">
+                <Button Text="تغییر رمز عبور" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="Center" />
             </Frame>
            
         </Grid>

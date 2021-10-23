@@ -44,5 +44,10 @@ namespace HomeCare.Views
         {
             Navigation.PushAsync(new LateralSettings());
         }
+
+        void RemoteSettingButton_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new RemoteSettings());
+        }
     }
 }

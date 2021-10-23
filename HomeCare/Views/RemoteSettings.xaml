@@ -13,9 +13,11 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="2*" />
                 <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <Frame Grid.Row="0">
+            <Frame Grid.Row="0" HasShadow="False" Padding="0" Margin="10, 5">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
@@ -23,54 +25,95 @@
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                    <Label Text="" />
-                    <Grid Grid.Row="1">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="0.5*" />
-                            <ColumnDefinition Width="1.5*" />
-                        </Grid.ColumnDefinitions>
-                    </Grid>
+                    <Label Grid.Row="0" Text="هوشمند سازی ریموت ها" HorizontalTextAlignment="Center" />
+                    <StackLayout Orientation="Horizontal" Grid.Row="1" >
+                        <Label Grid.Column="0" Text="خروج" VerticalTextAlignment="Center" />
+                        <Entry Grid.Column="1" Placeholder="۰۰:۰۰" VerticalOptions="Center" BackgroundColor="#EBF6FF" HorizontalTextAlignment="Center" />
+                        <Label Grid.Column="2" Text="ورود" VerticalTextAlignment="Center" />
+                        <Entry Grid.Column="3" Placeholder="۰۰:۰۰" VerticalOptions="Center" BackgroundColor="#EBF6FF" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                        <CheckBox Grid.Column="4" IsChecked="False" HorizontalOptions="End"/>
+                        <Label Grid.Column="5" Text="شیفت ۱" VerticalOptions="Center" HorizontalTextAlignment="End"/>
+                    </StackLayout>
+                        
 
-                    <Grid Grid.Row="2">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="0.5*" />
-                            <ColumnDefinition Width="1.5*" />
-                        </Grid.ColumnDefinitions>
-                    </Grid>
+                    <StackLayout Orientation="Horizontal" Grid.Row="2" >
+                        <Label Grid.Column="0" Text="خروج" VerticalTextAlignment="Center" />
+                        <Entry Grid.Column="1" Placeholder="۰۰:۰۰" VerticalOptions="Center" BackgroundColor="#EBF6FF" HorizontalTextAlignment="Center" />
+                        <Label Grid.Column="2" Text="ورود" VerticalTextAlignment="Center" />
+                        <Entry Grid.Column="3" Placeholder="۰۰:۰۰" VerticalOptions="Center" BackgroundColor="#EBF6FF" HorizontalTextAlignment="Center" />
+                        <CheckBox Grid.Column="4" IsChecked="False" HorizontalOptions="End"/>
+                        <Label Grid.Column="5" Text="شیفت ۲" VerticalOptions="Center" HorizontalTextAlignment="End"/>
+                    </StackLayout>
 
                     <Grid Grid.Row="3">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" Text="استعلام" />
-                        <Button Grid.Column="1" Text="ارسال" />
+                        <Button Grid.Column="0" Text="استعلام" BackgroundColor="#1F9AFF" TextColor="White" />
+                        <Button Grid.Column="1" Text="ارسال" BackgroundColor="#06d6a0"  TextColor="White"/>
                     </Grid>
                 </Grid>
             </Frame>
 
-            <Frame Grid.Row="1">
-
+            <Frame Grid.Row="1" Padding="2" HasShadow="False" CornerRadius="15" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Margin="20, 5">
+                <Frame HasShadow="False" CornerRadius="13" BackgroundColor="Transparent" Padding="6">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Switch Grid.Column="0" IsToggled="True" VerticalOptions="Center" />
+                        <Label Grid.Column="1" Text="فعال/غیر فعال"  VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                        <Picker Grid.Column="2" x:Name="rele_Picker" HorizontalOptions="FillAndExpand" Title="همه" TitleColor="White" BackgroundColor="#33A3FF" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center">
+                            <Picker.Items>
+                                <x:String>رله ۱</x:String> 
+                                <x:String>رله ۲</x:String>
+                                <x:String>رله ۳</x:String>
+                            </Picker.Items>
+                        </Picker>
+                        <Label Grid.Column="3" Text="ریموت:" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
+                    </Grid>
+                </Frame>
             </Frame>
 
-            <Frame Grid.Row="2">
-
+            <Frame Grid.Row="2" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="White" Padding="2" Margin="10, 0">
+                <Frame BorderColor="#eff7f6" BackgroundColor="#1F9AFF" HasShadow="False" Padding="4">
+                    <Button Text="استعلام ریموت های غیر فعال" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" />
+                </Frame>
             </Frame>
 
-            <Frame Grid.Row="3">
-
+            <Frame Grid.Row="3" HasShadow="False">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2.5*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Text="انتخاب مد عملکرد ریموت" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                    <CheckBox Grid.Row="1" Grid.Column="0" />
+                    <Label Grid.Row="1" Grid.Column="1" Text="رله(روشن/خاموش)" HorizontalTextAlignment="End"  />
+                    <CheckBox Grid.Row="1" Grid.Column="2" />
+                    <Label Grid.Row="1" Grid.Column="3" Text="دزدگیر" HorizontalTextAlignment="End"/>
+                    <CheckBox Grid.Row="2" Grid.Column="0" />
+                    <Label Grid.Row="2" Grid.Column="1" Text="رله ضربدری" HorizontalTextAlignment="End" />
+                    <CheckBox Grid.Row="2" Grid.Column="2" />
+                    <Label Grid.Row="2" Grid.Column="3" Text="رله لحظه ای" HorizontalTextAlignment="End"/>
+                </Grid>
             </Frame>
 
-            <Frame Grid.Row="4">
-
+            <Frame Grid.Row="4" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="White" Padding="2" Margin="10, 0" >
+                <Frame BorderColor="#eff7f6" BackgroundColor="#1F9AFF" HasShadow="False" Padding="4">
+                    <Button Text="مدیریت نام ریموت ها" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" />
+                </Frame>
             </Frame>
         </Grid>
         

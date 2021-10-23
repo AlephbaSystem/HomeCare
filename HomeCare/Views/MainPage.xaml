@@ -151,8 +151,8 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Frame Grid.Column="0" HasShadow="False" CornerRadius="25" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Margin="30, 10, 15, 10" Padding="2">
-                <Frame HasShadow="False" CornerRadius="23" BackgroundColor="White" Padding="8">
+            <Frame  Grid.Column="0" HasShadow="False" CornerRadius="25" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Margin="30, 10, 15, 10" Padding="2">
+                <Frame x:Name="closeFrame" HasShadow="False" CornerRadius="23" BackgroundColor="White" Padding="8">
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Close_Tapped" />
                     </Frame.GestureRecognizers>
@@ -170,7 +170,7 @@
             </Frame>
 
             <Frame Grid.Column="1" HasShadow="False" CornerRadius="25" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Margin="22, 10, 22, 10" Padding="2">
-                <Frame HasShadow="False" CornerRadius="23" BackgroundColor="White" Padding="8">
+                <Frame x:Name="halfFrame" HasShadow="False" CornerRadius="23" BackgroundColor="White" Padding="8">
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Partial_Tapped" />
                     </Frame.GestureRecognizers>
@@ -186,7 +186,7 @@
             </Frame>
 
             <Frame Grid.Column="2" HasShadow="False" CornerRadius="25" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Margin="15, 10, 30, 10" Padding="2">
-                <Frame HasShadow="False" CornerRadius="23" BackgroundColor="White" Padding="8">
+                <Frame x:Name="openFrame" HasShadow="False" CornerRadius="23" BackgroundColor="White" Padding="8">
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Open_Tapped" />
                     </Frame.GestureRecognizers>
