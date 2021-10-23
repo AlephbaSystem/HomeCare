@@ -98,6 +98,11 @@ namespace HomeCare
             await Task.Delay(100);
             await s.FadeTo(1, 100);
 
+            openFrame.BackgroundColor = Color.FromHex("F68D99");
+            halfFrame.BackgroundColor = Color.FromHex("eff7f6");
+            closeFrame.BackgroundColor = Color.FromHex("eff7f6");
+            await Task.Delay(200);
+
             Services.SMS.Commands.Open();
             UserDialogs.Instance.Toast("درخواست باز کردن دستگاه با موفقیت ارسال شد.");
         }
@@ -110,6 +115,10 @@ namespace HomeCare
             await Task.Delay(100);
             await s.FadeTo(1, 100);
 
+            halfFrame.BackgroundColor = Color.FromHex("FEC872");
+            openFrame.BackgroundColor = Color.FromHex("eff7f6");
+            closeFrame.BackgroundColor = Color.FromHex("eff7f6");
+
             Services.SMS.Commands.PartialOpen();
             UserDialogs.Instance.Toast("درخواست نیمه باز کردن دستگاه با موفقیت ارسال شد.");
         }
@@ -121,6 +130,10 @@ namespace HomeCare
             await s.FadeTo(0, 100);
             await Task.Delay(100);
             await s.FadeTo(1, 100);
+
+            closeFrame.BackgroundColor = Color.FromHex("95d5b2");
+            halfFrame.BackgroundColor = Color.FromHex("eff7f6");
+            openFrame.BackgroundColor = Color.FromHex("eff7f6");
 
             Services.SMS.Commands.Close();
             UserDialogs.Instance.Toast("درخواست قفل کردن دستگاه با موفقیت ارسال شد.");

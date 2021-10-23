@@ -100,7 +100,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Frame Grid.Column="0" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#a8dadc" Padding="0" Margin="10, 0, 5, 0">
+            <Frame Grid.Column="0" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="0" Margin="10, 0, 5, 0">
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Tapped="AI_Tapped" />
                 </Frame.GestureRecognizers>
@@ -110,11 +110,11 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Image Grid.Row="0" Source="ai.png" HorizontalOptions="Center" Aspect="AspectFit" />
-                    <Button BackgroundColor="Transparent" Grid.Row="1" Text="هوشمند" HorizontalOptions="Center" TextColor="#1d3557" />
+                    <Button BackgroundColor="Transparent" Grid.Row="1" Text="هوشمند سازی" HorizontalOptions="Center" TextColor="#1d3557" />
                 </Grid>
             </Frame>
 
-            <Frame Grid.Column="1" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#a8dadc" Padding="0" Margin="5, 0, 5, 0">
+            <Frame Grid.Column="1" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="0" Margin="5, 0, 5, 0">
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Tapped="RELE_Tapped" />
                 </Frame.GestureRecognizers>
@@ -124,11 +124,11 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Image Grid.Row="0" Source="relle.png" HorizontalOptions="Center" Aspect="AspectFit" />
-                    <Button BackgroundColor="Transparent" Grid.Row="1" Text="رله ها" HorizontalOptions="Center" TextColor="#1d3557" />
+                    <Button BackgroundColor="Transparent" Grid.Row="1" Text="کنترل رله ها" HorizontalOptions="Center" TextColor="#1d3557" />
                 </Grid>
             </Frame>
 
-            <Frame Grid.Column="2" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#a8dadc" Padding="0" Margin="5, 0, 10, 0">
+            <Frame Grid.Column="2" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="0" Margin="5, 0, 10, 0">
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Settings_Tapped" />
                 </Frame.GestureRecognizers>
@@ -151,149 +151,58 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Frame Grid.Column="0" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#a8dadc" Margin="30, 10, 15, 10" Padding="0">
-                <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="Close_Tapped" />
-                </Frame.GestureRecognizers>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="2*" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
+            <Frame  Grid.Column="0" HasShadow="False" CornerRadius="25" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Margin="30, 10, 15, 10" Padding="2">
+                <Frame x:Name="closeFrame" HasShadow="False" CornerRadius="23" BackgroundColor="White" Padding="8">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Close_Tapped" />
+                    </Frame.GestureRecognizers>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
 
-                    <ImageButton Grid.Row="0" Source="lock.png" HorizontalOptions="Center" />
-                    <Label Grid.Row="1" Text="بسته" HorizontalTextAlignment="Center" />
-                </Grid>
-
-            </Frame>
-
-            <Frame Grid.Column="1" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#a8dadc" Margin="15, 10, 15, 10" Padding="0">
-                <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="Partial_Tapped" />
-                </Frame.GestureRecognizers>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="2*" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <ImageButton Grid.Row="0" Source="halflock.png" HorizontalOptions="Center" />
-                    <Label Grid.Row="1" Text="نیمه باز" HorizontalTextAlignment="Center" />
-                </Grid>
+                        <ImageButton Grid.Row="0" Source="lock.png" HorizontalOptions="Center" />
+                        <Label Grid.Row="1" Text="بسته" HorizontalTextAlignment="Center" />
+                    </Grid>
+                </Frame>
 
             </Frame>
 
-            <Frame Grid.Column="2" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#a8dadc" Margin="15, 10, 30, 10" Padding="0">
-                <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="Open_Tapped" />
-                </Frame.GestureRecognizers>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="2*" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <ImageButton Grid.Row="0" Source="unlock.png" HorizontalOptions="Center" />
-                    <Label Grid.Row="1" Text="باز" HorizontalTextAlignment="Center" />
-                </Grid>
+            <Frame Grid.Column="1" HasShadow="False" CornerRadius="25" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Margin="22, 10, 22, 10" Padding="2">
+                <Frame x:Name="halfFrame" HasShadow="False" CornerRadius="23" BackgroundColor="White" Padding="8">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Partial_Tapped" />
+                    </Frame.GestureRecognizers>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <ImageButton Grid.Row="0" Source="halflock.png" HorizontalOptions="Center" />
+                        <Label Grid.Row="1" Text="نیمه باز" HorizontalTextAlignment="Center" />
+                    </Grid>
+                </Frame>
+            </Frame>
+
+            <Frame Grid.Column="2" HasShadow="False" CornerRadius="25" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Margin="15, 10, 30, 10" Padding="2">
+                <Frame x:Name="openFrame" HasShadow="False" CornerRadius="23" BackgroundColor="White" Padding="8">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Open_Tapped" />
+                    </Frame.GestureRecognizers>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <ImageButton Grid.Row="0" Source="unlock.png" HorizontalOptions="Center" />
+                        <Label Grid.Row="1" Text="باز" HorizontalTextAlignment="Center" />
+                    </Grid>
+                </Frame>
             </Frame>
         </Grid>
 
         <Label Grid.Row="4" Margin="0, 35, 0, 0" Text="Hymax burglar" HorizontalTextAlignment="Center" BackgroundColor="#1d3557" TextColor="#f1faee"/>
-
-        <!--<Grid.RowDefinitions>
-            <RowDefinition Height="0.2*" />
-            <RowDefinition Height="0.3*" />
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="1.5*" />
-            <RowDefinition Height="1.5*" />
-            <RowDefinition Height="0.3*" />
-        </Grid.RowDefinitions>
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-
-        <Image Source="background.jpg" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="6" Grid.RowSpan="7" Aspect="AspectFill" />
-
-        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Text="ردیاب خانه" HorizontalTextAlignment="Center" BackgroundColor="#a7cced" TextColor="Black" />
-
-        <Grid Grid.Row="2"  Grid.Column="0">
-            <Frame HasShadow="True"  BackgroundColor="#D6EDFF" BorderColor="#478978">
-
-                <ImageButton Source="connector.png" Margin="-10, -10" Clicked="releSettingsImageButton_Clicked" />
-
-            </Frame>
-            <Label Text="تنظیمات رله" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontAttributes="Bold" FontSize="Micro"/>
-            
-        </Grid>
-
-        <Grid Grid.Row="2"  Grid.Column="2" >
-            <Frame HasShadow="True" BackgroundColor="#D6EDFF" BorderColor="#478978">
-                <ImageButton Source="responsive.png" Margin="-2, -2" Clicked="AddNewDevice_Clicke" />
-            </Frame>
-            <Label Text="تنظیمات دستگاه" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontSize="Micro" FontAttributes="Bold"/>
-        </Grid>
-
-        <Grid Grid.Row="2"  Grid.Column="4">
-            <Frame HasShadow="True" BackgroundColor="#D6EDFF" BorderColor="#478978">
-                <ImageButton Source="ai.png" Margin="-5, -5" Clicked="Timing_Clicke" />
-            </Frame>
-            <Label Text="هوشمند سازی" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontAttributes="Bold" FontSize="Micro"/>
-        </Grid>
-
-        <Grid Grid.Row="3"  Grid.Column="0">
-            <Frame HasShadow="True" BackgroundColor="#D6EDFF" BorderColor="#478978">
-                <ImageButton Source="remotecontrol.png" Margin="-2, -2" />
-            </Frame>
-            <Label Text="تنظیمات ریموت" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontSize="Micro" FontAttributes="Bold"/>
-        </Grid>
-
-        <Grid Grid.Row="3" Grid.Column="2">
-            <Frame HasShadow="True" BackgroundColor="#D6EDFF" BorderColor="#478978">
-                <ImageButton Source="settings.png" Clicked="SettingsImageButton_Clicked"/>
-            </Frame>
-            <Label Text="تنظیمات" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontSize="Micro" FontAttributes="Bold"/>
-        </Grid>
-
-        <Grid Grid.Row="3" Grid.Column="4">
-            <Frame HasShadow="True" BackgroundColor="#D6EDFF" BorderColor="#478978">
-                <ImageButton Source="danger.png"/>
-            </Frame>
-            <Label Text=" هشدارها" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontSize="Micro" FontAttributes="Bold"/>
-        </Grid>
-
-        <Grid Grid.Row="4" Grid.Column="2">
-            <Frame HasShadow="True" BackgroundColor="#D6EDFF" BorderColor="#478978">
-                <ImageButton Margin="0, 0, 0, 30" HorizontalOptions="Center" Source="status.png" Command="{Binding StatusDeviceCommand}" />
-            </Frame>
-            <Label VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee" FontSize="Micro" FontAttributes="Bold" Text="وضعیت" />
-        </Grid>
-
-        <Grid Grid.Row="5" Grid.Column="0">
-            <Frame HasShadow="True" BackgroundColor="#fefae0" BorderColor="#478978">
-                <ImageButton Source="unlock.png" Command="{Binding UnLockDeviceCommand}" />
-            </Frame>
-            <Label Text="باز" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee"/>
-        </Grid>
-        <Grid Grid.Row="5"  Grid.Column="2">
-            <Frame BackgroundColor="#fefae0" BorderColor="#478978">
-                <ImageButton Source="halflock.png" Command="{Binding HalfLockDeviceCommand }" />
-            </Frame>
-            <Label Text="نیمه باز" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="#f1faee"/>
-        </Grid>
-
-        <Grid Grid.Row="5" Grid.Column="4">
-            <Frame HasShadow="True" BackgroundColor="#fefae0" BorderColor="#478978">
-                <ImageButton Source="lock.png" Command="{Binding LockDeviceCommand}" />
-            </Frame>
-            <Label Text="قفل" VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="Black"/>
-        </Grid>
-
-        <Label Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="6" Text="Hymax burgla" HorizontalTextAlignment="Center" BackgroundColor="#a7cced" TextColor="Black" />-->
 
     </Grid>
 

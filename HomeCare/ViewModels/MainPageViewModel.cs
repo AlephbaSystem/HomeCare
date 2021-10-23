@@ -56,6 +56,11 @@ namespace HomeCare.ViewModels
 
         private void ReciveSMSFromDevice(object sender, SMSEventArgs e)
         {
+            string phone = new Services.Users.UserHandler().GetCurrentUser().Phone;
+            if (e.PhoneNumber != phone)
+            {
+                return;
+            }
             var x = 0;
             try
             {

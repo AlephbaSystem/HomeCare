@@ -30,6 +30,11 @@ namespace HomeCare
 
         static void ReciveSMSFromDevice(object sender, SMSEventArgs e)
         {
+            string phone = new Services.Users.UserHandler().GetCurrentUser().Phone;
+            if (e.PhoneNumber != phone)
+            {
+                return;
+            }
             var x = 0;
             try
             {
@@ -44,6 +49,7 @@ namespace HomeCare
                 return;
             }
             Acr.UserDialogs.UserDialogs.Instance.Alert(e.Message, "", "باشه");
+
         }
         protected override void OnStart()
         {

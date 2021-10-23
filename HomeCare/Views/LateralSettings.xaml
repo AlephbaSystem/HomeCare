@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="HomeCare.Views.LateralSettings">
+
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Frame Grid.Row="0" HasShadow="False" BackgroundColor="#EBF6FF" BorderColor="#ADDAFF" Padding="0" Margin="10, 5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch Grid.Column="0" IsToggled="True" VerticalOptions="Center" HorizontalOptions="Center"  />
+                    <Label Grid.Column="1" Text="فعال/غیر فعال" VerticalTextAlignment="Center" HorizontalTextAlignment="End" />
+                    <Label Grid.Column="2" Margin="0, 0, 5, 0" Text="کنترل رله ها با ریموت" VerticalTextAlignment="Center" HorizontalTextAlignment="End" />
+
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="1" HasShadow="False" BackgroundColor="#EBF6FF" BorderColor="#ADDAFF" Padding="0" Margin="10, 5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch Grid.Column="0" IsToggled="True" VerticalOptions="Center" HorizontalOptions="Center"  />
+                    <Label Grid.Column="1" Text="فعال/غیر فعال" VerticalTextAlignment="Center" HorizontalTextAlignment="End" />
+                    <Label Grid.Column="2" Margin="0, 0, 5, 0" Text="حالت دینگ دانگ" VerticalTextAlignment="Center" HorizontalTextAlignment="End" />
+
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="2" HasShadow="False" BackgroundColor="#EBF6FF" BorderColor="#ADDAFF" Padding="0" Margin="10, 5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch Grid.Column="0" IsToggled="True" VerticalOptions="Center" HorizontalOptions="Center"  />
+                    <Label Grid.Column="1" Text="فعال/غیر فعال" VerticalTextAlignment="Center" HorizontalTextAlignment="End" />
+                    <Label Grid.Column="2" Margin="0, 0, 5, 0" Text="شنود" VerticalTextAlignment="Center" HorizontalTextAlignment="End" />
+
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="3" HasShadow="False" BackgroundColor="#EBF6FF" BorderColor="#ADDAFF" Padding="0" Margin="10, 5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch Grid.Column="0" IsToggled="True" VerticalOptions="Center" HorizontalOptions="Center"  />
+                    <Label Grid.Column="1" Text="فعال/غیر فعال" VerticalTextAlignment="Center" HorizontalTextAlignment="End" />
+                    <Label Grid.Column="2" Margin="0, 0, 5, 0" Text="هشدار قطع برق شهر" VerticalTextAlignment="Center" HorizontalTextAlignment="End" />
+
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="4" HasShadow="False" BackgroundColor="#EBF6FF" BorderColor="#ADDAFF" Padding="0" Margin="10, 5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch Grid.Column="0" IsToggled="True" VerticalOptions="Center" HorizontalOptions="Center"  />
+                    <Label Grid.Column="1" Text="فعال/غیر فعال" VerticalTextAlignment="Center" HorizontalTextAlignment="End" />
+                    <Label Grid.Column="2" Margin="0, 0, 5, 0" Text="گزارش دهی ریموت" VerticalTextAlignment="Center" HorizontalTextAlignment="End" />
+
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="5" HasShadow="False" BackgroundColor="#EBF6FF" BorderColor="#ADDAFF" Padding="0" Margin="10, 5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch Grid.Column="0" IsToggled="True" VerticalOptions="Center" HorizontalOptions="Center"  />
+                    <Label Grid.Column="1" Text="فعال/غیر فعال" VerticalTextAlignment="Center" HorizontalTextAlignment="End" />
+                    <Label Grid.Column="2" Margin="0, 0, 5, 0" Text="گزارش سناریو/زمانبندی" VerticalTextAlignment="Center" HorizontalTextAlignment="End"/>
+
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="6" HasShadow="False" Background="#EBF6FF" BorderColor="#ADDAFF" Padding="0" Margin="50, 5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Text="۱۲۰" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="5, 0, 10, 0" />
+                    <Label Grid.Row="0" Grid.Column="1" Text="مدت زمان آژیر (ثانیه)" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Margin="5, 0, 10, 0"/>
+                    <Slider Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Maximum="120" Minimum="0" HorizontalOptions="CenterAndExpand" WidthRequest="120" />
+                    <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="ارسال" BackgroundColor="#06d6a0" TextColor="White" HorizontalOptions="CenterAndExpand" WidthRequest="100" Margin="10" />
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="7" HasShadow="False" Background="#1F9AFF" BorderColor="#1F9AFF" Padding="0" Margin="50, 5">
+                <Button Text="تغییر رمز عبور" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="Center" />
+            </Frame>
+           
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
