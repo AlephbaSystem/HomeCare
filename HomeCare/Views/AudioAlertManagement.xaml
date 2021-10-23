@@ -30,14 +30,14 @@
             <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Padding="0" HasShadow="False" Margin="30, 5" BackgroundColor="#EBF6FF" BorderColor="#ADDAFF">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="0.6*" />
-                        <ColumnDefinition Width="0.6*" />
-                        <ColumnDefinition Width="0.6*" />
-                        <ColumnDefinition Width="0.6*" />
+                        <ColumnDefinition Width="0.7*" />
+                        <ColumnDefinition Width="0.7*" />
+                        <ColumnDefinition Width="0.7*" />
+                        <ColumnDefinition Width="0.7*" />
                         <ColumnDefinition Width="4*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <ImageButton Grid.Column="0" Source="garbage.png" />
+                    <ImageButton Grid.Column="0" Source="garbage.png" Margin="5, 0, 0, 0" />
                     <ImageButton Grid.Column="1" Source="microphone.png" />
                     <ImageButton Grid.Column="2" Source="stop.png" />
                     <ImageButton Grid.Column="3" Source="play.png" />
@@ -57,7 +57,7 @@
                         <ColumnDefinition Width="4*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <ImageButton Grid.Column="0" Source="garbage.png" />
+                    <ImageButton Grid.Column="0" Source="garbage.png" Margin="5, 0, 0, 0" />
                     <ImageButton Grid.Column="1" Source="microphone.png" />
                     <ImageButton Grid.Column="2" Source="stop.png" />
                     <ImageButton Grid.Column="3" Source="play.png" />
@@ -76,7 +76,7 @@
                         <ColumnDefinition Width="4*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <ImageButton Grid.Column="0" Source="garbage.png" />
+                    <ImageButton Grid.Column="0" Source="garbage.png" Margin="5, 0, 0, 0" />
                     <ImageButton Grid.Column="1" Source="microphone.png" />
                     <ImageButton Grid.Column="2" Source="stop.png" />
                     <ImageButton Grid.Column="3" Source="play.png" />
@@ -95,7 +95,7 @@
                         <ColumnDefinition Width="4*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <ImageButton Grid.Column="0" Source="garbage.png" />
+                    <ImageButton Grid.Column="0" Source="garbage.png" Margin="5, 0, 0, 0" />
                     <ImageButton Grid.Column="1" Source="microphone.png" />
                     <ImageButton Grid.Column="2" Source="stop.png" />
                     <ImageButton Grid.Column="3" Source="play.png" />
@@ -114,7 +114,7 @@
                         <ColumnDefinition Width="4*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <ImageButton Grid.Column="0" Source="garbage.png" />
+                    <ImageButton Grid.Column="0" Source="garbage.png" Margin="5, 0, 0, 0" />
                     <ImageButton Grid.Column="1" Source="microphone.png" />
                     <ImageButton Grid.Column="2" Source="stop.png" />
                     <ImageButton Grid.Column="3" Source="play.png" />
