@@ -34,5 +34,10 @@ namespace HomeCare.Views
         {
             Navigation.PushAsync(new AddNewDevice());
         }
+
+        void AudioAlertButton_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new AudioAlertManagement());
+        }
     }
 }

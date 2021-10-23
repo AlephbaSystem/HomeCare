@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="HomeCare.Views.AudioAlertManagement">
+
+
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="1" Text="شدت:" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Margin="10, 5, 20, 5" />
+            <Slider Grid.Row="0" Grid.Column="0" Maximum="100" Margin="10, 5"/>
+
+            <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Padding="0" HasShadow="False" Margin="30, 5" BackgroundColor="#E2F3ED" BorderColor="#0a9396">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.6*" />
+                        <ColumnDefinition Width="0.6*" />
+                        <ColumnDefinition Width="0.6*" />
+                        <ColumnDefinition Width="0.6*" />
+                        <ColumnDefinition Width="4*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <ImageButton Grid.Column="0" Source="garbage.png" />
+                    <ImageButton Grid.Column="1" Source="microphone.png" />
+                    <ImageButton Grid.Column="2" Source="stop.png" />
+                    <ImageButton Grid.Column="3" Source="play.png" />
+                    <Label Grid.Column="4" Text="اعلام فعال شدن هوشمند سازی ریموت ها" HorizontalTextAlignment="End" FontSize="Body" />
+                    <CheckBox Grid.Column="5" IsChecked="True" Color="#368167" />
+
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Padding="0" HasShadow="False" Margin="30, 5" BackgroundColor="#E2F3ED" BorderColor="#0a9396">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.6*" />
+                        <ColumnDefinition Width="0.6*" />
+                        <ColumnDefinition Width="0.6*" />
+                        <ColumnDefinition Width="0.6*" />
+                        <ColumnDefinition Width="4*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <ImageButton Grid.Column="0" Source="garbage.png" />
+                    <ImageButton Grid.Column="1" Source="microphone.png" />
+                    <ImageButton Grid.Column="2" Source="stop.png" />
+                    <ImageButton Grid.Column="3" Source="play.png" />
+                    <Label Grid.Column="4" Text="اعلام غیر فعال شدن هوشمند سازی ریموت ها" HorizontalTextAlignment="End" FontSize="Body" />
+                    <CheckBox Grid.Column="5" IsChecked="False" Color="#368167" />
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Padding="0" HasShadow="False" Margin="30, 5" BackgroundColor="#E2F3ED" BorderColor="#0a9396">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.6*" />
+                        <ColumnDefinition Width="0.6*" />
+                        <ColumnDefinition Width="0.6*" />
+                        <ColumnDefinition Width="0.6*" />
+                        <ColumnDefinition Width="4*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <ImageButton Grid.Column="0" Source="garbage.png" />
+                    <ImageButton Grid.Column="1" Source="microphone.png" />
+                    <ImageButton Grid.Column="2" Source="stop.png" />
+                    <ImageButton Grid.Column="3" Source="play.png" />
+                    <Label Grid.Column="4" Text="اعلام تغییر حالت زون ها" HorizontalTextAlignment="End" FontSize="Body"/>
+                    <CheckBox Grid.Column="5" IsChecked="True" Color="#368167" />
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Padding="0" HasShadow="False" Margin="30, 5" BackgroundColor="#E2F3ED" BorderColor="#0a9396">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.6*" />
+                        <ColumnDefinition Width="0.6*" />
+                        <ColumnDefinition Width="0.6*" />
+                        <ColumnDefinition Width="0.6*" />
+                        <ColumnDefinition Width="4*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <ImageButton Grid.Column="0" Source="garbage.png" />
+                    <ImageButton Grid.Column="1" Source="microphone.png" />
+                    <ImageButton Grid.Column="2" Source="stop.png" />
+                    <ImageButton Grid.Column="3" Source="play.png" />
+                    <Label Grid.Column="4" Text="اعلام هشدار سرقت توسط زون ۱" HorizontalTextAlignment="End" FontSize="Body" />
+                    <CheckBox Grid.Column="5" IsChecked="False" Color="#368167" />
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Padding="0" HasShadow="False" Margin="30, 5" BackgroundColor="#E2F3ED" BorderColor="#0a9396">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.6*" />
+                        <ColumnDefinition Width="0.6*" />
+                        <ColumnDefinition Width="0.6*" />
+                        <ColumnDefinition Width="0.6*" />
+                        <ColumnDefinition Width="4*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <ImageButton Grid.Column="0" Source="garbage.png" />
+                    <ImageButton Grid.Column="1" Source="microphone.png" />
+                    <ImageButton Grid.Column="2" Source="stop.png" />
+                    <ImageButton Grid.Column="3" Source="play.png" />
+                    <Label Grid.Column="4" Text="اعلام هشدار سرقت توسط زون ۲" HorizontalTextAlignment="End" FontSize="Body" />
+                    <CheckBox Grid.Column="5" IsChecked="True" Color="#368167" />
+                </Grid>
+            </Frame>
+
+            <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Text="ذخیره" HorizontalOptions="Center" TextColor="White" BackgroundColor="#04724d" WidthRequest="100" />
+
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>

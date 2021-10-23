@@ -33,7 +33,7 @@
 
                 <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="40, 3" Text="شماره سیمکارت دستگاه" HorizontalTextAlignment="Center" />
                 <Entry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="40, 2" Placeholder="09155125672" HorizontalTextAlignment="Center" Background="#eef4ed" PlaceholderColor="#191919" IsReadOnly="True" />
-                <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="40, 2" Text="مدیریت هشدار های صوتی" BackgroundColor="#083D77" TextColor="#eef4ed" />
+                <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="40, 2" Text="مدیریت هشدار های صوتی" BackgroundColor="#083D77" TextColor="#eef4ed" Clicked="AudioAlertButton_Clicked" />
                 <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="40, 2" Text="تنظیمات زون" BackgroundColor="#083D77" TextColor="#eef4ed"/>
                 <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="40, 2" Text="تنظیمات رله" BackgroundColor="#083D77" TextColor="#eef4ed" Clicked="RelleButton_Clicked" />
                 <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Margin="40, 2" Text="تنظیمات ریموت" BackgroundColor="#083D77" TextColor="#eef4ed"/>

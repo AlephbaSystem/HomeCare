@@ -162,6 +162,10 @@
     <BundleResource Include="Resources\Tutorial1.jpg" />
     <BundleResource Include="Resources\tutorial2.jpg" />
     <BundleResource Include="Resources\tutorial3.jpg" />
+    <BundleResource Include="Resources\garbage.png" />
+    <BundleResource Include="Resources\microphone.png" />
+    <BundleResource Include="Resources\play.png" />
+    <BundleResource Include="Resources\stop.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
