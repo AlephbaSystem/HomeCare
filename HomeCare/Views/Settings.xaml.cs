@@ -39,5 +39,10 @@ namespace HomeCare.Views
         {
             Navigation.PushAsync(new AudioAlertManagement());
         }
+
+        void LateralButton_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new LateralSettings());
+        }
     }
 }

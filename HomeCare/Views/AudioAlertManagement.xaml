@@ -27,7 +27,7 @@
             <Label Grid.Row="0" Grid.Column="1" Text="شدت:" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Margin="10, 5, 20, 5" />
             <Slider Grid.Row="0" Grid.Column="0" Maximum="100" Margin="10, 5"/>
 
-            <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Padding="0" HasShadow="False" Margin="30, 5" BackgroundColor="#E2F3ED" BorderColor="#0a9396">
+            <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Padding="0" HasShadow="False" Margin="30, 5" BackgroundColor="#EBF6FF" BorderColor="#ADDAFF">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0.6*" />
@@ -47,7 +47,7 @@
                 </Grid>
             </Frame>
 
-            <Frame Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Padding="0" HasShadow="False" Margin="30, 5" BackgroundColor="#E2F3ED" BorderColor="#0a9396">
+            <Frame Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Padding="0" HasShadow="False" Margin="30, 5" BackgroundColor="#EBF6FF" BorderColor="#ADDAFF">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0.6*" />
@@ -66,7 +66,7 @@
                 </Grid>
             </Frame>
 
-            <Frame Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Padding="0" HasShadow="False" Margin="30, 5" BackgroundColor="#E2F3ED" BorderColor="#0a9396">
+            <Frame Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Padding="0" HasShadow="False" Margin="30, 5" BackgroundColor="#EBF6FF" BorderColor="#ADDAFF">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0.6*" />
@@ -85,7 +85,7 @@
                 </Grid>
             </Frame>
 
-            <Frame Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Padding="0" HasShadow="False" Margin="30, 5" BackgroundColor="#E2F3ED" BorderColor="#0a9396">
+            <Frame Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Padding="0" HasShadow="False" Margin="30, 5" BackgroundColor="#EBF6FF" BorderColor="#ADDAFF">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0.6*" />
@@ -104,7 +104,7 @@
                 </Grid>
             </Frame>
 
-            <Frame Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Padding="0" HasShadow="False" Margin="30, 5" BackgroundColor="#E2F3ED" BorderColor="#0a9396">
+            <Frame Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Padding="0" HasShadow="False" Margin="30, 5" BackgroundColor="#EBF6FF" BorderColor="#ADDAFF">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0.6*" />
