@@ -20,7 +20,6 @@
             <RowDefinition Height="0.5*" />
         </Grid.RowDefinitions>
 
-
         <Grid Grid.Row="0" Margin="5, 10, 5, 0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -35,8 +34,8 @@
                                 <RowDefinition Height="*" />
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
-                            <Label Grid.Row="0" Text="{Binding Name}" Margin="0, 20, 10, 0" HorizontalOptions="End" FontSize="24" FontAttributes="Bold" TextColor="#1d3557" />
-                            <Label Grid.Row="1" Text="{Binding Phone}" Margin="0, 0, 10, 20" HorizontalOptions="End" FontSize="18" TextColor="#4a4e69" />
+                            <Label Grid.Row="0" Text="{Binding Name}" Margin="0, 25, 10, 0" HorizontalOptions="End" FontSize="24" FontAttributes="Bold" TextColor="#1d3557" />
+                            <Label Grid.Row="1" Text="{Binding Phone}" Margin="0, 5, 10, 15" HorizontalOptions="End" FontSize="18" TextColor="#4a4e69" />
                         </Grid>
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
@@ -151,8 +150,8 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Frame  Grid.Column="0" HasShadow="False" CornerRadius="25" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Margin="30, 10, 15, 10" Padding="2">
-                <Frame x:Name="closeFrame" HasShadow="False" CornerRadius="23" BackgroundColor="White" Padding="8">
+            <Frame  Grid.Column="0" HasShadow="False" CornerRadius="25" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Margin="30, 10, 15, 10" Padding="1">
+                <Frame x:Name="closeFrame" HasShadow="False" CornerRadius="23" BackgroundColor="White" Padding="4">
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Close_Tapped" />
                     </Frame.GestureRecognizers>
@@ -163,14 +162,14 @@
                         </Grid.RowDefinitions>
 
                         <ImageButton Grid.Row="0" Source="lock.png" HorizontalOptions="Center" />
-                        <Label Grid.Row="1" Text="بسته" HorizontalTextAlignment="Center" />
+                        <Label Grid.Row="1" Text="فعال" HorizontalTextAlignment="Center" />
                     </Grid>
                 </Frame>
 
             </Frame>
 
-            <Frame Grid.Column="1" HasShadow="False" CornerRadius="25" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Margin="22, 10, 22, 10" Padding="2">
-                <Frame x:Name="halfFrame" HasShadow="False" CornerRadius="23" BackgroundColor="White" Padding="8">
+            <Frame Grid.Column="1" HasShadow="False" CornerRadius="25" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Margin="22, 10, 22, 10" Padding="1">
+                <Frame x:Name="halfFrame" HasShadow="False" CornerRadius="23" BackgroundColor="White" Padding="4">
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Partial_Tapped" />
                     </Frame.GestureRecognizers>
@@ -180,13 +179,13 @@
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
                         <ImageButton Grid.Row="0" Source="halflock.png" HorizontalOptions="Center" />
-                        <Label Grid.Row="1" Text="نیمه باز" HorizontalTextAlignment="Center" />
+                        <Label Grid.Row="1" Text="نیمه فعال" HorizontalTextAlignment="Center" />
                     </Grid>
                 </Frame>
             </Frame>
 
-            <Frame Grid.Column="2" HasShadow="False" CornerRadius="25" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Margin="15, 10, 30, 10" Padding="2">
-                <Frame x:Name="openFrame" HasShadow="False" CornerRadius="23" BackgroundColor="White" Padding="8">
+            <Frame Grid.Column="2" HasShadow="False" CornerRadius="25" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Margin="15, 10, 30, 10" Padding="1">
+                <Frame x:Name="openFrame" HasShadow="False" CornerRadius="23" BackgroundColor="White" Padding="4">
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Open_Tapped" />
                     </Frame.GestureRecognizers>
@@ -196,7 +195,7 @@
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
                         <ImageButton Grid.Row="0" Source="unlock.png" HorizontalOptions="Center" />
-                        <Label Grid.Row="1" Text="باز" HorizontalTextAlignment="Center" />
+                        <Label Grid.Row="1" Text="غیر فعال" HorizontalTextAlignment="Center" />
                     </Grid>
                 </Frame>
             </Frame>

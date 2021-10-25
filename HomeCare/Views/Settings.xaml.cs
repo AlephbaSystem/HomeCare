@@ -15,6 +15,8 @@ namespace HomeCare.Views
             NavigationPage.SetHasNavigationBar(this, true);
             this.Title = "تنظیمات";
 
+            BindingContext = new ViewModels.SettingsViewModel();
+
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("E9F1F7");
             //((NavigationPage)Application.Current.MainPage).BarTextColor = Color.OrangeRed;
         }

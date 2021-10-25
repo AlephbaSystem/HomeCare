@@ -138,7 +138,7 @@ namespace HomeCare.ViewModels
         {
             Task.Delay(100);
             Services.SMS.Commands.Status();
-            UserDialogs.Instance.Toast("درخواست وضعیت با موفقیت ارصال شد.");
+            UserDialogs.Instance.Toast("درخواست وضعیت با موفقیت ارسال شد.");
         }
 
         private void SetToLockDevice()
@@ -209,11 +209,6 @@ namespace HomeCare.ViewModels
                 {
                     Title = "تنظیمات رله",
                     ImageUrl = "relle.png"
-                },
-                new Models.Menu
-                {
-                    Title = "تنظیمات ریموت",
-                    ImageUrl = "remote.png"
                 },
                 new Models.Menu
                 {
