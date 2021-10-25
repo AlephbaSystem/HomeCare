@@ -86,7 +86,7 @@ namespace HomeCare
             await s.FadeTo(1, 100);
 
             Services.SMS.Commands.Status();
-            UserDialogs.Instance.Toast("درخواست وضعیت با موفقیت ارصال شد.");
+            UserDialogs.Instance.Toast("درخواست وضعیت با موفقیت ارسال شد.");
         }
 
         private async void Open_Tapped(object sender, EventArgs e)
