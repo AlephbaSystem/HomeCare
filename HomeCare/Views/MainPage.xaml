@@ -97,6 +97,7 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
             <Frame Grid.Column="0" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="0" Margin="10, 0, 5, 0">
@@ -109,7 +110,7 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Image Grid.Row="0" Source="ai.png" HorizontalOptions="Center" Aspect="AspectFit" />
-                    <Button BackgroundColor="Transparent" Grid.Row="1" Text="هوشمند سازی" HorizontalOptions="Center" TextColor="#1d3557" />
+                    <Button BackgroundColor="Transparent" Grid.Row="1" Text="هوشمند سازی" HorizontalOptions="Center" TextColor="#1d3557" FontSize="13" />
                 </Grid>
             </Frame>
 
@@ -127,7 +128,7 @@
                 </Grid>
             </Frame>
 
-            <Frame Grid.Column="2" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="0" Margin="5, 0, 10, 0">
+            <Frame Grid.Column="2" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="0" Margin="5, 0, 5, 0">
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Settings_Tapped" />
                 </Frame.GestureRecognizers>
@@ -138,6 +139,19 @@
                     </Grid.RowDefinitions>
                     <Image Grid.Row="0" Source="settings.png" HorizontalOptions="Center" Aspect="AspectFit" />
                     <Button BackgroundColor="Transparent" Grid.Row="1" Text="تنظیمات" HorizontalOptions="Center" TextColor="#1d3557" />
+                </Grid>
+            </Frame>
+            <Frame Grid.Column="3" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="0" Margin="5, 0, 10, 0">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Hearing_Tapped" />
+                </Frame.GestureRecognizers>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Source="hearing.png" HorizontalOptions="Center" Aspect="AspectFit" />
+                    <Button BackgroundColor="Transparent" Grid.Row="1" Text="شنود" HorizontalOptions="Center" TextColor="#1d3557" />
                 </Grid>
             </Frame>
         </Grid>

@@ -166,6 +166,7 @@
     <BundleResource Include="Resources\microphone.png" />
     <BundleResource Include="Resources\play.png" />
     <BundleResource Include="Resources\stop.png" />
+    <BundleResource Include="Resources\hearing.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />

@@ -106,6 +106,21 @@ namespace HomeCare
             Services.SMS.Commands.Open();
             UserDialogs.Instance.Toast("درخواست باز کردن دستگاه با موفقیت ارسال شد.");
         }
+
+        private async void Hearing_Tapped(object sender, EventArgs e)
+        {
+            DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
+            Frame s = (Frame)sender;
+            await Task.Delay(100);
+            await s.FadeTo(0, 100);
+            await Task.Delay(100);
+            await s.FadeTo(1, 100);
+
+            Services.SMS.Commands.Wiretapping();
+            UserDialogs.Instance.Toast("درخواست شنود با موفقیت ارسال شد.");
+        }
+
+
         private async void Partial_Tapped(object sender, EventArgs e)
         {
             DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
