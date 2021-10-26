@@ -62,7 +62,7 @@
                         </Picker.Items>
                     </Picker>
                     <Label Grid.Row="4" Grid.Column="1" Text="حالت:" HorizontalTextAlignment="End"/>
-                    <Button Grid.Row="5" Grid.Column="0" Text="استعلام" BackgroundColor="#1F9AFF" TextColor="White" FontSize="Small"  />
+                    <Button Grid.Row="5" Grid.Column="0" Text="استعلام" BackgroundColor="#1F9AFF" TextColor="White" FontSize="Small" Clicked="SimZoneQueryButton_Clicked"  />
                     <Button Grid.Row="5" Grid.Column="1" Text="ارسال" BackgroundColor="#06d6a0"  TextColor="White" FontSize="Small" />
                 </Grid>
             </Frame>

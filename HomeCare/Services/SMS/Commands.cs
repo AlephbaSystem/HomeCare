@@ -8,8 +8,8 @@ namespace HomeCare.Services.SMS
     class Commands
     {
         public static string OpenCommand = "باز";
-        public static string CloseCommand = "بسته";
-        public static string PartialOpenCommand = "نیمه باز";
+        public static string CloseCommand = "قفل";
+        public static string PartialOpenCommand = "نیمه";
         public static string WiretappingCommand = "شنود";
         public static string StatusCommand = "وضعیت";
         public static string ChargeCommand = "شارژ";
@@ -125,7 +125,7 @@ namespace HomeCare.Services.SMS
         /// درخواست لیست کاربران
         /// </summary> 
         /// <returns>Bool</returns>
-        public static bool Uesr()
+        public static bool User()
         {
             DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, UserCommand);
             return true;

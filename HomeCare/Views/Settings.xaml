@@ -43,13 +43,8 @@
                 <Button Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="ویرایش/افزودن کاربر" BackgroundColor="#083D77" TextColor="#eef4ed" Clicked="UserAccessButton_Clicked" />
                 <Button Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="تعریف/تغییر رمز عبور" BackgroundColor="#083D77" TextColor="#eef4ed" />
 
-                <Frame Grid.Row="10" Grid.Column="0" BackgroundColor="#04724d" HasShadow="False">
-                    <Button Text="ذخیره" TextColor="#fcfffc" FontAttributes="Bold"  BackgroundColor="Transparent" />
-                </Frame>
-
-                <Frame Grid.Row="10" Grid.Column="1" BackgroundColor="#e5383b" HasShadow="False">
-                    <Button Grid.Column="0" Text="بازگشت" TextColor="#fcfffc" BackgroundColor="Transparent" FontAttributes="Bold" Clicked="BackButton_Clicked" />
-                </Frame>
+                <Button Grid.Row="10" Grid.Column="0" Text="ذخیره" TextColor="#fcfffc" BackgroundColor="#06d6a0" />
+                <Button Grid.Row="10" Grid.Column="1" Text="بازگشت" TextColor="#fcfffc" BackgroundColor="#E42535" Clicked="BackButton_Clicked" />
             </Grid>
         
     </ContentPage.Content>
