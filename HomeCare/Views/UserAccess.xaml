@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="HomeCare.Views.UserAccess">
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2.5*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="0.5*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="10, 10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Picker Grid.Row="0" Grid.Column="0" WidthRequest="100" HorizontalOptions="CenterAndExpand" Title="۱" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center">
+                    <Picker.Items>
+                        <x:String>۰</x:String>
+                        <x:String>۱</x:String>
+                        <x:String>۲</x:String>
+                        <x:String>۳</x:String>
+                        <x:String>۴</x:String>
+                        <x:String>۵</x:String>
+                        <x:String>۶</x:String>
+                        <x:String>۷</x:String>
+                        <x:String>۸</x:String>
+                        <x:String>۹</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Label Grid.Row="0" Grid.Column="1" Text="کاربر:" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
+                <Entry Grid.Row="1" Grid.Column="0" Text="" Placeholder="" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="50, 0"/>
+                <Label Grid.Row="1" Grid.Column="1" Text="نام:" HorizontalOptions="End" VerticalTextAlignment="Center"/>
+                <Entry Grid.Row="2" Grid.Column="0"  Text="" Placeholder="۰۹........." HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="50, 0"/>
+                <Label Grid.Row="2" Grid.Column="1" Text="شماره همراه:" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
+            </Grid>
+            <Frame Grid.Row="1" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="1" Margin="10, 10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Text="سطح دسترسی" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Subtitle" />
+                    <CheckBox Grid.Row="1" Grid.Column="0" HorizontalOptions="CenterAndExpand" />
+                    <Label Grid.Row="1" Grid.Column="1" Text="مدیر دستگاه" HorizontalTextAlignment="Center"  />
+                    <CheckBox Grid.Row="1" Grid.Column="2" HorizontalOptions="EndAndExpand" />
+                    <Label Grid.Row="1" Grid.Column="3" Text="کنترل رله" HorizontalTextAlignment="End" />
+                    <CheckBox Grid.Row="2" Grid.Column="0" HorizontalOptions="CenterAndExpand" />
+                    <Label Grid.Row="2" Grid.Column="1" Text="غیر فعال" HorizontalTextAlignment="Center" />
+                    <CheckBox Grid.Row="2" Grid.Column="2" HorizontalOptions="EndAndExpand" />
+                    <Label Grid.Row="2" Grid.Column="3" Text="فعال" HorizontalTextAlignment="End" />
+                    <CheckBox Grid.Row="3" Grid.Column="0" HorizontalOptions="CenterAndExpand" />
+                    <Label Grid.Row="3" Grid.Column="1" Text="پیامک" HorizontalTextAlignment="Center" />
+                    <CheckBox Grid.Row="3" Grid.Column="2" HorizontalOptions="EndAndExpand" />
+                    <Label Grid.Row="3" Grid.Column="3" Text="تماس" HorizontalTextAlignment="End" />
+                    
+                </Grid>
+            </Frame>
+            <Frame Grid.Row="2" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="1" Margin="10, 10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Text="تنظیمات شیفت" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Subtitle" />
+                    <Picker Grid.Row="1" HorizontalOptions="CenterAndExpand" Title="شیفت ۱" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center">
+                        <Picker.Items>
+                            <x:String>بدون شیفت</x:String>
+                            <x:String>شیفت ۱</x:String>
+                            <x:String>شیفت ۲</x:String>
+                            <x:String>شیفت ۱و ۲</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Button Grid.Row="2" Text="ارسال" BackgroundColor="#06d6a0" TextColor="White" Margin="50, 0" />
+                </Grid>
+            </Frame>
+            <Grid Grid.Row="3" Margin="10, 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Text="حذف" BackgroundColor="#E42535" TextColor="White"  />
+                <Button Grid.Column="1" Text="استعلام" BackgroundColor="#1F9AFF" TextColor="White" />
+                <Button Grid.Column="2" Text="افزودن/ویرایش" BackgroundColor="#06d6a0"  TextColor="White"/>
+            </Grid>
+            <Label Grid.Row="4" Text="Hymax burglar" BackgroundColor="#1d3557" TextColor="#f1faee" HorizontalTextAlignment="Center" VerticalOptions="Center" Margin="0, 10, 0, 0" />
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>

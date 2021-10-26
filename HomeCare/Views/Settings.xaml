@@ -40,7 +40,7 @@
                 <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="تنظیمات ریموت" BackgroundColor="#083D77" TextColor="#eef4ed" Clicked="RemoteSettingButton_Clicked"/>
                 <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="تنظیمات دستگاه" BackgroundColor="#083D77" TextColor="#eef4ed" Clicked="LateralButton_Clicked" />
                 <Button Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="ویرایش/افزودن دستگاه" BackgroundColor="#083D77" TextColor="#eef4ed" Clicked="AddNewDevice_Clicked" />
-                <Button Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="ویرایش/افزودن کاربر" BackgroundColor="#083D77" TextColor="#eef4ed" />
+                <Button Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="ویرایش/افزودن کاربر" BackgroundColor="#083D77" TextColor="#eef4ed" Clicked="UserAccessButton_Clicked" />
                 <Button Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="تعریف/تغییر رمز عبور" BackgroundColor="#083D77" TextColor="#eef4ed" />
 
                 <Frame Grid.Row="10" Grid.Column="0" BackgroundColor="#04724d" HasShadow="False">
