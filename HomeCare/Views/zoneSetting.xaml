@@ -66,7 +66,7 @@
                     <Button Grid.Row="5" Grid.Column="1" Text="ارسال" BackgroundColor="#06d6a0"  TextColor="White" FontSize="Small" />
                 </Grid>
             </Frame>
-            <Frame Grid.Row="1" HasShadow="True" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="0" Margin="10, 10">
+            <Frame Grid.Row="1" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="0" Margin="10, 10">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />

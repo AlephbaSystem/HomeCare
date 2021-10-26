@@ -23,7 +23,7 @@
                     <ColumnDefinition Width="3*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Picker Grid.Row="0" Grid.Column="0" WidthRequest="100" HorizontalOptions="CenterAndExpand" Title="۱" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center">
+                <Picker Grid.Row="0" Grid.Column="0" Title="۱" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center" Margin="50, 0">
                     <Picker.Items>
                         <x:String>۱</x:String>
                         <x:String>۲</x:String>
@@ -37,7 +37,7 @@
                     </Picker.Items>
                 </Picker>
                 <Label Grid.Row="0" Grid.Column="1" Text="کاربر:" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
-                <Entry Grid.Row="1" Grid.Column="0" Text="{Binding Name}" Placeholder="" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="50, 0"/>
+                <Entry Grid.Row="1" Grid.Column="0" Text="{Binding Name}" Placeholder="Hymax burglar" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="50, 0"/>
                 <Label Grid.Row="1" Grid.Column="1" Text="نام:" HorizontalOptions="End" VerticalTextAlignment="Center"/>
                 <Entry Grid.Row="2" Grid.Column="0"  Text="{Binding Phone}" Placeholder="۰۹........." HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="50, 0"/>
                 <Label Grid.Row="2" Grid.Column="1" Text="شماره همراه:" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
@@ -57,9 +57,9 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Text="سطح دسترسی" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Subtitle" />
-                    <CheckBox Grid.Row="1" Grid.Column="2" HorizontalOptions="EndAndExpand" IsChecked="{Binding IsManager}" />
-                    <Label Grid.Row="1" Grid.Column="3" Text="مدیر دستگاه" HorizontalTextAlignment="End"  />
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Text="سطح دسترسی" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+                    <CheckBox Grid.Row="1" Grid.Column="2" IsChecked="{Binding IsManager}" HorizontalOptions="End" />
+                    <Label Grid.Row="1" Grid.Column="3" Text="مدیر دستگاه" HorizontalTextAlignment="Center"  HorizontalOptions="End"/>
                     <CheckBox Grid.Row="2" Grid.Column="0" HorizontalOptions="CenterAndExpand" IsChecked="{Binding IsDisable}" />
                     <Label Grid.Row="2" Grid.Column="1" Text="غیر فعال" HorizontalTextAlignment="Center" />
                     <CheckBox Grid.Row="2" Grid.Column="2" HorizontalOptions="EndAndExpand" IsChecked="{Binding IsEnable}" />
@@ -80,8 +80,8 @@
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                    <Label Grid.Row="0" Text="تنظیمات شیفت" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Subtitle" />
-                    <Picker Grid.Row="1" HorizontalOptions="CenterAndExpand" Title="شیفت ۱" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center">
+                    <Label Grid.Row="0" Text="تنظیمات شیفت" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+                    <Picker Grid.Row="1" Title="شیفت ۱" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center" Margin="50, 0">
                         <Picker.Items>
                             <x:String>بدون شیفت</x:String>
                             <x:String>شیفت ۱</x:String>
