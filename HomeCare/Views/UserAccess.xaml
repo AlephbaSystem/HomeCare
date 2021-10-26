@@ -42,7 +42,7 @@
                 <Entry Grid.Row="2" Grid.Column="0"  Text="{Binding Phone}" Placeholder="۰۹........." HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="50, 0"/>
                 <Label Grid.Row="2" Grid.Column="1" Text="شماره همراه:" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
             </Grid>
-            <Frame Grid.Row="1" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="1" Margin="10, 10">
+            <Frame Grid.Row="1" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="0" Margin="10, 10">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
@@ -73,7 +73,7 @@
                     
                 </Grid>
             </Frame>
-            <Frame Grid.Row="2" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="1" Margin="10, 10">
+            <Frame Grid.Row="2" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="0" Margin="10, 10">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />

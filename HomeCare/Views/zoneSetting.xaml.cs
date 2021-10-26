@@ -10,6 +10,10 @@ namespace HomeCare.Views
         public zoneSetting()
         {
             InitializeComponent();
+
+            NavigationPage.SetHasNavigationBar(this, true);
+            NavigationPage.SetHasBackButton(this, true);
+            this.Title = "تنظیمات زون";
         }
     }
 }
