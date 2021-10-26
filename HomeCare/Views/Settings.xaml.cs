@@ -51,5 +51,15 @@ namespace HomeCare.Views
         {
             Navigation.PushAsync(new RemoteSettings());
         }
+
+        void UserAccessButton_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new UserAccess());
+        }
+
+        void ZoneSettingButton_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new zoneSetting());
+        }
     }
 }

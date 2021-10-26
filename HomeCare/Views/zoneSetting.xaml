@@ -8,9 +8,122 @@
 
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="0.8*" />
             </Grid.RowDefinitions>
+            <Frame Grid.Row="0" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="0" Margin="10, 10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="زون سیمی" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+                    <Picker Grid.Row="1" Grid.Column="0" Title="۱" TitleColor="Black" BackgroundColor="#caf0f8" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center">
+                        <Picker.Items>
+                            <x:String>1</x:String>
+                            <x:String>2</x:String>
+                            <x:String>3</x:String>
+                            <x:String>4</x:String>
+                            <x:String>5</x:String>
+                            <x:String>6</x:String>
+                            <x:String>7</x:String>
+                            <x:String>8</x:String>
+                            <x:String>9</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Label Grid.Row="1" Grid.Column="1" Text="شماره زون:" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
+                    <Entry Grid.Row="2" Grid.Column="0" Text="" Placeholder="زون ۱" HorizontalTextAlignment="Center" BackgroundColor="#caf0f8" />
+                    <Label Grid.Row="2" Grid.Column="1" Text="نام زون:" HorizontalTextAlignment="End" />
+                    <Picker Grid.Row="3" Grid.Column="0" Title="شیفت ۱" TitleColor="Black" BackgroundColor="#caf0f8" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center">
+                        <Picker.Items>
+                            <x:String>غیر فعال</x:String>
+                            <x:String>معمولی</x:String>
+                            <x:String>۲۴ ساعته</x:String>
+                            <x:String>پیامک</x:String>
+                            <x:String>تماس</x:String>
+                            <x:String>پارت زون</x:String>
+                            <x:String>App</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Label Grid.Row="3" Grid.Column="1" Text="نوع" HorizontalTextAlignment="End" />
+                    <Picker Grid.Row="4" Grid.Column="0" Title="NO" TitleColor="Black" BackgroundColor="#caf0f8" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center">
+                        <Picker.Items>
+                           <x:String>No</x:String>
+                           <x:String>NC</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Label Grid.Row="4" Grid.Column="1" Text="حالت:" HorizontalTextAlignment="End"/>
+                    <Button Grid.Row="5" Grid.Column="0" Text="استعلام" BackgroundColor="#1F9AFF" TextColor="White" FontSize="Small"  />
+                    <Button Grid.Row="5" Grid.Column="1" Text="ارسال" BackgroundColor="#06d6a0"  TextColor="White" FontSize="Small" />
+                </Grid>
+            </Frame>
+            <Frame Grid.Row="1" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="0" Margin="10, 10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="زون بی سیم" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+                    <Picker Grid.Row="1" Grid.Column="0" Title="1" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center">
+                        <Picker.Items>
+                            <x:String>1</x:String><x:String>2</x:String><x:String>3</x:String>
+                            <x:String>4</x:String><x:String>5</x:String><x:String>6</x:String>
+                            <x:String>7</x:String><x:String>8</x:String><x:String>9</x:String>
+                            <x:String>10</x:String><x:String>11</x:String><x:String>12</x:String>
+                            <x:String>13</x:String><x:String>14</x:String><x:String>15</x:String>
+                            <x:String>16</x:String><x:String>17</x:String><x:String>18</x:String>
+                            <x:String>19</x:String><x:String>20</x:String><x:String>21</x:String>
+                            <x:String>22</x:String><x:String>23</x:String><x:String>24</x:String>
+                            <x:String>25</x:String><x:String>26</x:String><x:String>27</x:String>
+                            <x:String>28</x:String><x:String>29</x:String><x:String>30</x:String>
+                            <x:String>31</x:String><x:String>32</x:String><x:String>33</x:String>
+                            <x:String>34</x:String><x:String>35</x:String><x:String>36</x:String>
+                            <x:String>37</x:String><x:String>38</x:String><x:String>39</x:String>
+                            <x:String>40</x:String><x:String>41</x:String><x:String>42</x:String>
+                            <x:String>43</x:String><x:String>44</x:String><x:String>45</x:String>
+                            <x:String>46</x:String><x:String>47</x:String><x:String>48</x:String>
+                            <x:String>49</x:String><x:String>50</x:String><x:String>51</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Label Grid.Row="1" Grid.Column="1" Text="شماره زون:" HorizontalTextAlignment="End" />
+                    <Entry Grid.Row="2" Grid.Column="0" HorizontalTextAlignment="Center" Placeholder="زون ۱" BackgroundColor="#caf0f8"  />
+                    <Label Grid.Row="2" Grid.Column="1" Text="نام زون:" HorizontalTextAlignment="End" />
+                    <Picker Grid.Row="3" Grid.Column="0" Title="غیر فعال" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center">
+                        <Picker.Items>
+                            <x:String>حذف</x:String>
+                            <x:String>غیر فعال</x:String>
+                            <x:String>معمولی</x:String>
+                            <x:String>۲۴ ساعته</x:String>
+                            <x:String>پیامک</x:String>
+                            <x:String>تماس</x:String>
+                            <x:String>پارت زون</x:String>
+                            <x:String>App</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Label Grid.Row="3" Grid.Column="1" Text="نوع:" HorizontalTextAlignment="End" />
+                    <Button Grid.Row="4" Grid.Column="0" Text="استعلام" BackgroundColor="#1F9AFF" TextColor="White" FontSize="Small" />
+                    <Button Grid.Row="4" Grid.Column="1" Text="ارسال"  BackgroundColor="#06d6a0"  TextColor="White" FontSize="Small" />
+                    <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="افزودن زون بیسیم" BackgroundColor="#06d6a0"  TextColor="White" FontSize="Small" />
+                </Grid>
+            </Frame>
+            <Label Grid.Row="2" Text="Hymax burglar" BackgroundColor="#1d3557" TextColor="#f1faee" HorizontalTextAlignment="Center" VerticalOptions="Center" Margin="0, 20, 0, 0" />
         </Grid>
         
     </ContentPage.Content>
