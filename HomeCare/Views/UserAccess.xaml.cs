@@ -11,11 +11,11 @@ namespace HomeCare.Views
         {
             InitializeComponent();
 
+            NavigationPage.SetHasBackButton(this, true);
             NavigationPage.SetHasNavigationBar(this, true);
             this.Title = "کاربران";
 
-            NavigationPage.SetHasBackButton(this, true);
-            
+            BindingContext = new ViewModels.UserAccessViewModel();
         }
     }
 }
