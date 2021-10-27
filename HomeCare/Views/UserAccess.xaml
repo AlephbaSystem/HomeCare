@@ -98,7 +98,7 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Text="حذف" BackgroundColor="#E42535" TextColor="White" FontSize="Small" />
+                <Button Grid.Column="0" Text="حذف" BackgroundColor="#E42535" TextColor="White" FontSize="Small" Command="{Binding UserDelete}" />
                 <Button Grid.Column="1" Text="استعلام" BackgroundColor="#1F9AFF" TextColor="White" FontSize="Small" Command="{Binding UserQuery}" />
                 <Button Grid.Column="2" Text="افزودن/ویرایش" BackgroundColor="#06d6a0"  TextColor="White" FontSize="Micro"/>
             </Grid>
