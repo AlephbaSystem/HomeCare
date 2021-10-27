@@ -23,7 +23,7 @@
                     <ColumnDefinition Width="3*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Picker Grid.Row="0" Grid.Column="0" Title="1" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center" Margin="50, 0">
+                <Picker Grid.Row="0" Grid.Column="0" Title="{Binding UserId}" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center" Margin="50, 0">
                     <Picker.Items>
                         <x:String>1</x:String>
                         <x:String>2</x:String>
@@ -99,7 +99,7 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Button Grid.Column="0" Text="حذف" BackgroundColor="#E42535" TextColor="White" FontSize="Small" />
-                <Button Grid.Column="1" Text="استعلام" BackgroundColor="#1F9AFF" TextColor="White" FontSize="Small" Clicked="QueryButton_Clicked" />
+                <Button Grid.Column="1" Text="استعلام" BackgroundColor="#1F9AFF" TextColor="White" FontSize="Small" Command="{Binding UserQuery}" />
                 <Button Grid.Column="2" Text="افزودن/ویرایش" BackgroundColor="#06d6a0"  TextColor="White" FontSize="Micro"/>
             </Grid>
             <Label Grid.Row="4" Text="Hymax burglar" BackgroundColor="#1d3557" TextColor="#f1faee" HorizontalTextAlignment="Center" VerticalOptions="Center" Margin="0, 10, 0, 0" />

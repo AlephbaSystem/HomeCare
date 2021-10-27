@@ -2,11 +2,15 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Input;
+using Acr.UserDialogs;
+using Xamarin.Forms;
 
 namespace HomeCare.ViewModels
 {
     public class UserAccessViewModel: INotifyPropertyChanged
     {
+        private string _userId;
         private string _phone;
         private string _name;
         private bool _hasRelleControl;
@@ -19,6 +23,7 @@ namespace HomeCare.ViewModels
         public UserAccessViewModel()
         {
             OnMenu();
+            LunchUserQuery();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -28,10 +33,19 @@ namespace HomeCare.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        public string UserId
+        {
+            get { return _userId; }
+            set
+            {
+                _userId = value;
+                NotifyPropertyChanged(nameof(UserId));
+            }
+        }
+
         public string Phone
         {
-            get
-            {   return _phone; }
+            get{   return _phone; }
             set
             {
                 _phone = value;
@@ -125,7 +139,31 @@ namespace HomeCare.ViewModels
 
         public void OnMenu()
         {
+            UserId = "1";
         }
+
+        private void LunchUserQuery()
+        {
+            UserQuery = new Command(() =>
+            {
+                try
+                {
+                    DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
+                    Services.SMS.Commands.UserInquire(int.Parse(UserId));
+
+                    string message = "استعلام مربوط به کاربر " + UserId + " با موفقیت ارسال شد."; ;
+                    UserDialogs.Instance.Toast(message);
+                }
+                catch(Exception ex)
+                {
+                    Console.Write("Error info:" + ex.Message);
+                }
+                
+            });
+
+        }
+
+        public ICommand UserQuery { get; private set; }
 
     }
 }
