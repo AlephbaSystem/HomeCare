@@ -9,6 +9,16 @@ namespace HomeCare.Models
         public string Code { get; set; }
         public string Text { get; set; }
 
+        public Zone(string text)
+        {
+            Text = text;
+        }
+
+        public Zone()
+        {
+
+        }
+
         public static List<Zone> GetAll()
         {
             var p = new List<Zone>();
@@ -21,6 +31,26 @@ namespace HomeCare.Models
             p.Add(new Zone() { Code = "A", Text = "مخفی -اعالم توسط APP" });
             p.Add(new Zone() { Code = "B", Text = "معمولی و پارت زون" });
             return p;
+        }
+
+        public string GetTypeZone()
+        {
+            switch(this.Text)
+            {
+                case "غیر فعال":
+                    return "D";
+                case "معمولی":
+                    return "E";
+                case "24 ساعته":
+                    return "O";
+                case "پیامک":
+                    return "S";
+                case "تماس":
+                    return "C";
+                case "App":
+                    return "A";
+            }
+            return "";
         }
     }
 }

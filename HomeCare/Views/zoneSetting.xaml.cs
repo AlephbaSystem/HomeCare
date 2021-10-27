@@ -15,6 +15,8 @@ namespace HomeCare.Views
             NavigationPage.SetHasNavigationBar(this, true);
             NavigationPage.SetHasBackButton(this, true);
             this.Title = "تنظیمات زون";
+
+            BindingContext = new ViewModels.ZoneSettingViewModel();
         }
 
         public async void SimZoneQueryButton_Clicked(System.Object sender, System.EventArgs e)
