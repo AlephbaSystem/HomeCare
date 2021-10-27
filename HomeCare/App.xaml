@@ -16,7 +16,13 @@
             <Setter Property="PlaceholderColor" Value="Black" />
             <Setter Property="BackgroundColor" Value="#a8dadc" />
         </Style>
-
+        <Style TargetType="TimePicker" ApplyToDerivedTypes="True">
+            <Setter Property="FontFamily" Value="ISans" />
+            <Setter Property="FontSize" Value="Small" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="BackgroundColor" Value="#a8dadc" />
+        </Style>
         <Style TargetType="ImageButton">
             <Setter Property="BackgroundColor" Value="Transparent" />
         </Style>
@@ -24,10 +30,22 @@
         <Style TargetType="Button">
             <Setter Property="FontFamily" Value="ISans" />
         </Style>
-
+        <Style TargetType="Switch" ApplyToDerivedTypes="True" >
+            <Setter Property="ThumbColor" Value="#04724d" />
+            <Setter Property="OnColor" Value="#368167" />
+        </Style>
+        <Style TargetType="Slider" ApplyToDerivedTypes="True" >
+            <Setter Property="ThumbColor" Value="#04724d" />
+            <Setter Property="MinimumTrackColor" Value="#368167" />
+            <Setter Property="MaximumTrackColor" Value="Black" />
+        </Style>
         <!--<Style TargetType="Button">
+        MaximumTrackColor="Black" MinimumTrackColor="#368167" ThumbColor="#04724d"
             <Setter Property="BackgroundColor" Value="Transparent" />
         </Style>-->
-
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="White" />
+            <Setter Property="BarTextColor" Value="Black" />
+        </Style>
     </Application.Resources>
 </Application>

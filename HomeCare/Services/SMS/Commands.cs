@@ -35,8 +35,9 @@ namespace HomeCare.Services.SMS
         /// <returns>Bool</returns>
         public static bool Open()
         {
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, OpenCommand);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, OpenCommand))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -45,8 +46,9 @@ namespace HomeCare.Services.SMS
         /// <returns>Bool</returns>
         public static bool Close()
         {
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, CloseCommand);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, CloseCommand))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -55,8 +57,9 @@ namespace HomeCare.Services.SMS
         /// <returns>Bool</returns>
         public static bool PartialOpen()
         {
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, PartialOpenCommand);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, PartialOpenCommand))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -65,8 +68,9 @@ namespace HomeCare.Services.SMS
         /// <returns>Bool</returns>
         public static bool Wiretapping()
         {
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, WiretappingCommand);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, WiretappingCommand))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -75,8 +79,9 @@ namespace HomeCare.Services.SMS
         /// <returns>Bool</returns>
         public static bool Status()
         {
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, StatusCommand);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, StatusCommand))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -85,8 +90,9 @@ namespace HomeCare.Services.SMS
         /// <returns>Bool</returns>
         public static bool Charge()
         {
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, ChargeCommand);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, ChargeCommand))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -95,8 +101,9 @@ namespace HomeCare.Services.SMS
         /// <returns>Bool</returns>
         public static bool Rele()
         {
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, ReleCommand);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, ReleCommand))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -105,8 +112,9 @@ namespace HomeCare.Services.SMS
         /// <returns>Bool</returns>
         public static bool Zone()
         {
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, ZoneCommand);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, ZoneCommand))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -115,8 +123,9 @@ namespace HomeCare.Services.SMS
         /// <returns>Bool</returns>
         public static bool Traffic()
         {
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, TrafficCommand);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, TrafficCommand))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -125,8 +134,9 @@ namespace HomeCare.Services.SMS
         /// <returns>Bool</returns>
         public static bool Report()
         {
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, ReportCommand);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, ReportCommand))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -135,8 +145,9 @@ namespace HomeCare.Services.SMS
         /// <returns>Bool</returns>
         public static bool User()
         {
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, UserCommand);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, UserCommand))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -149,8 +160,9 @@ namespace HomeCare.Services.SMS
         public static bool AddUser(int userId, string phone, string permission)
         {
             string command = $"{userId}#{phone}{permission}";
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -161,8 +173,9 @@ namespace HomeCare.Services.SMS
         public static bool RemoveUser(int userId)
         {
             string command = $"DUR{userId}";
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -174,8 +187,9 @@ namespace HomeCare.Services.SMS
         public static bool ChangePermission(string phone, string permission)
         {
             string command = $"{phone}EUA{permission}";
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -186,8 +200,9 @@ namespace HomeCare.Services.SMS
         public static bool ChangeOwner(string phone)
         {
             string command = $"CHG{phone}";
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -198,8 +213,9 @@ namespace HomeCare.Services.SMS
         public static bool EnableReports(string permission)
         {
             string command = $"MAS{permission}";
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -217,8 +233,9 @@ namespace HomeCare.Services.SMS
                 return false;
             }
             string command = $"{userId}USH{shift}{hmStart}{hmEnd}";
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -230,8 +247,9 @@ namespace HomeCare.Services.SMS
         public static bool UserShift(int userId, string shift)
         {
             string command = $"{userId}UCS{shift}";
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -242,8 +260,9 @@ namespace HomeCare.Services.SMS
         public static bool UserInquire(int userId)
         {
             string command = $"UDT{userId}";
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -252,8 +271,9 @@ namespace HomeCare.Services.SMS
         /// <returns>Bool</returns>
         public static bool FullReset()
         {
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, ResetCommand);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, ResetCommand))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -262,8 +282,9 @@ namespace HomeCare.Services.SMS
         /// <returns>Bool</returns>
         public static bool FactoryReset()
         {
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, FactoryCommand);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, FactoryCommand))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -279,8 +300,9 @@ namespace HomeCare.Services.SMS
         public static bool SetTime(string yr, string mh, string dy, string hr, string mn)
         {
             string command = $"TIME{yr}{mh}{dy}{hr}{mn}";
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -302,8 +324,9 @@ namespace HomeCare.Services.SMS
                 return false;
             }
             string command = $"Z{zoneNumber}{zoneType}{sensitivity}";
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -315,8 +338,9 @@ namespace HomeCare.Services.SMS
         public static bool SetPartZone(string zoneNumbers)
         {
             string command = $"PRT{zoneNumbers}";
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -328,8 +352,9 @@ namespace HomeCare.Services.SMS
         public static bool SetWirelessZone(string zoneNumber, string operation)
         {
             string command = $"WZ{zoneNumber}{operation}";
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -342,8 +367,9 @@ namespace HomeCare.Services.SMS
         public static bool SetRemote(int userId, int remoteNumber, string operation)
         {
             string command = $"{userId}RM{remoteNumber}{operation}";
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -360,8 +386,9 @@ namespace HomeCare.Services.SMS
                 return false;
             }
             string command = $"ALT{duration}";
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -378,8 +405,9 @@ namespace HomeCare.Services.SMS
                 return false;
             }
             string command = $"OTT{duration}";
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -393,8 +421,9 @@ namespace HomeCare.Services.SMS
         {
             int s = status ? 1 : 0;
             string command = $"ALS{s}";
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command))
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -411,8 +440,9 @@ namespace HomeCare.Services.SMS
             }
             int s = status ? 1 : 0;
             string command = $"{rele}#{status}";
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command);
-            return true;
+            if (DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, command))
+                return true;
+            return false;
         }
     }
 }

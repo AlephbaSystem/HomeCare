@@ -16,6 +16,8 @@ namespace HomeCare.Views
 
             NavigationPage.SetHasBackButton(this, true);
             NavigationPage.SetBackButtonTitle(this, "Back");
+
+            BindingContext = new ViewModels.RemoteSettingsViewModel();
         }
     }
 }

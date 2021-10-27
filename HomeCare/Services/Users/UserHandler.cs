@@ -22,16 +22,12 @@ namespace HomeCare.Services.Users
             try
             {
                 var cr = GetAllUsers();
-                var crr = cr.Where(x => x.Selected == true).FirstOrDefault();
-                if (crr is null)
-                {
-                    crr = cr.FirstOrDefault();
-                }
+                var crr = cr.Where(x => x.Selected == true).FirstOrDefault() ?? cr.FirstOrDefault();
                 if (crr is null)
                 {
                     Acr.UserDialogs.UserDialogs.Instance.Toast("لطفا در بخش تنظیمات شماره سیمکارت دستگاه را وارد نمایید.");
                 }
-                return crr;
+                return crr ?? new Devices();
             }
             catch
             {

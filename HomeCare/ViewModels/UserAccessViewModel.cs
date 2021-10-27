@@ -161,17 +161,11 @@ namespace HomeCare.ViewModels
 
         private void LunchUserQuery()
         {
-            try
+           DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
+            if (Services.SMS.Commands.UserInquire(int.Parse(UserId)))
             {
-                DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
-                Services.SMS.Commands.UserInquire(int.Parse(UserId));
-
-                string message = "استعلام مربوط به کاربر " + UserId + " با موفقیت ارسال شد."; ;
+                string message = "استعلام مربوط به کاربر " + UserId + " با موفقیت ارسال شد.";
                 UserDialogs.Instance.Toast(message);
-            }
-            catch (Exception ex)
-            {
-                Console.Write("Error info:" + ex.Message);
             }
         }
 
@@ -250,6 +244,5 @@ namespace HomeCare.ViewModels
         public ICommand UserDelete { get; }
         public ICommand SendShift { get; }
         public ICommand AddUser { get; }
-
     }
 }

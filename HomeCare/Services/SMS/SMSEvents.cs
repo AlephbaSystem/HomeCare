@@ -13,7 +13,7 @@ namespace HomeCare.Services.SMS
     }
     public interface ISendSms
     {
-        void Send(string address, string message);
+        bool Send(string address, string message);
     }
     public class SMSEventArgs : EventArgs
     {

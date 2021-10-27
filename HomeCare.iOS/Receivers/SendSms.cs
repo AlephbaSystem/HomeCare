@@ -10,10 +10,11 @@ namespace HomeCare.iOS.Receivers
 {
     public class SendSms : ISendSms
     {
-        public void Send(string body, string phoneNumber)
-        {
+        public bool Send(string body, string phoneNumber)
+        { 
+            if (phoneNumber is null) return false;
             if (!MFMailComposeViewController.CanSendMail)
-                return;
+                return false;
 
             MFMessageComposeViewController smsController = new MFMessageComposeViewController();
 
@@ -28,7 +29,7 @@ namespace HomeCare.iOS.Receivers
                 var uiViewController = sender as UIViewController;
                 if (uiViewController == null)
                 {
-                    throw new ArgumentException("sender");
+                    throw new ArgumentException("sender"); 
                 }
 
                 uiViewController.DismissViewControllerAsync(true);
@@ -37,6 +38,7 @@ namespace HomeCare.iOS.Receivers
             smsController.Finished += handler;
 
             UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewControllerAsync(smsController, true);
+            return true;
         }
     }
 }
