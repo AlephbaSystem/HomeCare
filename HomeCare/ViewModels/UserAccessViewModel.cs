@@ -161,7 +161,7 @@ namespace HomeCare.ViewModels
 
         private void LunchUserQuery()
         {
-           DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
+            DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
             if (Services.SMS.Commands.UserInquire(int.Parse(UserId)))
             {
                 string message = "استعلام مربوط به کاربر " + UserId + " با موفقیت ارسال شد.";
@@ -174,10 +174,12 @@ namespace HomeCare.ViewModels
             try
             {
                 DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
-                Services.SMS.Commands.RemoveUser(int.Parse(UserId));
 
-                string message = "حذف کاربر شماره " + UserId + "با موفقیت ارسال شد.";
-                UserDialogs.Instance.Toast(message);
+                if (Services.SMS.Commands.RemoveUser(int.Parse(UserId)))
+                {
+                    string message = "حذف کاربر شماره " + UserId + "با موفقیت ارسال شد.";
+                    UserDialogs.Instance.Toast(message);
+                }
             }
             catch (Exception ex)
             {
@@ -190,7 +192,7 @@ namespace HomeCare.ViewModels
             try
             {
                 string shiftType;
-                switch(Shift)
+                switch (Shift)
                 {
                     case "بدون شیفت":
                         shiftType = "D";
@@ -206,11 +208,14 @@ namespace HomeCare.ViewModels
                         break;
                 }
                 DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
-                Services.SMS.Commands.UserShift(int.Parse(UserId), shiftType);
-                string message = "فعال سازی شیفت برای کاربر " + UserId + " با موفقیت ارسال شد.";
-                UserDialogs.Instance.Toast(message);
+
+                if (Services.SMS.Commands.UserShift(int.Parse(UserId), shiftType))
+                {
+                    string message = "فعال سازی شیفت برای کاربر " + UserId + " با موفقیت ارسال شد.";
+                    UserDialogs.Instance.Toast(message);
+                }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.Write("Error info:" + ex.Message);
             }
@@ -224,10 +229,12 @@ namespace HomeCare.ViewModels
                 try
                 {
                     DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
-                    Services.SMS.Commands.AddUser(int.Parse(UserId), Phone, user.GetAccess());
 
-                    string message = "درخواست افزودن/ویرایش کاربر " + UserId + " با موفقیت ارسال شد."; ;
-                    UserDialogs.Instance.Toast(message);
+                    if (Services.SMS.Commands.AddUser(int.Parse(UserId), Phone, user.GetAccess()))
+                    {
+                        string message = "درخواست افزودن/ویرایش کاربر " + UserId + " با موفقیت ارسال شد."; ;
+                        UserDialogs.Instance.Toast(message);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -240,7 +247,7 @@ namespace HomeCare.ViewModels
             }
         }
 
-        public ICommand UserQuery { get;}
+        public ICommand UserQuery { get; }
         public ICommand UserDelete { get; }
         public ICommand SendShift { get; }
         public ICommand AddUser { get; }
