@@ -23,17 +23,17 @@
                     <ColumnDefinition Width="3*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Picker Grid.Row="0" Grid.Column="0" Title="۱" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center" Margin="50, 0">
+                <Picker Grid.Row="0" Grid.Column="0" Title="1" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center" Margin="50, 0">
                     <Picker.Items>
-                        <x:String>۱</x:String>
-                        <x:String>۲</x:String>
-                        <x:String>۳</x:String>
-                        <x:String>۴</x:String>
-                        <x:String>۵</x:String>
-                        <x:String>۶</x:String>
-                        <x:String>۷</x:String>
-                        <x:String>۸</x:String>
-                        <x:String>۹</x:String>
+                        <x:String>1</x:String>
+                        <x:String>2</x:String>
+                        <x:String>3</x:String>
+                        <x:String>4</x:String>
+                        <x:String>5</x:String>
+                        <x:String>6</x:String>
+                        <x:String>7</x:String>
+                        <x:String>8</x:String>
+                        <x:String>9</x:String>
                     </Picker.Items>
                 </Picker>
                 <Label Grid.Row="0" Grid.Column="1" Text="کاربر:" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
