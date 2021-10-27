@@ -27,7 +27,7 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="زون سیمی" HorizontalTextAlignment="Center" FontAttributes="Bold" />
-                    <Picker Grid.Row="1" Grid.Column="0" Title="۱" TitleColor="Black" BackgroundColor="#caf0f8" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="EndAndExpand" WidthRequest="150">
+                    <Picker Grid.Row="1" Grid.Column="0" SelectedItem="{Binding ZoneNumber}" Title="{Binding ZoneNumber}" TitleColor="Black" BackgroundColor="#caf0f8" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="EndAndExpand" WidthRequest="150">
                         <Picker.Items>
                             <x:String>1</x:String>
                             <x:String>2</x:String>
@@ -41,21 +41,20 @@
                         </Picker.Items>
                     </Picker>
                     <Label Grid.Row="1" Grid.Column="1" Text="شماره زون:" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
-                    <Entry Grid.Row="2" Grid.Column="0" Text="" Placeholder="زون ۱" HorizontalTextAlignment="Center" BackgroundColor="#caf0f8" HorizontalOptions="EndAndExpand" WidthRequest="150"/>
+                    <Entry Grid.Row="2" Grid.Column="0" Text="{Binding ZoneName}" Placeholder="زون ۱" HorizontalTextAlignment="Center" BackgroundColor="#caf0f8" HorizontalOptions="EndAndExpand" WidthRequest="150"/>
                     <Label Grid.Row="2" Grid.Column="1" Text="نام زون:" HorizontalTextAlignment="End" />
-                    <Picker Grid.Row="3" Grid.Column="0" Title="شیفت ۱" TitleColor="Black" BackgroundColor="#caf0f8" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="EndAndExpand" WidthRequest="150">
+                    <Picker Grid.Row="3" Grid.Column="0" SelectedItem="{Binding ZoneType}" Title="{Binding ZoneType}" TitleColor="Black" BackgroundColor="#caf0f8" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="EndAndExpand" WidthRequest="150">
                         <Picker.Items>
                             <x:String>غیر فعال</x:String>
                             <x:String>معمولی</x:String>
                             <x:String>۲۴ ساعته</x:String>
                             <x:String>پیامک</x:String>
                             <x:String>تماس</x:String>
-                            <x:String>پارت زون</x:String>
                             <x:String>App</x:String>
                         </Picker.Items>
                     </Picker>
                     <Label Grid.Row="3" Grid.Column="1" Text="نوع" HorizontalTextAlignment="End" />
-                    <Picker Grid.Row="4" Grid.Column="0" Title="NO" TitleColor="Black" BackgroundColor="#caf0f8" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="EndAndExpand" WidthRequest="150">
+                    <Picker Grid.Row="4" Grid.Column="0" SelectedItem="{Binding ZoneState}" Title="{Binding ZoneState}" TitleColor="Black" BackgroundColor="#caf0f8" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="EndAndExpand" WidthRequest="150">
                         <Picker.Items>
                            <x:String>No</x:String>
                            <x:String>NC</x:String>
@@ -63,7 +62,7 @@
                     </Picker>
                     <Label Grid.Row="4" Grid.Column="1" Text="حالت:" HorizontalTextAlignment="End"/>
                     <Button Grid.Row="5" Grid.Column="0" Text="استعلام" BackgroundColor="#1F9AFF" TextColor="White" FontSize="Small" Clicked="SimZoneQueryButton_Clicked"  />
-                    <Button Grid.Row="5" Grid.Column="1" Text="ارسال" BackgroundColor="#06d6a0"  TextColor="White" FontSize="Small" />
+                    <Button Grid.Row="5" Grid.Column="1" Text="ارسال" BackgroundColor="#06d6a0"  TextColor="White" FontSize="Small" Command="{Binding SetSimZone}" />
                 </Grid>
             </Frame>
             <Frame Grid.Row="1" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="0" Margin="10, 10">
@@ -83,9 +82,9 @@
                     <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="زون بی سیم" HorizontalTextAlignment="Center" FontAttributes="Bold" />
                     <Picker Grid.Row="1" Grid.Column="0" Title="1" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="EndAndExpand" WidthRequest="150">
                         <Picker.Items>
-                            <x:String>1</x:String><x:String>2</x:String><x:String>3</x:String>
-                            <x:String>4</x:String><x:String>5</x:String><x:String>6</x:String>
-                            <x:String>7</x:String><x:String>8</x:String><x:String>9</x:String>
+                            <x:String>01</x:String><x:String>02</x:String><x:String>03</x:String>
+                            <x:String>04</x:String><x:String>05</x:String><x:String>06</x:String>
+                            <x:String>07</x:String><x:String>08</x:String><x:String>09</x:String>
                             <x:String>10</x:String><x:String>11</x:String><x:String>12</x:String>
                             <x:String>13</x:String><x:String>14</x:String><x:String>15</x:String>
                             <x:String>16</x:String><x:String>17</x:String><x:String>18</x:String>
