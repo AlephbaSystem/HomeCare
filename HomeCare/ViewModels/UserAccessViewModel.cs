@@ -23,7 +23,7 @@ namespace HomeCare.ViewModels
         public UserAccessViewModel()
         {
             OnMenu();
-            LunchUserQuery();
+            UserQuery = new Command(LunchUserQuery);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -144,26 +144,22 @@ namespace HomeCare.ViewModels
 
         private void LunchUserQuery()
         {
-            UserQuery = new Command(() =>
+            try
             {
-                try
-                {
-                    DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
-                    Services.SMS.Commands.UserInquire(int.Parse(UserId));
+                DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
+                Services.SMS.Commands.UserInquire(int.Parse(UserId));
 
-                    string message = "استعلام مربوط به کاربر " + UserId + " با موفقیت ارسال شد."; ;
-                    UserDialogs.Instance.Toast(message);
-                }
-                catch(Exception ex)
-                {
-                    Console.Write("Error info:" + ex.Message);
-                }
-                
-            });
+                string message = "استعلام مربوط به کاربر " + UserId + " با موفقیت ارسال شد."; ;
+                UserDialogs.Instance.Toast(message);
+            }
+            catch (Exception ex)
+            {
+                Console.Write("Error info:" + ex.Message);
+            }
 
         }
 
-        public ICommand UserQuery { get; private set; }
+        public ICommand UserQuery { get;}
 
     }
 }
