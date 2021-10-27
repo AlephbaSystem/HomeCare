@@ -37,9 +37,9 @@
                     </Picker.Items>
                 </Picker>
                 <Label Grid.Row="0" Grid.Column="1" Text="کاربر:" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
-                <Entry Grid.Row="1" Grid.Column="0" Text="{Binding Name}" Placeholder="Hymax burglar" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="50, 0"/>
+                <Entry Grid.Row="1" Grid.Column="0" Text="{Binding Name}" Placeholder="Hymax burglar" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="50, 0" FontSize="Small"/>
                 <Label Grid.Row="1" Grid.Column="1" Text="نام:" HorizontalOptions="End" VerticalTextAlignment="Center"/>
-                <Entry Grid.Row="2" Grid.Column="0"  Text="{Binding Phone}" Placeholder="۰۹........." HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="50, 0"/>
+                <Entry Grid.Row="2" Grid.Column="0"  Text="{Binding Phone}" Placeholder="۰۹........." HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="50, 0" FontSize="Small"/>
                 <Label Grid.Row="2" Grid.Column="1" Text="شماره همراه:" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
             </Grid>
             <Frame Grid.Row="1" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="0" Margin="10, 10">
@@ -58,8 +58,8 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Text="سطح دسترسی" HorizontalTextAlignment="Center" FontAttributes="Bold" />
-                    <CheckBox Grid.Row="1" Grid.Column="2" IsChecked="{Binding IsManager}" HorizontalOptions="End" />
-                    <Label Grid.Row="1" Grid.Column="3" Text="مدیر دستگاه" HorizontalTextAlignment="Center"  HorizontalOptions="End"/>
+                    <CheckBox Grid.Row="1" Grid.Column="2" IsChecked="{Binding IsManager}" HorizontalOptions="EndAndExpand" />
+                    <Label Grid.Row="1" Grid.Column="3" Text="مدیر دستگاه" HorizontalTextAlignment="End"/>
                     <CheckBox Grid.Row="2" Grid.Column="0" HorizontalOptions="CenterAndExpand" IsChecked="{Binding IsDisable}" />
                     <Label Grid.Row="2" Grid.Column="1" Text="غیر فعال" HorizontalTextAlignment="Center" />
                     <CheckBox Grid.Row="2" Grid.Column="2" HorizontalOptions="EndAndExpand" IsChecked="{Binding IsEnable}" />
@@ -100,7 +100,7 @@
                 </Grid.ColumnDefinitions>
                 <Button Grid.Column="0" Text="حذف" BackgroundColor="#E42535" TextColor="White" FontSize="Small" />
                 <Button Grid.Column="1" Text="استعلام" BackgroundColor="#1F9AFF" TextColor="White" FontSize="Small" Clicked="QueryButton_Clicked" />
-                <Button Grid.Column="2" Text="افزودن/ویرایش" BackgroundColor="#06d6a0"  TextColor="White" FontSize="Small"/>
+                <Button Grid.Column="2" Text="افزودن/ویرایش" BackgroundColor="#06d6a0"  TextColor="White" FontSize="Micro"/>
             </Grid>
             <Label Grid.Row="4" Text="Hymax burglar" BackgroundColor="#1d3557" TextColor="#f1faee" HorizontalTextAlignment="Center" VerticalOptions="Center" Margin="0, 10, 0, 0" />
         </Grid>
