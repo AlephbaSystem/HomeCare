@@ -19,14 +19,22 @@ namespace HomeCare.Services.Users
 
         public Devices GetCurrentUser()
         {
-
-            var cr = GetAllUsers();
-            var crr = cr.Where(x => x.Selected == true).FirstOrDefault();
-            if (crr is null)
+            try
             {
-                crr = cr.FirstOrDefault();
+                var cr = GetAllUsers();
+                var crr = cr.Where(x => x.Selected == true).FirstOrDefault();
+                if (crr is null)
+                {
+                    crr = cr.FirstOrDefault();
+                }
+                return crr;
             }
-            return crr;
+            catch (Exception ex)
+            {
+                Acr.UserDialogs.UserDialogs.Instance.Toast("لطفا در بخش تنظیمات شماره سیمکارت دستگاه را وارد نمایید.");
+                return null;
+            }
+
         }
         public List<Devices> GetAllUsers()
         {

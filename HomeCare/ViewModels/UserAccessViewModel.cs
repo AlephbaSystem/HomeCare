@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace HomeCare.ViewModels
 {
-    public class UserAccessViewModel: INotifyPropertyChanged
+    public class UserAccessViewModel : INotifyPropertyChanged
     {
         private string _userId;
         private string _phone;
@@ -23,7 +23,7 @@ namespace HomeCare.ViewModels
         public UserAccessViewModel()
         {
             OnMenu();
-            LunchUserQuery();
+            UserQuery = new Command(LunchUserQuery);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -45,7 +45,7 @@ namespace HomeCare.ViewModels
 
         public string Phone
         {
-            get{   return _phone; }
+            get { return _phone; }
             set
             {
                 _phone = value;
@@ -55,7 +55,7 @@ namespace HomeCare.ViewModels
 
         public string Name
         {
-            get{ return _name;}
+            get { return _name; }
             set
             {
                 _name = value;
@@ -126,7 +126,7 @@ namespace HomeCare.ViewModels
 
         public void IfIsManager()
         {
-            if(IsManager)
+            if (IsManager)
             {
                 HasRelleControl = true;
                 IsEnable = true;
@@ -134,7 +134,7 @@ namespace HomeCare.ViewModels
                 HasCall = true;
                 HasText = true;
             }
-            
+
         }
 
         public void OnMenu()
@@ -144,26 +144,14 @@ namespace HomeCare.ViewModels
 
         private void LunchUserQuery()
         {
-            UserQuery = new Command(() =>
-            {
-                try
-                {
-                    DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
-                    Services.SMS.Commands.UserInquire(int.Parse(UserId));
+            DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
+            Services.SMS.Commands.UserInquire(int.Parse(UserId));
 
-                    string message = "استعلام مربوط به کاربر " + UserId + " با موفقیت ارسال شد."; ;
-                    UserDialogs.Instance.Toast(message);
-                }
-                catch(Exception ex)
-                {
-                    Console.Write("Error info:" + ex.Message);
-                }
-                
-            });
-
+            string message = "استعلام مربوط به کاربر " + UserId + " با موفقیت ارسال شد."; ;
+            UserDialogs.Instance.Toast(message);
         }
 
-        public ICommand UserQuery { get; private set; }
+        public ICommand UserQuery { get; }
 
     }
 }
