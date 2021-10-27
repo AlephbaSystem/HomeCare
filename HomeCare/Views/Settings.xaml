@@ -32,8 +32,8 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="شماره سیمکارت دستگاه" HorizontalTextAlignment="Center" />
-                <Entry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Placeholder="{Binding Phone}" HorizontalTextAlignment="Center" Background="#eef4ed" PlaceholderColor="#191919" IsReadOnly="True" />
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="شماره سیمکارت دستگاه" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+                <Entry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Placeholder="{Binding Phone}" HorizontalTextAlignment="Center" Background="#eef4ed" PlaceholderColor="#191919" IsReadOnly="True" FontSize="Small" />
                 <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="مدیریت هشدار های صوتی نرم افزار" BackgroundColor="#083D77" TextColor="#eef4ed" Clicked="AudioAlertButton_Clicked" />
                 <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="تنظیمات زون" BackgroundColor="#083D77" TextColor="#eef4ed" Clicked="ZoneSettingButton_Clicked"/>
                 <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="تنظیمات رله" BackgroundColor="#083D77" TextColor="#eef4ed" Clicked="RelleButton_Clicked" />
