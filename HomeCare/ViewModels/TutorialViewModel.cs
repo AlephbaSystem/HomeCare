@@ -97,8 +97,8 @@ namespace HomeCare.ViewModels
 
         private static void ExitOnBoarding()
         {
-            Application.Current.MainPage.Navigation.PopModalAsync();
             Application.Current.MainPage.Navigation.PushAsync(new MainPage());
+            Application.Current.MainPage.Navigation.PopModalAsync();
         }
 
         private void MoveToNextPosition()
