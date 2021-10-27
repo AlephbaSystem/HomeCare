@@ -23,7 +23,7 @@
                     <ColumnDefinition Width="3*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Picker Grid.Row="0" Grid.Column="0" Title="{Binding UserId}" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center" Margin="50, 0">
+                <Picker Grid.Row="0" Grid.Column="0" SelectedItem="{Binding UserId}" Title="{Binding UserId}" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center" Margin="50, 0">
                     <Picker.Items>
                         <x:String>1</x:String>
                         <x:String>2</x:String>
@@ -81,7 +81,7 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Label Grid.Row="0" Text="تنظیمات شیفت" HorizontalTextAlignment="Center" FontAttributes="Bold" />
-                    <Picker Grid.Row="1" Title="شیفت ۱" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center" Margin="50, 0">
+                    <Picker Grid.Row="1" SelectedItem="{Binding Shift}" Title="{Binding Shift}" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center" Margin="50, 0">
                         <Picker.Items>
                             <x:String>بدون شیفت</x:String>
                             <x:String>شیفت ۱</x:String>
@@ -89,7 +89,7 @@
                             <x:String>شیفت ۱و ۲</x:String>
                         </Picker.Items>
                     </Picker>
-                    <Button Grid.Row="2" Text="ارسال" BackgroundColor="#06d6a0" TextColor="White" Margin="50, 0" />
+                    <Button Grid.Row="2" Text="ارسال" BackgroundColor="#06d6a0" TextColor="White" Margin="50, 0" Command="{Binding SendShift}" />
                 </Grid>
             </Frame>
             <Grid Grid.Row="3" Margin="10, 10">
@@ -98,9 +98,9 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Text="حذف" BackgroundColor="#E42535" TextColor="White" FontSize="Small" />
+                <Button Grid.Column="0" Text="حذف" BackgroundColor="#E42535" TextColor="White" FontSize="Small" Command="{Binding UserDelete}" />
                 <Button Grid.Column="1" Text="استعلام" BackgroundColor="#1F9AFF" TextColor="White" FontSize="Small" Command="{Binding UserQuery}" />
-                <Button Grid.Column="2" Text="افزودن/ویرایش" BackgroundColor="#06d6a0"  TextColor="White" FontSize="Micro"/>
+                <Button Grid.Column="2" Text="افزودن/ویرایش" BackgroundColor="#06d6a0"  TextColor="White" FontSize="Micro" Command="{Binding AddUser}"/>
             </Grid>
             <Label Grid.Row="4" Text="Hymax burglar" BackgroundColor="#1d3557" TextColor="#f1faee" HorizontalTextAlignment="Center" VerticalOptions="Center" Margin="0, 10, 0, 0" />
         </Grid>

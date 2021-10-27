@@ -7,6 +7,7 @@ namespace HomeCare.Services.SMS
 {
     class Commands
     {
+        public static string SilenceCommand = "سکوت";
         public static string OpenCommand = "باز";
         public static string CloseCommand = "قفل";
         public static string PartialOpenCommand = "نیمه";
@@ -20,6 +21,13 @@ namespace HomeCare.Services.SMS
         public static string TrafficCommand = "تردد";
         public static string ReportCommand = "گزارش";
         public static string UserCommand = "کاربر";
+
+
+        public static bool Silence()
+        {
+            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, SilenceCommand);
+            return true;
+        }
 
         /// <summary>
         /// غیرفعال کردن دستگاه

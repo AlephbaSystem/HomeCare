@@ -61,5 +61,10 @@ namespace HomeCare.Views
         {
             Navigation.PushAsync(new zoneSetting());
         }
+
+        void TimingButton_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new Timing());
+        }
     }
 }
