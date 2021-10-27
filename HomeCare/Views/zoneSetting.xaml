@@ -27,7 +27,7 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="زون سیمی" HorizontalTextAlignment="Center" FontAttributes="Bold" />
-                    <Picker Grid.Row="1" Grid.Column="0" Title="۱" TitleColor="Black" BackgroundColor="#caf0f8" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center">
+                    <Picker Grid.Row="1" Grid.Column="0" Title="۱" TitleColor="Black" BackgroundColor="#caf0f8" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="EndAndExpand" WidthRequest="150">
                         <Picker.Items>
                             <x:String>1</x:String>
                             <x:String>2</x:String>
@@ -41,9 +41,9 @@
                         </Picker.Items>
                     </Picker>
                     <Label Grid.Row="1" Grid.Column="1" Text="شماره زون:" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
-                    <Entry Grid.Row="2" Grid.Column="0" Text="" Placeholder="زون ۱" HorizontalTextAlignment="Center" BackgroundColor="#caf0f8" />
+                    <Entry Grid.Row="2" Grid.Column="0" Text="" Placeholder="زون ۱" HorizontalTextAlignment="Center" BackgroundColor="#caf0f8" HorizontalOptions="EndAndExpand" WidthRequest="150"/>
                     <Label Grid.Row="2" Grid.Column="1" Text="نام زون:" HorizontalTextAlignment="End" />
-                    <Picker Grid.Row="3" Grid.Column="0" Title="شیفت ۱" TitleColor="Black" BackgroundColor="#caf0f8" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center">
+                    <Picker Grid.Row="3" Grid.Column="0" Title="شیفت ۱" TitleColor="Black" BackgroundColor="#caf0f8" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="EndAndExpand" WidthRequest="150">
                         <Picker.Items>
                             <x:String>غیر فعال</x:String>
                             <x:String>معمولی</x:String>
@@ -55,7 +55,7 @@
                         </Picker.Items>
                     </Picker>
                     <Label Grid.Row="3" Grid.Column="1" Text="نوع" HorizontalTextAlignment="End" />
-                    <Picker Grid.Row="4" Grid.Column="0" Title="NO" TitleColor="Black" BackgroundColor="#caf0f8" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center">
+                    <Picker Grid.Row="4" Grid.Column="0" Title="NO" TitleColor="Black" BackgroundColor="#caf0f8" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="EndAndExpand" WidthRequest="150">
                         <Picker.Items>
                            <x:String>No</x:String>
                            <x:String>NC</x:String>
@@ -81,7 +81,7 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="زون بی سیم" HorizontalTextAlignment="Center" FontAttributes="Bold" />
-                    <Picker Grid.Row="1" Grid.Column="0" Title="1" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center">
+                    <Picker Grid.Row="1" Grid.Column="0" Title="1" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="EndAndExpand" WidthRequest="150">
                         <Picker.Items>
                             <x:String>1</x:String><x:String>2</x:String><x:String>3</x:String>
                             <x:String>4</x:String><x:String>5</x:String><x:String>6</x:String>
@@ -103,9 +103,9 @@
                         </Picker.Items>
                     </Picker>
                     <Label Grid.Row="1" Grid.Column="1" Text="شماره زون:" HorizontalTextAlignment="End" />
-                    <Entry Grid.Row="2" Grid.Column="0" HorizontalTextAlignment="Center" Placeholder="زون ۱" BackgroundColor="#caf0f8"  />
+                    <Entry Grid.Row="2" Grid.Column="0" HorizontalTextAlignment="Center" Placeholder="زون ۱" BackgroundColor="#caf0f8" HorizontalOptions="EndAndExpand" WidthRequest="150" />
                     <Label Grid.Row="2" Grid.Column="1" Text="نام زون:" HorizontalTextAlignment="End" />
-                    <Picker Grid.Row="3" Grid.Column="0" Title="غیر فعال" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center">
+                    <Picker Grid.Row="3" Grid.Column="0" Title="غیر فعال" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="EndAndExpand" WidthRequest="150"> 
                         <Picker.Items>
                             <x:String>حذف</x:String>
                             <x:String>غیر فعال</x:String>

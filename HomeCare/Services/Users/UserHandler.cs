@@ -27,15 +27,19 @@ namespace HomeCare.Services.Users
                 {
                     crr = cr.FirstOrDefault();
                 }
+                if (crr is null)
+                {
+                    Acr.UserDialogs.UserDialogs.Instance.Toast("لطفا در بخش تنظیمات شماره سیمکارت دستگاه را وارد نمایید.");
+                }
                 return crr;
             }
-            catch (Exception ex)
+            catch
             {
                 Acr.UserDialogs.UserDialogs.Instance.Toast("لطفا در بخش تنظیمات شماره سیمکارت دستگاه را وارد نمایید.");
                 return null;
             }
-
         }
+
         public List<Devices> GetAllUsers()
         {
             return devicesDatabase.GetDevices().ToList();

@@ -151,7 +151,6 @@
     <BundleResource Include="Resources\add.png" />
     <BundleResource Include="Resources\antenna.png" />
     <BundleResource Include="Resources\calender.png" />
-    <BundleResource Include="Resources\ai.png" />
     <BundleResource Include="Resources\relle.png" />
     <BundleResource Include="Resources\remote.png" />
     <BundleResource Include="Resources\settings.png" />
@@ -167,6 +166,7 @@
     <BundleResource Include="Resources\play.png" />
     <BundleResource Include="Resources\stop.png" />
     <BundleResource Include="Resources\hearing.png" />
+    <BundleResource Include="Resources\silence.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
