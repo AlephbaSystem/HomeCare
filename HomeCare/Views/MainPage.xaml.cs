@@ -175,7 +175,7 @@ namespace HomeCare
 
             await Navigation.PushAsync(new releSettings());
         }
-        private async void AI_Tapped(object sender, EventArgs e)
+        private async void Silence_Tapped(object sender, EventArgs e)
         {
             DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
             Frame s = (Frame)sender;
@@ -184,7 +184,8 @@ namespace HomeCare
             await Task.Delay(100);
             await s.FadeTo(1, 100);
 
-            await Navigation.PushAsync(new Timing());
+            Services.SMS.Commands.Silence();
+            UserDialogs.Instance.Toast("درخواست سکوت با موفقیت ارسال شد.");
         }
 
         private async void onMenuCarousel_CurrentItemChanged(Xamarin.Forms.CarouselView sender, CurrentItemChangedEventArgs e)

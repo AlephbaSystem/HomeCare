@@ -16493,34 +16493,37 @@ namespace HomeCare.Droid
 			public const int settings = 2131165345;
 			
 			// aapt resource value: 0x7F0700A2
-			public const int splash = 2131165346;
+			public const int silence = 2131165346;
 			
 			// aapt resource value: 0x7F0700A3
-			public const int stop = 2131165347;
+			public const int splash = 2131165347;
 			
 			// aapt resource value: 0x7F0700A4
-			public const int test_custom_background = 2131165348;
+			public const int stop = 2131165348;
 			
 			// aapt resource value: 0x7F0700A5
-			public const int tooltip_frame_dark = 2131165349;
+			public const int test_custom_background = 2131165349;
 			
 			// aapt resource value: 0x7F0700A6
-			public const int tooltip_frame_light = 2131165350;
+			public const int tooltip_frame_dark = 2131165350;
 			
 			// aapt resource value: 0x7F0700A7
-			public const int Tutorial1 = 2131165351;
+			public const int tooltip_frame_light = 2131165351;
 			
 			// aapt resource value: 0x7F0700A8
-			public const int Tutorial2 = 2131165352;
+			public const int Tutorial1 = 2131165352;
 			
 			// aapt resource value: 0x7F0700A9
-			public const int Tutorial3 = 2131165353;
+			public const int Tutorial2 = 2131165353;
 			
 			// aapt resource value: 0x7F0700AA
-			public const int unlock = 2131165354;
+			public const int Tutorial3 = 2131165354;
 			
 			// aapt resource value: 0x7F0700AB
-			public const int Up = 2131165355;
+			public const int unlock = 2131165355;
+			
+			// aapt resource value: 0x7F0700AC
+			public const int Up = 2131165356;
 			
 			static Drawable()
 			{
