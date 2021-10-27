@@ -85,8 +85,10 @@ namespace HomeCare
             await Task.Delay(100);
             await s.FadeTo(1, 100);
 
-            Services.SMS.Commands.Status();
-            UserDialogs.Instance.Toast("درخواست وضعیت با موفقیت ارسال شد.");
+            if (Services.SMS.Commands.Status())
+            {
+                UserDialogs.Instance.Toast("درخواست وضعیت با موفقیت ارسال شد.");
+            }
         }
 
         private async void Open_Tapped(object sender, EventArgs e)
@@ -103,8 +105,10 @@ namespace HomeCare
             closeFrame.BackgroundColor = Color.FromHex("eff7f6");
             await Task.Delay(200);
 
-            Services.SMS.Commands.Open();
-            UserDialogs.Instance.Toast("درخواست باز کردن دستگاه با موفقیت ارسال شد.");
+            if (Services.SMS.Commands.Open())
+            {
+                UserDialogs.Instance.Toast("درخواست باز کردن دستگاه با موفقیت ارسال شد.");
+            }
         }
 
         private async void Hearing_Tapped(object sender, EventArgs e)
@@ -116,8 +120,10 @@ namespace HomeCare
             await Task.Delay(100);
             await s.FadeTo(1, 100);
 
-            Services.SMS.Commands.Wiretapping();
-            UserDialogs.Instance.Toast("درخواست شنود با موفقیت ارسال شد.");
+            if (Services.SMS.Commands.Wiretapping())
+            {
+                UserDialogs.Instance.Toast("درخواست شنود با موفقیت ارسال شد.");
+            }
         }
 
 
@@ -134,8 +140,10 @@ namespace HomeCare
             openFrame.BackgroundColor = Color.FromHex("eff7f6");
             closeFrame.BackgroundColor = Color.FromHex("eff7f6");
 
-            Services.SMS.Commands.PartialOpen();
-            UserDialogs.Instance.Toast("درخواست نیمه باز کردن دستگاه با موفقیت ارسال شد.");
+            if (Services.SMS.Commands.PartialOpen())
+            {
+                UserDialogs.Instance.Toast("درخواست نیمه باز کردن دستگاه با موفقیت ارسال شد.");
+            }
         }
         private async void Close_Tapped(object sender, EventArgs e)
         {
@@ -150,8 +158,10 @@ namespace HomeCare
             halfFrame.BackgroundColor = Color.FromHex("eff7f6");
             openFrame.BackgroundColor = Color.FromHex("eff7f6");
 
-            Services.SMS.Commands.Close();
-            UserDialogs.Instance.Toast("درخواست قفل کردن دستگاه با موفقیت ارسال شد.");
+            if (Services.SMS.Commands.Close())
+            {
+                UserDialogs.Instance.Toast("درخواست قفل کردن دستگاه با موفقیت ارسال شد.");
+            }
         }
         private async void Settings_Tapped(object sender, EventArgs e)
         {
@@ -184,8 +194,10 @@ namespace HomeCare
             await Task.Delay(100);
             await s.FadeTo(1, 100);
 
-            Services.SMS.Commands.Silence();
-            UserDialogs.Instance.Toast("درخواست سکوت با موفقیت ارسال شد.");
+            if (Services.SMS.Commands.Silence())
+            {
+                UserDialogs.Instance.Toast("درخواست سکوت با موفقیت ارسال شد.");
+            }
         }
 
         private async void onMenuCarousel_CurrentItemChanged(Xamarin.Forms.CarouselView sender, CurrentItemChangedEventArgs e)

@@ -12,7 +12,7 @@ using Xamarin.Forms;
 namespace HomeCare.ViewModels
 {
     public class RemoteSettingsViewModel : INotifyPropertyChanged
-    {  
+    {
         public ICommand AddRemote { get; }
 
         private int _userID;
@@ -36,7 +36,7 @@ namespace HomeCare.ViewModels
                 _selectedRemote = value;
                 NotifyPropertyChanged(nameof(SelectedRemote));
             }
-        } 
+        }
         public int UserID
         {
             get { return _userID; }
@@ -68,8 +68,8 @@ namespace HomeCare.ViewModels
             RemoteList = Remote.GetAll();
             SelectedRemote = RemoteList.FirstOrDefault();
 
-            AddRemote = new Command(LunchAddRemote); 
-        } 
+            AddRemote = new Command(LunchAddRemote);
+        }
         private void LunchAddRemote()
         {
             DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
@@ -78,6 +78,6 @@ namespace HomeCare.ViewModels
                 string message = "استعلام مربوط به کاربر " + UserID + " با موفقیت ارسال شد.";
                 UserDialogs.Instance.Toast(message);
             }
-        } 
+        }
     }
 }
