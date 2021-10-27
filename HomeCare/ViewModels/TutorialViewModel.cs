@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace HomeCare.ViewModels
 {
-    public class TutorialViewModel: INotifyPropertyChanged
+    public class TutorialViewModel : INotifyPropertyChanged
     {
         private int position;
         private string nextButtonText;
@@ -97,8 +97,9 @@ namespace HomeCare.ViewModels
 
         private static void ExitOnBoarding()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new MainPage());
-            Application.Current.MainPage.Navigation.PopModalAsync();
+            App.Current.MainPage = new NavigationPage(new MainPage());
+            //Application.Current.MainPage.Navigation.PushAsync(new MainPage());
+            //Application.Current.MainPage.Navigation.PopModalAsync();
         }
 
         private void MoveToNextPosition()

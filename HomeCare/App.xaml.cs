@@ -25,7 +25,6 @@ namespace HomeCare
             {
                 MainPage = new NavigationPage(new MainPage());
             }
-
         }
 
         static void ReciveSMSFromDevice(object sender, SMSEventArgs e)

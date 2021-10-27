@@ -25,7 +25,9 @@ namespace HomeCare.Views
 
             NavigationPage.SetHasNavigationBar(this, true);
             this.Title = "هوشمند سازی";
-            
+             
+            BindingContext = new ViewModels.TimingViewModel();
+
         }
     }
 }

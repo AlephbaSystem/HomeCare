@@ -9,18 +9,16 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="2*" />
+                <RowDefinition Height="2*" /> 
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
                 <RowDefinition Height="2*" />
-                <RowDefinition Height="3*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
                 <RowDefinition Height="0.5*" />
             </Grid.RowDefinitions>
 
             <Frame Grid.Row="0" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="1" Margin="10, 5" >
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="2*" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
@@ -29,149 +27,56 @@
                         <ColumnDefinition Width="2*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Picker Grid.Row="0" Grid.Column="0" HorizontalOptions="CenterAndExpand" Title="۱" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center">
+                    <Picker ItemDisplayBinding="{Binding RemoteId}" SelectedItem="{Binding RemoteId}" Title="{Binding RemoteId}" Grid.Row="0" Grid.Column="0" HorizontalOptions="CenterAndExpand" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center">
                         <Picker.Items>
-                            <x:String>۱</x:String>
-                            <x:String>۲</x:String>
-                            <x:String>۳</x:String>
-                            <x:String>۴</x:String>
-                            <x:String>۵</x:String>
-                            <x:String>۶</x:String>
-                            <x:String>۷</x:String>
-                            <x:String>۸</x:String>
+                            <x:String>1</x:String>
+                            <x:String>2</x:String>
+                            <x:String>3</x:String>
+                            <x:String>4</x:String>
+                            <x:String>5</x:String>
+                            <x:String>6</x:String>
+                            <x:String>7</x:String>
+                            <x:String>8</x:String>
                         </Picker.Items>
                     </Picker>
                     <Label Grid.Row="0" Grid.Column="1" Text="ریموت:" HorizontalTextAlignment="Start"  VerticalTextAlignment="Center"/>
-                    <Picker Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" Title="۱" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center">
+                    <Picker ItemDisplayBinding="{Binding UserID}" SelectedItem="{Binding UserID}" Title="{Binding UserID}" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center">
                         <Picker.Items>
-                            <x:String>۰</x:String>
-                            <x:String>۱</x:String>
-                            <x:String>۲</x:String>
-                            <x:String>۳</x:String>
-                            <x:String>۴</x:String>
-                            <x:String>۵</x:String>
-                            <x:String>۶</x:String>
-                            <x:String>۷</x:String>
-                            <x:String>۸</x:String>
-                            <x:String>۹</x:String>
+                            <x:String>0</x:String>
+                            <x:String>1</x:String>
+                            <x:String>2</x:String>
+                            <x:String>3</x:String>
+                            <x:String>4</x:String>
+                            <x:String>5</x:String>
+                            <x:String>6</x:String>
+                            <x:String>7</x:String>
+                            <x:String>8</x:String>
+                            <x:String>9</x:String>
                         </Picker.Items>
                     </Picker>
                     <Label Grid.Row="0" Grid.Column="3" Text="کاربر:" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
-                    <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="حذف" BackgroundColor="#E42535" TextColor="White" />
-                    <Button Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Text="ارسال" BackgroundColor="#06d6a0"  TextColor="White"/>
                 </Grid>
             </Frame>
             <Frame Grid.Row="1" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="1" Margin="10, 10">
                 <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="2*" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="3*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <Picker Grid.Row="0" Grid.Column="0" Title="غیر فعال" TitleColor="Black" TextColor="Black" BackgroundColor="#caf0f8" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center">
-                        <Picker.Items>
-                            <x:String>فعال</x:String>
-                            <x:String>غیر فعال</x:String>
-                            <x:String>شیفت ۱</x:String>
-                            <x:String>شیفت ۲</x:String>
-                            <x:String>شیفت ۱و ۲</x:String>
-                        </Picker.Items>
+                    <Picker ItemsSource="{Binding RemoteList}"
+                            ItemDisplayBinding="{Binding Text}"
+                            SelectedItem="{Binding SelectedRemote}" Grid.Column="0" Title="{Binding SelectedRemote.Text}" TitleColor="Black" TextColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center">
                     </Picker>
-                    <Label Grid.Row="0" Grid.Column="1" Text="وضعیت:" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
-                    
-                    <Button Grid.Row="1" Grid.Column="0" Text="استعلام" BackgroundColor="#1F9AFF" TextColor="White" />
-                    <Button Grid.Row="1" Grid.Column="1" Text="ارسال" BackgroundColor="#06d6a0"  TextColor="White"/>
+                    <Label Grid.Column="1" Text="وضعیت:" VerticalTextAlignment="Center" />
                 </Grid>
             </Frame>
-            <Frame Grid.Row="2" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="1" Margin="10, 10">
+            <Frame Grid.Row="4" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="1" Margin="10, 10">
                 <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="2*" />
-                        <RowDefinition Height="2*" />
-                        <RowDefinition Height="1.5*" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Text="انتخاب عملکرد کلید های ریموت" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" />
-                    <Picker Grid.Row="1" Grid.Column="0" HorizontalOptions="CenterAndExpand" Title="غیر فعال" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center">
-                        <Picker.Items>
-                            <x:String>فعال</x:String>
-                            <x:String>غیر فعال</x:String>
-                            <x:String>نیمه فعال</x:String>
-                            <x:String>آژیر</x:String>
-                            <x:String>بی صدا</x:String>
-                            <x:String>رله ۱ فعال</x:String>
-                            <x:String>رله ۱ غیر فعال</x:String>
-                            <x:String>رله ۲ فعال</x:String>
-                            <x:String>رله ۲ غیر فعال</x:String>
-                            <x:String>رله ۳ فعال</x:String>
-                            <x:String>رله ۳ غیر فعال</x:String>
-                        </Picker.Items>
-                    </Picker>
-                    <Label Grid.Row="1" Grid.Column="1" Text="کلید ۱:" HorizontalTextAlignment="Start"  VerticalTextAlignment="Center"/>
-                    <Picker Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" Title="غیر فعال" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center">
-                        <Picker.Items>
-                            <x:String>فعال</x:String>
-                            <x:String>غیر فعال</x:String>
-                            <x:String>نیمه فعال</x:String>
-                            <x:String>آژیر</x:String>
-                            <x:String>بی صدا</x:String>
-                            <x:String>رله ۱ فعال</x:String>
-                            <x:String>رله ۱ غیر فعال</x:String>
-                            <x:String>رله ۲ فعال</x:String>
-                            <x:String>رله ۲ غیر فعال</x:String>
-                            <x:String>رله ۳ فعال</x:String>
-                            <x:String>رله ۳ غیر فعال</x:String>
-                        </Picker.Items>
-                    </Picker>
-                    <Label Grid.Row="1" Grid.Column="3" Text="کلید ۲:" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
-                    
-                    <Picker Grid.Row="2" Grid.Column="0" HorizontalOptions="CenterAndExpand" Title="غیر فعال" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center">
-                        <Picker.Items>
-                            <x:String>فعال</x:String>
-                            <x:String>غیر فعال</x:String>
-                            <x:String>نیمه فعال</x:String>
-                            <x:String>آژیر</x:String>
-                            <x:String>بی صدا</x:String>
-                            <x:String>رله ۱ فعال</x:String>
-                            <x:String>رله ۱ غیر فعال</x:String>
-                            <x:String>رله ۲ فعال</x:String>
-                            <x:String>رله ۲ غیر فعال</x:String>
-                            <x:String>رله ۳ فعال</x:String>
-                            <x:String>رله ۳ غیر فعال</x:String>
-                        </Picker.Items>
-                    </Picker>
-                    <Label Grid.Row="2" Grid.Column="1" Text="کلید ۳:" HorizontalTextAlignment="Start"  VerticalTextAlignment="Center"/>
-                    <Picker Grid.Row="2" Grid.Column="2" HorizontalOptions="Center" Title="غیر فعال" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center">
-                        <Picker.Items>
-                            <x:String>فعال</x:String>
-                            <x:String>غیر فعال</x:String>
-                            <x:String>نیمه فعال</x:String>
-                            <x:String>آژیر</x:String>
-                            <x:String>بی صدا</x:String>
-                            <x:String>رله ۱ فعال</x:String>
-                            <x:String>رله ۱ غیر فعال</x:String>
-                            <x:String>رله ۲ فعال</x:String>
-                            <x:String>رله ۲ غیر فعال</x:String>
-                            <x:String>رله ۳ فعال</x:String>
-                            <x:String>رله ۳ غیر فعال</x:String>
-                        </Picker.Items>
-                    </Picker>
-                    <Label Grid.Row="2" Grid.Column="3" Text="کلید ۴:" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
-                    <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="استعلام" BackgroundColor="#1F9AFF" TextColor="White" />
-                    <Button Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Text="ارسال" BackgroundColor="#06d6a0"  TextColor="White"/>
+                    <Button VerticalOptions="Center" Text="ارسال" BackgroundColor="#06d6a0" TextColor="White" Command="{Binding AddRemote}" />
                 </Grid>
             </Frame>
-            <Label Grid.Row="6" Text="Hymax burglar" BackgroundColor="#1d3557" TextColor="#f1faee" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+            <Label Grid.Row="5" Text="Hymax burglar" BackgroundColor="#1d3557" TextColor="#f1faee" HorizontalTextAlignment="Center" VerticalOptions="Center" />
         </Grid>
         
     </ContentPage.Content>

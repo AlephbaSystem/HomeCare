@@ -16,7 +16,13 @@
             <Setter Property="PlaceholderColor" Value="Black" />
             <Setter Property="BackgroundColor" Value="#a8dadc" />
         </Style>
-
+        <Style TargetType="TimePicker" ApplyToDerivedTypes="True">
+            <Setter Property="FontFamily" Value="ISans" />
+            <Setter Property="FontSize" Value="Small" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="BackgroundColor" Value="#a8dadc" />
+        </Style>
         <Style TargetType="ImageButton">
             <Setter Property="BackgroundColor" Value="Transparent" />
         </Style>
@@ -28,6 +34,9 @@
         <!--<Style TargetType="Button">
             <Setter Property="BackgroundColor" Value="Transparent" />
         </Style>-->
-
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="White" />
+            <Setter Property="BarTextColor" Value="Black" />
+        </Style>
     </Application.Resources>
 </Application>
