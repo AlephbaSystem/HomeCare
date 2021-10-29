@@ -59,7 +59,7 @@
                     <ColumnDefinition Width="2*" />
                     <ColumnDefinition Width="2*" />
                 </Grid.ColumnDefinitions>
-
+ 
                 <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2" Source="calender.png" HorizontalOptions="StartAndExpand" />
                 <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"  Text="{Binding StatusDevice.DATE}" FontAttributes="Bold" HorizontalOptions="Start" Margin="0, 0, 40, 0" />
                 <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding StatusDevice.TIME}" FontAttributes="Bold" HorizontalOptions="Start" Margin="0, 0, 40, 0" />
@@ -100,7 +100,7 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Image Grid.Row="0" Source="silence.png" HorizontalOptions="Center" Aspect="AspectFit" />
-                    <Label BackgroundColor="Transparent" Grid.Row="1" Text="سکوت" HorizontalOptions="Center" TextColor="#1d3557"/>
+                    <Button BackgroundColor="Transparent" Grid.Row="1" Text="سکوت" HorizontalOptions="Center" TextColor="#1d3557"/>
                 </Grid>
             </Frame>
 
@@ -114,10 +114,10 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Image Grid.Row="0" Source="relle.png" HorizontalOptions="Center" Aspect="AspectFit" />
-                    <Label BackgroundColor="Transparent" Grid.Row="1" Text="کنترل رله ها" HorizontalOptions="Center" TextColor="#1d3557" />
+                    <Button BackgroundColor="Transparent" Grid.Row="1" Text="کنترل رله ها" HorizontalOptions="Center" TextColor="#1d3557" FontSize="Small" />
                 </Grid>
             </Frame>
-
+            
             <Frame Grid.Column="2" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="0" Margin="5, 0, 10, 0">
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Hearing_Tapped" />
@@ -128,7 +128,7 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Image Grid.Row="0" Source="hearing.png" HorizontalOptions="Center" Aspect="AspectFit" />
-                    <Label BackgroundColor="Transparent" Grid.Row="1" Text="شنود" HorizontalOptions="Center" TextColor="#1d3557" />
+                    <Button BackgroundColor="Transparent" Grid.Row="1" Text="شنود" HorizontalOptions="Center" TextColor="#1d3557" />
                 </Grid>
             </Frame>
 
@@ -142,7 +142,7 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Image Grid.Row="0" Source="settings.png" HorizontalOptions="Center" Aspect="AspectFit" />
-                    <Label BackgroundColor="Transparent" Grid.Row="1" Text="تنظیمات" HorizontalOptions="Center" TextColor="#1d3557" />
+                    <Button BackgroundColor="Transparent" Grid.Row="1" Text="تنظیمات" HorizontalOptions="Center" TextColor="#1d3557" />
                 </Grid>
             </Frame>
         </Grid>
@@ -166,7 +166,7 @@
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
 
-                        <Image Grid.Row="0" Source="lock.png" HorizontalOptions="Center" />
+                        <ImageButton Grid.Row="0" Source="lock.png" HorizontalOptions="Center" />
                         <Label Grid.Row="1" Text="فعال" HorizontalTextAlignment="Center" />
                     </Grid>
                 </Frame>
@@ -183,7 +183,7 @@
                             <RowDefinition Height="2*" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <Image Grid.Row="0" Source="halflock.png" HorizontalOptions="Center" />
+                        <ImageButton Grid.Row="0" Source="halflock.png" HorizontalOptions="Center" />
                         <Label Grid.Row="1" Text="نیمه فعال" HorizontalTextAlignment="Center" />
                     </Grid>
                 </Frame>
@@ -199,7 +199,7 @@
                             <RowDefinition Height="2*" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <Image Grid.Row="0" Source="unlock.png" HorizontalOptions="Center" />
+                        <ImageButton Grid.Row="0" Source="unlock.png" HorizontalOptions="Center" />
                         <Label Grid.Row="1" Text="غیر فعال" HorizontalTextAlignment="Center" />
                     </Grid>
                 </Frame>
