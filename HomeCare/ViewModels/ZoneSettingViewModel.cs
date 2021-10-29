@@ -81,7 +81,6 @@ namespace HomeCare.ViewModels
                     string message = "تنظیمات زون سیمی با موفقیت انجام شد.";
                     UserDialogs.Instance.Toast(message);
                 }
-
             }
             catch (Exception ex)
             {
@@ -89,8 +88,6 @@ namespace HomeCare.ViewModels
             }
         }
 
-
         public ICommand SetSimZone { get; }
-
     }
 }

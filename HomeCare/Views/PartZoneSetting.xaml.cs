@@ -10,6 +10,11 @@ namespace HomeCare.Views
         public PartZoneSetting()
         {
             InitializeComponent();
+
+            NavigationPage.SetHasNavigationBar(this, true);
+            this.Title = "تنظیمات پارت زون";
+
+            BindingContext = new ViewModels.PartZoneViewModel();
         }
     }
 }

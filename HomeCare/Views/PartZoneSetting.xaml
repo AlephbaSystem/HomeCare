@@ -3,7 +3,123 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="HomeCare.Views.PartZoneSetting">
+
     <ContentPage.Content>
-        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="1.5*" />
+                <RowDefinition Height="0.8*" />
+            </Grid.RowDefinitions>
+
+            <Frame Grid.Row="0" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="0" Margin="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch Grid.Column="0" IsToggled="{Binding PartZone1}" />
+                    <Label Grid.Column="1" Text="فعال سازی زون سیمی ۱" HorizontalTextAlignment="End" />
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="1" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="0" Margin="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch Grid.Column="0" IsToggled="{Binding PartZone2}" />
+                    <Label Grid.Column="1" Text="فعال سازی زون سیمی ۲" HorizontalTextAlignment="End" />
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="2" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="0" Margin="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch Grid.Column="0" IsToggled="{Binding PartZone3}" />
+                    <Label Grid.Column="1" Text="فعال سازی زون سیمی ۳" HorizontalTextAlignment="End" />
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="3" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="0" Margin="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                   <Switch Grid.Column="0" IsToggled="{Binding PartZone4}" />
+                    <Label Grid.Column="1" Text="فعال سازی زون سیمی ۴" HorizontalTextAlignment="End" />
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="4" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="0" Margin="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch Grid.Column="0" IsToggled="{Binding PartZone5}" />
+                    <Label Grid.Column="1" Text="فعال سازی زون سیمی ۵" HorizontalTextAlignment="End" />
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="5" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="0" Margin="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch Grid.Column="0" IsToggled="{Binding PartZone6}" />
+                    <Label Grid.Column="1" Text="فعال سازی زون سیمی ۶" HorizontalTextAlignment="End" />
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="6" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="0" Margin="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch Grid.Column="0" IsToggled="{Binding PartZone7}" />
+                    <Label Grid.Column="1" Text="فعال سازی زون سیمی ۷" HorizontalTextAlignment="End" />
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="7" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="0" Margin="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch Grid.Column="0" IsToggled="{Binding PartZone8}" />
+                    <Label Grid.Column="1" Text="فعال سازی زون سیمی ۸" HorizontalTextAlignment="End" />
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="8" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="0" Margin="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <Switch Grid.Column="0" IsToggled="{Binding PartZone9}" />
+                    <Label Grid.Column="1" Text="فعال سازی زون سیمی ۹" HorizontalTextAlignment="End" />
+                </Grid>
+            </Frame>
+            <Button Grid.Row="9" Text="ارسال" BackgroundColor="#1F9AFF" TextColor="White" Margin="10" Command="{Binding SendPartZone}" />
+            <Label Grid.Row="10" Text="Hymax burglar" BackgroundColor="#1d3557" TextColor="#f1faee" HorizontalTextAlignment="Center" VerticalOptions="Center" Margin="0, 20, 0, 0" />
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

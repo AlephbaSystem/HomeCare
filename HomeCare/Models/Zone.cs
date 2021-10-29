@@ -9,14 +9,14 @@ namespace HomeCare.Models
         public string Code { get; set; }
         public string Text { get; set; }
 
-        public Zone(string text)
-        {
-            Text = text;
-        }
-
         public Zone()
         {
 
+        }
+
+        public Zone(string text)
+        {
+            Text = text;
         }
 
         public static List<Zone> GetAll()

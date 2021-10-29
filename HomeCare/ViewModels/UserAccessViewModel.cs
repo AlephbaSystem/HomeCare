@@ -164,22 +164,8 @@ namespace HomeCare.ViewModels
             DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
             if (Services.SMS.Commands.UserInquire(int.Parse(UserId)))
             {
-                DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
-
-                if(Services.SMS.Commands.UserInquire(int.Parse(UserId)))
-                {
-                    string message = "استعلام مربوط به کاربر " + UserId + " با موفقیت ارسال شد.";
-                    UserDialogs.Instance.Toast(message);
-                }
-                else
-                {
-                    UserDialogs.Instance.Toast("لطفا در بخش تنظیمات شماره سیمکارت دستگاه را وارد نمایید.");
-                }
-               
-            }
-            catch (Exception ex)
-            {
-                Console.Write("Error info:" + ex.Message);
+                string message = "استعلام مربوط به کاربر " + UserId + " با موفقیت ارسال شد.";
+                UserDialogs.Instance.Toast(message);
             }
         }
 

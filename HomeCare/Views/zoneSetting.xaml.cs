@@ -31,5 +31,10 @@ namespace HomeCare.Views
             Services.SMS.Commands.Zone();
             UserDialogs.Instance.Toast("استعلام وضعیت زون های سیمی با موفقیت ارسال شد.");
         }
+
+        void PartZoneButton_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new PartZoneSetting());
+        }
     }
 }
