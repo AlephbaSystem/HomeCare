@@ -31,18 +31,15 @@
             <Setter Property="FontFamily" Value="ISans" />
         </Style>
         <Style TargetType="Switch" ApplyToDerivedTypes="True" >
-            <Setter Property="ThumbColor" Value="#04724d" />
-            <Setter Property="OnColor" Value="#368167" />
+            <Setter Property="ThumbColor" Value="#06d6a0" />
+            <Setter Property="OnColor" Value="#60FBD2" />
+            <Setter Property="BackgroundColor" Value="#EBFEF9" />
         </Style>
         <Style TargetType="Slider" ApplyToDerivedTypes="True" >
-            <Setter Property="ThumbColor" Value="#04724d" />
-            <Setter Property="MinimumTrackColor" Value="#368167" />
+            <Setter Property="ThumbColor" Value="#06d6a0" />
+            <Setter Property="MinimumTrackColor" Value="#60FBD2" />
             <Setter Property="MaximumTrackColor" Value="Black" />
         </Style>
-        <!--<Style TargetType="Button">
-        MaximumTrackColor="Black" MinimumTrackColor="#368167" ThumbColor="#04724d"
-            <Setter Property="BackgroundColor" Value="Transparent" />
-        </Style>-->
         <Style TargetType="NavigationPage">
             <Setter Property="BarBackgroundColor" Value="White" />
             <Setter Property="BarTextColor" Value="Black" />
