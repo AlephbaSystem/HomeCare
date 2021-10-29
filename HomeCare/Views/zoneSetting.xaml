@@ -82,7 +82,7 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="زون بی سیم" HorizontalTextAlignment="Center" FontAttributes="Bold" />
-                    <Picker Grid.Row="1" Grid.Column="0" Title="1" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="EndAndExpand" WidthRequest="150">
+                    <Picker Grid.Row="1" Grid.Column="0" SelectedItem="{Binding WirelessZoneNumber}" Title="{Binding WirelessZoneNumber}" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="EndAndExpand" WidthRequest="150">
                         <Picker.Items>
                             <x:String>01</x:String><x:String>02</x:String><x:String>03</x:String>
                             <x:String>04</x:String><x:String>05</x:String><x:String>06</x:String>
@@ -106,7 +106,7 @@
                     <Label Grid.Row="1" Grid.Column="1" Text="شماره زون:" HorizontalTextAlignment="End" />
                     <Entry Grid.Row="2" Grid.Column="0" HorizontalTextAlignment="Center" Placeholder="زون ۱" BackgroundColor="#caf0f8" HorizontalOptions="EndAndExpand" WidthRequest="150" />
                     <Label Grid.Row="2" Grid.Column="1" Text="نام زون:" HorizontalTextAlignment="End" />
-                    <Picker Grid.Row="3" Grid.Column="0" Title="غیر فعال" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="EndAndExpand" WidthRequest="150"> 
+                    <Picker Grid.Row="3" Grid.Column="0" SelectedItem="{Binding WirelessZoneType}" Title="{Binding WirelessZoneType}" TitleColor="Black" BackgroundColor="#caf0f8" HorizontalTextAlignment="Center" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="EndAndExpand" WidthRequest="150"> 
                         <Picker.Items>
                             <x:String>حذف</x:String>
                             <x:String>غیر فعال</x:String>
@@ -119,7 +119,7 @@
                     </Picker>
                     <Label Grid.Row="3" Grid.Column="1" Text="نوع:" HorizontalTextAlignment="End" />
                     <Button Grid.Row="4" Grid.Column="0" Text="استعلام" BackgroundColor="#1F9AFF" TextColor="White" FontSize="Small" />
-                    <Button Grid.Row="4" Grid.Column="1" Text="ارسال"  BackgroundColor="#06d6a0"  TextColor="White" FontSize="Small" />
+                    <Button Grid.Row="4" Grid.Column="1" Text="ارسال"  BackgroundColor="#06d6a0"  TextColor="White" FontSize="Small" Command="{Binding SetWirelessZone}"/>
                     <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="افزودن زون بیسیم" BackgroundColor="#06d6a0"  TextColor="White" FontSize="Small" />
                 </Grid>
             </Frame>

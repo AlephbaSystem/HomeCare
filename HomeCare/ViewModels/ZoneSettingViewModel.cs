@@ -15,11 +15,14 @@ namespace HomeCare.ViewModels
         private string _zoneName;
         private string _zoneType;
         private string _zoneState;
+        private string _wirelessZoneType;
+        private string _wirelessZoneNumber;
         public event PropertyChangedEventHandler PropertyChanged;
 
         public ZoneSettingViewModel()
         {
             SetSimZone = new Command(LunchSetSimZone);
+            SetWirelessZone = new Command(LunchSetWirelessZone);
         }
 
         protected virtual void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
@@ -67,6 +70,26 @@ namespace HomeCare.ViewModels
             }
         }
 
+        public string WirelessZoneType
+        {
+            get { return _wirelessZoneType; }
+            set
+            {
+                _wirelessZoneType = value;
+                NotifyPropertyChanged(nameof(WirelessZone));
+            }
+        }
+
+        public string WirelessZoneNumber
+        {
+            get { return _wirelessZoneNumber; }
+            set
+            {
+                _wirelessZoneNumber = value;
+                NotifyPropertyChanged(nameof(WirelessZoneNumber));
+            }
+        }
+
         private void LunchSetSimZone()
         {
             int state = ZoneState == "NO" ? 0 : 1;
@@ -88,6 +111,17 @@ namespace HomeCare.ViewModels
             }
         }
 
+        private void LunchSetWirelessZone()
+        {
+            DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
+            if(Services.SMS.Commands.SetWirelessZone(WirelessZoneNumber, WirelessZone.GetWirelessZone(WirelessZoneType)))
+            {
+                UserDialogs.Instance.Toast("تنظیمات زون بیسیم با موفقیت انجام شد.");
+            }
+
+        }
+
+        public ICommand SetWirelessZone { get; }
         public ICommand SetSimZone { get; }
     }
 }

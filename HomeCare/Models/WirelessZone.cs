@@ -25,10 +25,9 @@ namespace HomeCare.Models
             return p;
         }
 
-        public string GetWirelessZone()
+        public static string GetWirelessZone(string Text)
         {
-
-            switch(this.Text)
+            switch(Text)
             {
                 case "اضافه":
                     return "+";
