@@ -25,8 +25,9 @@ namespace HomeCare.Services.SMS
 
         public static bool Silence()
         {
-            DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, SilenceCommand);
-            return true;
+            if(DependencyService.Get<ISendSms>().Send(new Users.UserHandler().GetCurrentUser().Phone, SilenceCommand))
+                return true;
+            return false;
         }
 
         /// <summary>
