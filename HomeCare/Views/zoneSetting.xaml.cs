@@ -28,8 +28,8 @@ namespace HomeCare.Views
             await Task.Delay(100);
             await s.FadeTo(1, 100);
 
-            Services.SMS.Commands.Zone();
-            UserDialogs.Instance.Toast("استعلام وضعیت زون های سیمی با موفقیت ارسال شد.");
+            if (Services.SMS.Commands.Zone())
+                UserDialogs.Instance.Toast("استعلام وضعیت زون های سیمی با موفقیت ارسال شد.");
         }
 
         void PartZoneButton_Clicked(System.Object sender, System.EventArgs e)

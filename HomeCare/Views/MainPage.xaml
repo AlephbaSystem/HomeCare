@@ -77,10 +77,10 @@
                 <Label Grid.Row="5" Grid.Column="3" Text="رله ۳" HorizontalTextAlignment="Start" />
                 <Label Grid.Row="6" Grid.Column="0" Text="IMEI:" VerticalTextAlignment="Center" />
                 <Label Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding StatusDevice.IMEI}" VerticalTextAlignment="Center" />
-                <!--<Button Grid.Row="6" Grid.Column="3" Text="بروز رسانی" BackgroundColor="#1d3557" TextColor="#f1faee" Clicked="DeviceStatus_Clicked" />-->
+                <Button Grid.Row="6" Grid.Column="3" Text="بروز رسانی" BackgroundColor="#1d3557" TextColor="#f1faee" Clicked="DeviceStatus_Clicked" />
             </Grid>
         </Frame>
-        <Button x:Name="DeviceStatusButton" Grid.Row="1" Text="وضعیت دستگاه" Opacity="{Binding StatusDevice.op}" BackgroundColor="#eff7f6" TextColor="Black" Clicked="DeviceStatus_Clicked" />
+        <Button x:Name="DeviceStatusButton" Grid.Row="1" Text="وضعیت دستگاه" IsVisible="{Binding StatusDevice.op}" Opacity="0.9" BackgroundColor="#eff7f6" TextColor="Black" Clicked="DeviceStatus_Clicked" />
 
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>

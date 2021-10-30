@@ -35,6 +35,18 @@ namespace HomeCare.Services.Users
                 return null;
             }
         }
+        public Devices UpdateAll()
+        {
+            try
+            {
+               
+            }
+            catch
+            {
+                
+            }
+            return null;
+        }
 
         public List<Devices> GetAllUsers()
         {

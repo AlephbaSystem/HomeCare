@@ -83,7 +83,7 @@ namespace HomeCare
             await Task.Delay(100);
             await s.FadeTo(0, 100);
             await Task.Delay(100);
-            await s.FadeTo(1, 100);
+            await s.FadeTo(1, 80);
 
             if (Services.SMS.Commands.Status())
             {
@@ -210,7 +210,7 @@ namespace HomeCare
                 if (item.Selected)
                 {
                     item.Selected = false;
-                    userHandler.UpdateDevice(citem);
+                    userHandler.UpdateDevice(item);
                 }
             }
             citem.Selected = true;

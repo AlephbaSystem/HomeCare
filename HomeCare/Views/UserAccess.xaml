@@ -39,7 +39,7 @@
                 <Label Grid.Row="0" Grid.Column="1" Text="کاربر:" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
                 <Entry Grid.Row="1" Grid.Column="0" Text="{Binding Name}" Placeholder="Hymax burglar" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="50, 0" FontSize="Small"/>
                 <Label Grid.Row="1" Grid.Column="1" Text="نام:" HorizontalOptions="End" VerticalTextAlignment="Center"/>
-                <Entry Grid.Row="2" Grid.Column="0"  Text="{Binding Phone}" Placeholder="۰۹........." HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="50, 0" FontSize="Small"/>
+                <Entry Grid.Row="2" Grid.Column="0"  Text="{Binding Phone}" Keyboard="Telephone" Placeholder="۰۹........." HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="50, 0" FontSize="Small"/>
                 <Label Grid.Row="2" Grid.Column="1" Text="شماره همراه:" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
             </Grid>
             <Frame Grid.Row="1" HasShadow="False" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Padding="0" Margin="10, 10">

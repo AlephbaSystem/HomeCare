@@ -42,7 +42,6 @@ namespace HomeCare.Services.Database
         {
             conn.Update(device);
             return "success";
-        }
-
+        } 
     }
 }

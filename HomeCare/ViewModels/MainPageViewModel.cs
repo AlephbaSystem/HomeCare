@@ -76,37 +76,43 @@ namespace HomeCare.ViewModels
                 Status stat = new Status();
                 try
                 {
-                    stat.SV = y[1].Split('\n')[1] + " ٪";
-                    stat.IMEI = y[2].Split('\n')[1];
-                    stat.CSQ = y[3].Split('\n')[1];
+                    stat.SV = y[1].Split(':')[1] + " ٪";
+                    stat.IMEI = y[2].Split(':')[1];
+                    stat.CSQ = y[3].Split(':')[1];
                     stat.MoneyCharge = y[4];
-                    stat.DATE = y[5].Split('\n')[1];
-                    stat.TIME = y[6].Split('\n')[1];
+                    stat.DATE = y[5].Split(':')[1];
+                    stat.TIME = y[6].Split(':')[1] + ':' + y[6].Split(':')[2];
                     stat.DiARM = y[7];
                     stat.No = y[8];
-                    stat.REL1 = y[9].Split('\n')[1];
-                    stat.REL2 = y[10].Split('\n')[1];
-                    stat.REL3 = y[11].Split('\n')[1];
-                    stat.op = 0.0;
+                    stat.REL1 = y[9].Split(':')[1];
+                    stat.REL2 = y[10].Split(':')[1];
+                    stat.REL3 = y[11].Split(':')[1];
+                    stat.op = false;
                 }
                 catch
-                { 
-                    stat.SV = "0 ٪";
-                    stat.IMEI = "0";
-                    stat.CSQ = "0";
-                    stat.MoneyCharge = "0";
-                    stat.DATE = "0";
-                    stat.TIME = "0";
-                    stat.DiARM = "0";
-                    stat.No = "0";
-                    stat.REL1 = "Off";
-                    stat.REL2 = "Off";
-                    stat.REL3 = "Off";
-                    stat.op = 0.9;  
-
+                {
+                    hideStatBtn();
+                    return;
                 }
                 StatusDevice = stat; 
             }
+        }
+        private void hideStatBtn()
+        {
+            Status stat = new Status();
+            stat.SV = "0 ٪";
+            stat.IMEI = "0";
+            stat.CSQ = "0";
+            stat.MoneyCharge = "0";
+            stat.DATE = "0";
+            stat.TIME = "0";
+            stat.DiARM = "0";
+            stat.No = "0";
+            stat.REL1 = "Off";
+            stat.REL2 = "Off";
+            stat.REL3 = "Off";
+            stat.op = true;
+            StatusDevice = stat;
         }
         public ObservableCollection<Models.Devices> SelectDevice
         {
@@ -170,21 +176,8 @@ namespace HomeCare.ViewModels
         }
 
         public void OnMenu()
-        { 
-            Status stat = new Status();
-            stat.SV = "0 ٪";
-            stat.IMEI = "0";
-            stat.CSQ = "0";
-            stat.MoneyCharge = "0";
-            stat.DATE = "0";
-            stat.TIME = "0";
-            stat.DiARM = "0";
-            stat.No = "0";
-            stat.REL1 = "Off";
-            stat.REL2 = "Off";
-            stat.REL3 = "Off";
-            stat.op = 0.9;
-            StatusDevice = stat;
+        {
+            hideStatBtn();
             SelectDevice = new ObservableCollection<Devices>(new Services.Users.UserHandler().GetAllUsers().OrderByDescending(x => x.Selected));
             if (SelectDevice.Count <= 0)
             {
