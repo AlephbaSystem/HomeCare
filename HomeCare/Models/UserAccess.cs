@@ -79,7 +79,7 @@ namespace HomeCare.Models
                     return "B";
                 case 2:
                     return "D";
-                case 1:
+                case 63:
                     return "F";
                 case 60:
                     return "E";
