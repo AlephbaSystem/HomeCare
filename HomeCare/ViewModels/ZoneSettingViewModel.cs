@@ -92,6 +92,12 @@ namespace HomeCare.ViewModels
 
         private void LunchSetSimZone()
         {
+            if (ZoneState is null || ZoneNumber is null)
+            {
+                string message = "لطفا فرم بالا را پر نمایید.";
+                UserDialogs.Instance.Toast(message);
+                return;
+            }
             int state = ZoneState == "NO" ? 0 : 1;
             int zoneId = int.Parse(ZoneNumber);
             Zone z = new Zone(ZoneType);
@@ -113,6 +119,12 @@ namespace HomeCare.ViewModels
 
         private void LunchSetWirelessZone()
         {
+            if (WirelessZoneNumber is null || WirelessZoneType is null)
+            {
+                string message = "لطفا فرم بالا را پر نمایید.";
+                UserDialogs.Instance.Toast(message);
+                return;
+            }
             DependencyService.Get<Services.Audio.IAudio>().PlayWavSuccess();
             if(Services.SMS.Commands.SetWirelessZone(WirelessZoneNumber, WirelessZone.GetWirelessZone(WirelessZoneType)))
             {

@@ -17,6 +17,6 @@ namespace HomeCare.Models
         public string REL1 { get; set; }
         public string REL2 { get; set; }
         public string REL3 { get; set; }
-        public double op { get; set; }
+        public bool op { get; set; }
     }
 }

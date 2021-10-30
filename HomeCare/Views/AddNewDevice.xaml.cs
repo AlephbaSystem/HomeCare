@@ -37,11 +37,8 @@ namespace HomeCare.Views
             }
             set
             {
-                if (_listOfItems != value)
-                {
-                    _listOfItems = value;
-                    NotifyPropertyChanged();
-                }
+                _listOfItems = value;
+                NotifyPropertyChanged(nameof(ListOfItems));
             }
         }
         public void OnEdit(object sender, EventArgs e)
@@ -199,6 +196,10 @@ namespace HomeCare.Views
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, true);
             this.BindingContext = this;
+            UpdateList();
+        }
+        private void UpdateList()
+        {
             userHandler = new UserHandler();
             ListOfItems = new ObservableCollection<Devices>(userHandler.GetAllUsers());
             lstDevices.ItemsSource = ListOfItems;
@@ -206,8 +207,8 @@ namespace HomeCare.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            userHandler = new UserHandler();
-            ListOfItems = new ObservableCollection<Devices>(userHandler.GetAllUsers());
+
+            UpdateList();
         }
         private async void ToolbarItem_Clicked(object sender, EventArgs e)
         {
