@@ -76,9 +76,9 @@ namespace HomeCare.ViewModels
                 Status stat = new Status();
                 try
                 {
-                    stat.SV = y[1].Split(':')[1] + " ٪";
+                    stat.SV = y[1].Split(':')[1];
                     stat.IMEI = y[2].Split(':')[1];
-                    stat.CSQ = y[3].Split(':')[1];
+                    stat.CSQ = y[3].Split(':')[1] + " ٪";
                     stat.MoneyCharge = y[4];
                     stat.DATE = y[5].Split(':')[1];
                     stat.TIME = y[6].Split(':')[1] + ':' + y[6].Split(':')[2];
@@ -100,9 +100,9 @@ namespace HomeCare.ViewModels
         private void hideStatBtn()
         {
             Status stat = new Status();
-            stat.SV = "0 ٪";
+            stat.SV = "0";
             stat.IMEI = "0";
-            stat.CSQ = "0";
+            stat.CSQ = "0 ٪";
             stat.MoneyCharge = "0";
             stat.DATE = "0";
             stat.TIME = "0";

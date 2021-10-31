@@ -64,9 +64,9 @@
                 <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"  Text="{Binding StatusDevice.DATE}" FontAttributes="Bold" HorizontalOptions="Start" Margin="0, 0, 40, 0" />
                 <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding StatusDevice.TIME}" FontAttributes="Bold" HorizontalOptions="Start" Margin="0, 0, 40, 0" />
                 <Label Grid.Row="0" Grid.Column="3" Text="ورژن نرم افزار" HorizontalOptions="End" />
-                <Label Grid.Row="1" Grid.Column="3" Text="{Binding StatusDevice.CSQ}" HorizontalTextAlignment="End" />
+                <Label Grid.Row="1" Grid.Column="3" Text="{Binding StatusDevice.SV}" HorizontalTextAlignment="End" />
                 <Image Grid.Row="2" Grid.Column="0" Margin="0, 5, 0, 0" Source="antenna.png" />
-                <Label Grid.Row="2" Grid.Column="1" Margin="0, 5, 0, 0" Text="{Binding StatusDevice.SV}" />
+                <Label Grid.Row="2" Grid.Column="1" Margin="0, 5, 0, 0" Text="{Binding StatusDevice.CSQ}" />
                 <Label Grid.Row="2" Grid.Column="3" Text="شارژ سیمکارت" HorizontalOptions="End" />
                 <Label Grid.Row="3" Grid.Column="3" Text="{Binding StatusDevice.MoneyCharge}" HorizontalTextAlignment="End" />
                 <Ellipse Grid.Row="4" Grid.Column="0"  Stroke="{Binding StatusDevice.REL1, Converter={StaticResource relConverter}}" Fill="{Binding StatusDevice.REL1, Converter={StaticResource relConverter}}" StrokeThickness="2" WidthRequest="20" HeightRequest="10" HorizontalOptions="Start" />
