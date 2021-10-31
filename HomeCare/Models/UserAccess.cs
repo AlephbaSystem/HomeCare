@@ -77,18 +77,34 @@ namespace HomeCare.Models
                     return "A";
                 case 28:
                     return "B";
+                case 36:
+                    return "C";
                 case 2:
                     return "D";
-                case 63:
-                    return "F";
                 case 60:
                     return "E";
+                case 63:
+                    return "F";
+                case 20:
+                    return "G";
                 case 62:
                     return "H";
+                case 6:
+                    return "I";
+                case 14:
+                    return "J";
+                case 40:
+                    return "K";
+                case 24:
+                    return "L";
                 case 46:
                     return "M";
                 case 30:
                     return "N";
+                case 10:
+                    return "O";
+                case 42:
+                    return "P";
                 case 12:
                     return "Q";
                 case 8:
@@ -97,6 +113,28 @@ namespace HomeCare.Models
                     return "S";
                 case 48:
                     return "T";
+                case 56:
+                    return "U";
+                case 52:
+                    return "W";
+                case 58:
+                    return "X";
+                case 54:
+                    return "Y";
+                case 26:
+                    return "Z";
+
+                case 34:
+                    return "a";
+                case 50:
+                    return "b";
+                case 16:
+                    return "c";
+                case 18:
+                    return "d";
+                case 32:
+                    return "e";
+
             }
             return "";
         }
