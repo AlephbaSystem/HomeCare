@@ -25,7 +25,7 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
+                    
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
@@ -33,19 +33,19 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="شماره سیمکارت دستگاه" HorizontalTextAlignment="Center" FontAttributes="Bold" />
-                <Entry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Placeholder="{Binding Phone}" HorizontalTextAlignment="Center" Background="#eef4ed" PlaceholderColor="#191919" IsReadOnly="True" FontSize="Small" />
-                <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="مدیریت هشدار های صوتی نرم افزار" BackgroundColor="#083D77" TextColor="#eef4ed" Clicked="AudioAlertButton_Clicked" />
-                <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="تنظیمات زون" BackgroundColor="#083D77" TextColor="#eef4ed" Clicked="ZoneSettingButton_Clicked"/>
-                <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="تنظیمات رله" BackgroundColor="#083D77" TextColor="#eef4ed" Clicked="RelleButton_Clicked" />
-                <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="تنظیمات ریموت" BackgroundColor="#083D77" TextColor="#eef4ed" Clicked="RemoteSettingButton_Clicked"/>
-                <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="تنظیمات دستگاه" BackgroundColor="#083D77" TextColor="#eef4ed" Clicked="LateralButton_Clicked" />
-                <Button Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="ویرایش/افزودن دستگاه" BackgroundColor="#083D77" TextColor="#eef4ed" Clicked="AddNewDevice_Clicked" />
-                <Button Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="ویرایش/افزودن کاربر" BackgroundColor="#083D77" TextColor="#eef4ed" Clicked="UserAccessButton_Clicked" />
-                <Button Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="تعریف/تغییر رمز عبور" BackgroundColor="#083D77" TextColor="#eef4ed" />
-                <Button Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="هوشمند سازی" Background="#083D77" TextColor="#eef4ed" Clicked="TimingButton_Clicked" />
-                <Button Grid.Row="11" Grid.Column="0" Text="ذخیره" TextColor="#fcfffc" BackgroundColor="#06d6a0" />
-                <Button Grid.Row="11" Grid.Column="1" Text="بازگشت" TextColor="#fcfffc" BackgroundColor="#E42535" Clicked="BackButton_Clicked" />
+                <!--<Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="شماره سیمکارت دستگاه" HorizontalTextAlignment="Center" FontAttributes="Bold" />-->
+                <!--<Entry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Placeholder="{Binding Phone}" HorizontalTextAlignment="Center" Background="#eef4ed" PlaceholderColor="#191919" IsReadOnly="True" FontSize="Micro" />-->
+                <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="مدیریت هشدار های صوتی نرم افزار" BackgroundColor="#083D77" TextColor="#eef4ed" Clicked="AudioAlertButton_Clicked" />
+                <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="تنظیمات زون" BackgroundColor="#083D77" TextColor="#eef4ed" Clicked="ZoneSettingButton_Clicked"/>
+                <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="تنظیمات رله" BackgroundColor="#083D77" TextColor="#eef4ed" Clicked="RelleButton_Clicked" />
+                <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="تنظیمات ریموت" BackgroundColor="#083D77" TextColor="#eef4ed" Clicked="RemoteSettingButton_Clicked"/>
+                <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="تنظیمات دستگاه" BackgroundColor="#083D77" TextColor="#eef4ed" Clicked="LateralButton_Clicked" />
+                <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="ویرایش/افزودن دستگاه" BackgroundColor="#083D77" TextColor="#eef4ed" Clicked="AddNewDevice_Clicked" />
+                <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="ویرایش/افزودن کاربر" BackgroundColor="#083D77" TextColor="#eef4ed" Clicked="UserAccessButton_Clicked" />
+                <Button Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="تعریف/تغییر رمز عبور" BackgroundColor="#083D77" TextColor="#eef4ed" />
+                <Button Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 2" Text="هوشمند سازی" Background="#083D77" TextColor="#eef4ed" Clicked="TimingButton_Clicked" />
+                <Button Grid.Row="10" Grid.Column="0" Text="ذخیره" TextColor="#fcfffc" BackgroundColor="#06d6a0" />
+                <Button Grid.Row="10" Grid.Column="1" Text="بازگشت" TextColor="#fcfffc" BackgroundColor="#E42535" Clicked="BackButton_Clicked" />
             </Grid>
         
     </ContentPage.Content>
