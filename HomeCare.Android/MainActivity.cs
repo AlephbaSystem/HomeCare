@@ -45,8 +45,16 @@ namespace HomeCare.Droid
             Manifest.Permission.ReadSms,
             Manifest.Permission.SendSms,
             Manifest.Permission.ReceiveSms,
-            Manifest.Permission.WriteSms,
+            Manifest.Permission.WriteSms, 
+            Manifest.Permission.ForegroundService,
+            Manifest.Permission.InstantAppForegroundService,
+            Manifest.Permission.SystemAlertWindow,
+            Manifest.Permission.DisableKeyguard,
+            Manifest.Permission.WakeLock,
+            Manifest.Permission.ModifyPhoneState,
+            Manifest.Permission.ModifyAudioSettings,
         };
+         
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults); 

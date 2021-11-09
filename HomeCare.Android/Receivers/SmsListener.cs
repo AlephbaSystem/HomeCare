@@ -3,7 +3,9 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Telephony;
+using HomeCare.Droid.Interfaces;
 using HomeCare.Services.SMS;
+using Xamarin.Forms;
 
 namespace HomeCare.Droid.Receivers
 {
@@ -31,7 +33,11 @@ namespace HomeCare.Droid.Receivers
 #pragma warning restore CS0618
                             address = sms.OriginatingAddress;
                             message = sms.MessageBody;
-
+                            if (message.Contains("خطرسرقت"))
+                            {
+                                DependencyService.Get<INotification>().ShowAlert(address, message);
+                                return;
+                            }
                             SMSEvents.OnSMSReceived_Event(this, new SMSEventArgs() { PhoneNumber = address, Message = message });
                         }
                     }
