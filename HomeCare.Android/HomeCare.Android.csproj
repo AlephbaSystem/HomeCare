@@ -271,6 +271,9 @@
   <ItemGroup>
     <AndroidResource Include="Resources\raw\car_alarm.mp3" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\widget.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>

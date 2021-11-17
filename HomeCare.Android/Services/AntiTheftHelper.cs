@@ -22,16 +22,10 @@ namespace HomeCare.Droid.Services
         {
             Toast.MakeText(context, message, ToastLength.Short).Show();
             Intent mainIntent = new Intent(context, typeof(AlertActivity));
-            mainIntent.AddFlags(ActivityFlags.NewTask | ActivityFlags.ClearTop | ActivityFlags.SingleTop);
+            mainIntent.AddFlags(ActivityFlags.NewTask | ActivityFlags.ClearTop | ActivityFlags.ReorderToFront);
             mainIntent.PutExtra(address, message);
             context.StartActivity(mainIntent);
-
-            //Intent launchIntent = Application.Context.PackageManager.GetLaunchIntentForPackage(Application.Context.PackageName);
-            //Intent mainIntent = Intent.MakeRestartActivityTask(launchIntent.Component);
-            //mainIntent.AddFlags(ActivityFlags.NewTask | ActivityFlags.ClearTop | ActivityFlags.SingleTop);
-            //mainIntent.PutExtra(address, message);
-            //context.StartActivity(mainIntent);
-
+             
             Toast.MakeText(context, message, ToastLength.Short).Show();
             var f96v = (Vibrator)context.GetSystemService(Context.VibratorService);
             long[] vbf = { 100, 200, 200, 500, 500, 400, 400, 100 };
@@ -87,9 +81,8 @@ namespace HomeCare.Droid.Services
                 .SetSmallIcon(Resource.Mipmap.icon)
                 .SetOngoing(true)
                 .SetAutoCancel(true)
-                .SetVibrate(false)
                 .SetContentIntent(pendingIntent);
-                
+
             // Building channel if API verion is 26 or above
             if (global::Android.OS.Build.VERSION.SdkInt >= BuildVersionCodes.O)
             {
@@ -97,6 +90,7 @@ namespace HomeCare.Droid.Services
                 notificationChannel.Importance = NotificationImportance.High;
                 notificationChannel.EnableLights(true);
                 notificationChannel.SetShowBadge(true);
+                notificationChannel.EnableVibration(false);
 
                 var notifManager = context.GetSystemService(Context.NotificationService) as NotificationManager;
                 if (notifManager != null)
