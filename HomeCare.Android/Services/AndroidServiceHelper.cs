@@ -19,21 +19,21 @@ namespace HomeCare.Droid.Services
         private static Context context = global::Android.App.Application.Context;
         public void StartService()
         {
-            var intent = new Intent(context, typeof(AntiTheft));
+            var intentS = new Intent(context, typeof(AntiTheft));
             if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.O)
             {
-                context.StartForegroundService(intent);
+                context.StartForegroundService(intentS);
             }
             else
             {
-                context.StartService(intent);
+                context.StartService(intentS);
             }
         }
 
         public void StopService()
         {
-            var intent = new Intent(context, typeof(AntiTheft));
-            context.StopService(intent);
+            var intentS = new Intent(context, typeof(AntiTheft));
+            context.StopService(intentS);
         }
     }
 }
