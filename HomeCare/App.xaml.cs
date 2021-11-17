@@ -6,6 +6,7 @@ using Xamarin.Forms.Xaml;
 
 using HomeCare.Views;
 using Xamarin.Essentials;
+using HomeCare.Interfaces;
 
 namespace HomeCare
 {
@@ -25,6 +26,9 @@ namespace HomeCare
             {
                 MainPage = new NavigationPage(new MainPage());
             }
+
+            Xamarin.Forms.DependencyService.Get<IAndroidService>().StopService();
+            Xamarin.Forms.DependencyService.Get<IAndroidService>().StartService();
         }
 
         static void ReciveSMSFromDevice(object sender, SMSEventArgs e)
@@ -56,11 +60,11 @@ namespace HomeCare
         }
 
         protected override void OnSleep()
-        {
+        {  
         }
 
         protected override void OnResume()
-        {
+        { 
         }
     }
 }
