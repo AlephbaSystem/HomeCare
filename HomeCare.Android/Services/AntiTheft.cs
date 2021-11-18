@@ -28,10 +28,16 @@ namespace HomeCare.Droid.Services
         {
             base.OnCreate();
 
+            if (Android.Provider.Settings.CanDrawOverlays(this))
+            {
+                widget();
+            }
+        }
+        private void widget()
+        {
+
             _floatingView = LayoutInflater.From(this).Inflate(Resource.Layout.widget, null);
-
-            SetTouchListener();
-
+              
             WindowManagerTypes FLG = WindowManagerTypes.ApplicationOverlay;
 
             if (Android.OS.Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.O)

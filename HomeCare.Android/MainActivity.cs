@@ -13,20 +13,19 @@ namespace HomeCare.Droid
 {
     [Activity(Label = "HomeCare", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
-    {
+    {     
         private const int RequestCode = 5469;
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            reset();
             base.OnCreate(savedInstanceState);
-
-
+             
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Acr.UserDialogs.UserDialogs.Init(this);
             CarouselViewRenderer.Init();
             LoadApplication(new App());
-
-
+             
             KeyguardManager keyguardManager = (KeyguardManager)GetSystemService(Context.KeyguardService);
             PowerManager pm = (PowerManager)GetSystemService(Context.PowerService);
             if (keyguardManager != null)
@@ -40,14 +39,27 @@ namespace HomeCare.Droid
                             WindowManagerFlags.KeepScreenOn |
                             WindowManagerFlags.DismissKeyguard |
                             WindowManagerFlags.TurnScreenOn | WindowManagerFlags.AllowLockWhileScreenOn | WindowManagerFlags.TouchableWhenWaking);
+
+        }
+        private void reset()
+        {
+            Android.Media.MediaPlayer f95mp = new Android.Media.MediaPlayer();
+            Vibrator f96v;
+            f96v = (Vibrator)this.GetSystemService(Context.VibratorService);
+            f96v.Cancel();
+            f95mp.Stop();
+            f95mp.Release();
+
+            if (!Android.Provider.Settings.CanDrawOverlays(this))
+            {
+                checkPermission();
+            }
         }
         public void checkPermission()
         {
             if (Android.OS.Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.M) return;
-            if (Android.Provider.Settings.CanDrawOverlays(this)) return;
-            var intent = new Intent(Android.Provider.Settings.ActionManageOverlayPermission);
-            intent.SetPackage(PackageName);
-            StartActivityForResult(intent, RequestCode);
+            if (Android.Provider.Settings.CanDrawOverlays(this)) return; 
+            Xamarin.Forms.Forms.Context.StartActivity(new Android.Content.Intent(Android.Provider.Settings.ActionManageOverlayPermission));
         }
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
