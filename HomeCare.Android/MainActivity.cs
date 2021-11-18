@@ -8,6 +8,7 @@ using Acr.UserDialogs;
 using CarouselView.FormsPlugin.Android;
 using Android.Views;
 using HomeCare.Droid.Services;
+using System;
 
 namespace HomeCare.Droid
 {
@@ -17,7 +18,6 @@ namespace HomeCare.Droid
         private const int RequestCode = 5469;
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            reset();
             base.OnCreate(savedInstanceState);
              
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
@@ -43,23 +43,35 @@ namespace HomeCare.Droid
         }
         private void reset()
         {
-            Android.Media.MediaPlayer f95mp = new Android.Media.MediaPlayer();
-            Vibrator f96v;
-            f96v = (Vibrator)this.GetSystemService(Context.VibratorService);
-            f96v.Cancel();
-            f95mp.Stop();
-            f95mp.Release();
-
-            if (!Android.Provider.Settings.CanDrawOverlays(this))
+            try
             {
-                checkPermission();
+                Android.Media.MediaPlayer f95mp = new Android.Media.MediaPlayer();
+                Vibrator f96v;
+                f96v = (Vibrator)this.GetSystemService(Context.VibratorService);
+                f96v.Cancel();
+                f95mp.Stop();
+                f95mp.Release();
+
+                if (!Android.Provider.Settings.CanDrawOverlays(this))
+                {
+                    checkPermission();
+                }
+            }
+            catch (Exception e)
+            {
+                var s = e.Message;
             }
         }
+          
         public void checkPermission()
         {
             if (Android.OS.Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.M) return;
-            if (Android.Provider.Settings.CanDrawOverlays(this)) return; 
-            Xamarin.Forms.Forms.Context.StartActivity(new Android.Content.Intent(Android.Provider.Settings.ActionManageOverlayPermission));
+            if (Android.Provider.Settings.CanDrawOverlays(this)) return;
+            var intent = new Intent(Android.Provider.Settings.ActionManageOverlayPermission);
+            //intent.SetPackage(PackageName);
+            intent.SetData(Android.Net.Uri.Parse("package:" + PackageName)); 
+
+            Xamarin.Forms.Forms.Context.StartActivity(intent);
         }
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
@@ -88,6 +100,8 @@ namespace HomeCare.Droid
                     // Permissions already granted - display a message.
                 }
             }
+            
+            reset();
         }
         const int RequestLocationId = 0;
         readonly string[] LocationPermissions =
