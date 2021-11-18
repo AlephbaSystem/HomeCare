@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.810.8
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.31911.260
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeCare.Android", "HomeCare.Android\HomeCare.Android.csproj", "{EF92EDEC-DC9D-4CEF-84D5-93A2472B4BF0}"
 EndProject
@@ -28,6 +28,7 @@ Global
 		{EF92EDEC-DC9D-4CEF-84D5-93A2472B4BF0}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{EF92EDEC-DC9D-4CEF-84D5-93A2472B4BF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF92EDEC-DC9D-4CEF-84D5-93A2472B4BF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF92EDEC-DC9D-4CEF-84D5-93A2472B4BF0}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{EF92EDEC-DC9D-4CEF-84D5-93A2472B4BF0}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{EF92EDEC-DC9D-4CEF-84D5-93A2472B4BF0}.Release|iPhone.Build.0 = Release|Any CPU
 		{EF92EDEC-DC9D-4CEF-84D5-93A2472B4BF0}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU

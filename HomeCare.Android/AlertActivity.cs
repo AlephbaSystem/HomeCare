@@ -26,15 +26,10 @@ namespace HomeCare.Droid
         private int image;
         TextView income;
         bool keepGoing = true;
-
-        /* renamed from: mp */
+         
         MediaPlayer f95mp = new MediaPlayer();
         private string msg;
-        bool playSound = false;
-        string state = "";
-        //Techniques teq = Techniques.Shake;
-
-        /* renamed from: v */
+        bool playSound = false;  
         Vibrator f96v;
 
         protected override void OnCreate(Bundle savedInstanceState)

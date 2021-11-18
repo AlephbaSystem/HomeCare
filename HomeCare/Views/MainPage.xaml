@@ -156,17 +156,17 @@
             </Grid.ColumnDefinitions>
 
             <Frame  Grid.Column="0" HasShadow="False" CornerRadius="25" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Margin="30, 10, 15, 10" Padding="1">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Close_Tapped" />
+                </Frame.GestureRecognizers>
                 <Frame x:Name="closeFrame" HasShadow="False" CornerRadius="23" BackgroundColor="White" Padding="4">
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="Close_Tapped" />
-                    </Frame.GestureRecognizers>
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="2*" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
 
-                        <ImageButton Grid.Row="0" Source="lock.png" HorizontalOptions="Center" />
+                        <Image Grid.Row="0" Source="lock.png" HorizontalOptions="Center" />
                         <Label Grid.Row="1" Text="فعال" HorizontalTextAlignment="Center" />
                     </Grid>
                 </Frame>
@@ -174,16 +174,16 @@
             </Frame>
 
             <Frame Grid.Column="1" HasShadow="False" CornerRadius="25" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Margin="22, 10, 22, 10" Padding="1">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Partial_Tapped" />
+                </Frame.GestureRecognizers>
                 <Frame x:Name="halfFrame" HasShadow="False" CornerRadius="23" BackgroundColor="White" Padding="4">
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="Partial_Tapped" />
-                    </Frame.GestureRecognizers>
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="2*" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <ImageButton Grid.Row="0" Source="halflock.png" HorizontalOptions="Center" />
+                        <Image Grid.Row="0" Source="halflock.png" HorizontalOptions="Center" />
                         <Label Grid.Row="1" Text="نیمه فعال" HorizontalTextAlignment="Center" />
                     </Grid>
                 </Frame>
@@ -199,7 +199,7 @@
                             <RowDefinition Height="2*" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <ImageButton Grid.Row="0" Source="unlock.png" HorizontalOptions="Center" />
+                        <Image Grid.Row="0" Source="unlock.png" HorizontalOptions="Center" />
                         <Label Grid.Row="1" Text="غیر فعال" HorizontalTextAlignment="Center" />
                     </Grid>
                 </Frame>
