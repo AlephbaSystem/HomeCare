@@ -5,6 +5,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using AndroidX.Core.App;
 using HomeCare.Droid.Interfaces;
 using HomeCare.Droid.Services;
 using System;
@@ -18,32 +19,37 @@ namespace HomeCare.Droid.Services
     internal class AntiTheftHelper : INotification
     {
         private static Context context = global::Android.App.Application.Context;
-        public void ShowAlert(string address, string message, Intent mainIntent)
+        public void ShowAlert(string title, string body, Intent intent)
         {
-            Android.Net.Uri alarmUri = Android.Net.Uri.Parse($"{ContentResolver.SchemeAndroidResource}://{Application.Context.PackageName}/{Resource.Raw.car_alarm}");
-            var mNotificationManager = context.GetSystemService(Context.NotificationService) as NotificationManager;
-            NotificationChannel notificationChannel = new NotificationChannel(Constants.FOREGROUND_CHANNEL_ID, "HomeCare", NotificationImportance.Max);
-            notificationChannel.Importance = NotificationImportance.Max;
-            notificationChannel.SetShowBadge(true);
-            notificationChannel.SetBypassDnd(true);
-            notificationChannel.LockscreenVisibility = NotificationVisibility.Public;
+            NotificationManager notificationManager = (NotificationManager)context.GetSystemService(Context.NotificationService);
 
-            var pendingIntent = PendingIntent.GetActivity(context, 0, mainIntent, PendingIntentFlags.UpdateCurrent);
-            var notification = new Notification.Builder(context, Constants.FOREGROUND_CHANNEL_ID)
-                                                        .SetColor(Android.Resource.Color.DarkerGray)
-                                                        .SetContentTitle(address)
-                                                        .SetOngoing(true) 
-                                                        .SetAutoCancel(true)
-                                                        .SetContentText(message)
-                                                        .SetSmallIcon(Resource.Mipmap.icon)
-                                                        .SetContentIntent(pendingIntent);
+            int notificationId = 1;
+            String channelId = Constants.FOREGROUND_CHANNEL_ID;
+            var importance = NotificationImportance.Max;
+            var pendingIntent = PendingIntent.GetActivity(context, 0, intent, PendingIntentFlags.OneShot);
+            var notifBuilder = new NotificationCompat.Builder(context, channelId)
+                .SetContentTitle(title)
+                .SetContentText(body)
+                .SetSmallIcon(Resource.Mipmap.icon)
+                .SetOngoing(true)
+                .SetAutoCancel(true)
+                .SetContentIntent(pendingIntent);
 
-            if (Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.O)
+            if (global::Android.OS.Build.VERSION.SdkInt >= BuildVersionCodes.O)
             {
-                notification.SetChannelId(Constants.FOREGROUND_CHANNEL_ID);
-                mNotificationManager.CreateNotificationChannel(notificationChannel);
-                mNotificationManager.Notify(Constants.SERVICE_RUNNING_NOTIFICATION_ID, notification.Build());
-            }
+                NotificationChannel notificationChannel = new NotificationChannel(channelId, "HomeCare", importance);
+                notificationChannel.Importance = importance;
+                notificationChannel.EnableLights(true);
+                notificationChannel.SetShowBadge(true);
+                notificationChannel.EnableVibration(false);
+                 
+                if (notificationManager != null)
+                {
+                    notifBuilder.SetChannelId(channelId);
+                    notificationManager.CreateNotificationChannel(notificationChannel);
+                }
+            } 
+            if (notificationManager != null) notificationManager.Notify(notificationId, notifBuilder.Build());
         }
     }
 }

@@ -13,6 +13,6 @@ namespace HomeCare.Droid.Interfaces
 {
     public interface INotification
     { 
-        void ShowAlert(string address, string message, Intent intent);
+        void ShowAlert(string title, string body, Intent intent);
     }
 }
