@@ -52,8 +52,10 @@ namespace HomeCare.Droid
                             WindowManagerFlags.KeepScreenOn |
                             WindowManagerFlags.DismissKeyguard |
                             WindowManagerFlags.TurnScreenOn | WindowManagerFlags.AllowLockWhileScreenOn | WindowManagerFlags.TouchableWhenWaking);
-             
+
             // Create your application here
+
+            Toast.MakeText(this, "خطر سرقت", ToastLength.Short).Show();
             SetContentView(Resource.Layout.activity_alert);
             income = FindViewById<TextView>(Resource.Id.alert_text);
             icon = FindViewById<ImageButton>(Resource.Id.alert_icon);
@@ -71,8 +73,6 @@ namespace HomeCare.Droid
                 this.keepGoing = false;
                 this.f96v.Cancel();
                 this.f95mp.Stop();
-                Xamarin.Forms.DependencyService.Get<IAndroidService>().StopService();
-                Xamarin.Forms.DependencyService.Get<IAndroidService>().StartService();
                 this.Finish();
             };
             var metrics = new DisplayMetrics();

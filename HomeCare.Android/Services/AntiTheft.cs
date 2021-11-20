@@ -5,7 +5,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using HomeCare.Droid.Interfaces; 
+using HomeCare.Droid.Interfaces;
 using Xamarin.Forms;
 
 namespace HomeCare.Droid.Services
@@ -37,7 +37,7 @@ namespace HomeCare.Droid.Services
         {
 
             _floatingView = LayoutInflater.From(this).Inflate(Resource.Layout.widget, null);
-              
+
             WindowManagerTypes FLG = WindowManagerTypes.ApplicationOverlay;
 
             if (Android.OS.Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.O)
@@ -60,24 +60,9 @@ namespace HomeCare.Droid.Services
         }
         public override StartCommandResult OnStartCommand(Intent intent, StartCommandFlags flags, int startId)
         {
-            NotificationManager notificationManager = (NotificationManager)global::Android.App.Application.Context.GetSystemService(Context.NotificationService);
-
-            int notificationId = 1;
-            string channelId = Constants.FOREGROUND_CHANNEL_ID;
-            string channelName = "HomeCare";
-            var importance = NotificationImportance.Max;
-
-            if (Android.OS.Build.VERSION.SdkInt >= BuildVersionCodes.O)
-            {
-                NotificationChannel mChannel = new NotificationChannel(
-                        channelId, channelName, importance);
-                notificationManager.CreateNotificationChannel(mChannel);
-            }
-
-            Notification notif = DependencyService.Get<INotification>().ReturnNotif("Hymax Burglar", "Your properties are safe with us");
-
-
-            notificationManager.Notify(notificationId, notif);
+            var mintent = global::Android.App.Application.Context.PackageManager.GetLaunchIntentForPackage(global::Android.App.Application.Context.PackageName);
+            mintent.AddFlags(ActivityFlags.ClearTop);
+            DependencyService.Get<INotification>().ShowAlert("Hymax Burglar", "Your properties are safe with us", mintent);
             return StartCommandResult.Sticky;
         }
         public override void OnDestroy()
@@ -92,6 +77,5 @@ namespace HomeCare.Droid.Services
         {
             return base.StopService(name);
         }
-         
     }
 }

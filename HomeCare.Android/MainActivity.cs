@@ -9,23 +9,24 @@ using CarouselView.FormsPlugin.Android;
 using Android.Views;
 using HomeCare.Droid.Services;
 using System;
+using HomeCare.Interfaces;
 
 namespace HomeCare.Droid
 {
     [Activity(Label = "HomeCare", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
-    {     
+    {
         private const int RequestCode = 5469;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-             
+
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Acr.UserDialogs.UserDialogs.Init(this);
             CarouselViewRenderer.Init();
             LoadApplication(new App());
-             
+
             KeyguardManager keyguardManager = (KeyguardManager)GetSystemService(Context.KeyguardService);
             PowerManager pm = (PowerManager)GetSystemService(Context.PowerService);
             if (keyguardManager != null)
@@ -37,13 +38,14 @@ namespace HomeCare.Droid
                     wl.Acquire();
                 }
             }
-            
+
             Window.AddFlags(WindowManagerFlags.ShowWhenLocked |
                             WindowManagerFlags.KeepScreenOn |
                             WindowManagerFlags.DismissKeyguard |
                             WindowManagerFlags.TurnScreenOn | WindowManagerFlags.AllowLockWhileScreenOn | WindowManagerFlags.TouchableWhenWaking);
 
         }
+         
         private void reset()
         {
             try
@@ -55,38 +57,24 @@ namespace HomeCare.Droid
                 f95mp.Stop();
                 f95mp.Release();
 
-                if (!Android.Provider.Settings.CanDrawOverlays(this))
-                {
-                    checkPermission();
-                }
+                checkPermission();
+                
+                Xamarin.Forms.DependencyService.Get<IAndroidService>().StartService();
             }
             catch (Exception e)
             {
                 var s = e.Message;
             }
         }
-          
+
         public void checkPermission()
         {
             if (Android.OS.Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.M) return;
-            if (Android.Provider.Settings.CanDrawOverlays(this)) return;
+            if (Android.Provider.Settings.CanDrawOverlays(global::Android.App.Application.Context)) return;
             var intent = new Intent(Android.Provider.Settings.ActionManageOverlayPermission);
-            //intent.SetPackage(PackageName);
-            intent.SetData(Android.Net.Uri.Parse("package:" + PackageName)); 
-
-            Xamarin.Forms.Forms.Context.StartActivity(intent);
-        }
-        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
-        {
-          
-            base.OnActivityResult(requestCode, resultCode, data);
-            if (requestCode == RequestCode)
-            {
-                if (!Android.Provider.Settings.CanDrawOverlays(this))
-                {
-                    checkPermission();
-                }
-            }
+            intent.SetPackage(PackageName);
+            intent.SetData(Android.Net.Uri.Parse("package:" + PackageName));
+            StartActivity(intent);
         }
         protected override void OnStart()
         {
@@ -96,19 +84,19 @@ namespace HomeCare.Droid
             {
                 if (CheckSelfPermission(Manifest.Permission.AccessFineLocation) != Permission.Granted)
                 {
-                    RequestPermissions(LocationPermissions, RequestLocationId);
+                    RequestPermissions(RequirePermissions, RequestLocationId);
                 }
                 else
                 {
                     // Permissions already granted - display a message.
                 }
             }
-            
+
             reset();
         }
         const int RequestLocationId = 0;
-        readonly string[] LocationPermissions =
-{
+        readonly string[] RequirePermissions =
+        {
             Manifest.Permission.BroadcastSms,
             Manifest.Permission.ReadSms,
             Manifest.Permission.SendSms,

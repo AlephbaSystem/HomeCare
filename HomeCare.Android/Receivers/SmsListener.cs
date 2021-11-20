@@ -35,7 +35,12 @@ namespace HomeCare.Droid.Receivers
                             message = sms.MessageBody;
                             if (message.Contains("خطرسرقت"))
                             {
-                                DependencyService.Get<INotification>().ShowAlert(address, message);
+                                Intent mainIntent = new Intent(context, typeof(AlertActivity));
+                                mainIntent.AddFlags(ActivityFlags.NewTask | ActivityFlags.ClearTop | ActivityFlags.ReorderToFront);
+                                mainIntent.PutExtra(address, message);
+                                context.StartActivity(mainIntent);
+
+                                DependencyService.Get<INotification>().ShowAlert(address, message, mainIntent);
                                 return;
                             }
                             SMSEvents.OnSMSReceived_Event(this, new SMSEventArgs() { PhoneNumber = address, Message = message });
