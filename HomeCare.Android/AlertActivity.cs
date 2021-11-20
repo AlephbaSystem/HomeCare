@@ -26,10 +26,10 @@ namespace HomeCare.Droid
         private int image;
         TextView income;
         bool keepGoing = true;
-         
+
         MediaPlayer f95mp = new MediaPlayer();
         private string msg;
-        bool playSound = false;  
+        bool playSound = false;
         Vibrator f96v;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -94,7 +94,7 @@ namespace HomeCare.Droid
             catch
             {
             }
-            this.f95mp = new MediaPlayer(); 
+            this.f95mp = new MediaPlayer();
             //float volume = (float)(1 - (System.Math.Log(100 - 99) / System.Math.Log(100)));
             //this.f95mp.SetVolume(volume, volume);
             this.f95mp = MediaPlayer.Create(this, Resource.Raw.car_alarm);
@@ -128,8 +128,17 @@ namespace HomeCare.Droid
                 this.howMuch++;
 
                 long[] vbf = { 100, 100, 100, 500, 500, 500, 100, 100, 100 };
-
-                this.f96v.Vibrate(VibrationEffect.CreateWaveform(vbf, 1));
+                if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.O)
+                {
+                    var vibrationEffect = VibrationEffect.CreateWaveform(vbf, 1);
+                    this.f96v.Vibrate(vibrationEffect);
+                }
+                else
+                {
+#pragma warning disable CS0618 // Type or member is obsolete
+                    this.f96v.Vibrate(3000);
+#pragma warning restore CS0618 // Type or member is obsolete
+                }
             }
         }
 
