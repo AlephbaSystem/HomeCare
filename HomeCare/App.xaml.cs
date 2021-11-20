@@ -26,9 +26,6 @@ namespace HomeCare
             {
                 MainPage = new NavigationPage(new MainPage());
             }
-
-            Xamarin.Forms.DependencyService.Get<IAndroidService>().StopService();
-            Xamarin.Forms.DependencyService.Get<IAndroidService>().StartService();
         }
 
         static void ReciveSMSFromDevice(object sender, SMSEventArgs e)
