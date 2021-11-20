@@ -58,7 +58,6 @@ namespace HomeCare.Droid
                 f95mp.Release();
 
                 checkPermission();
-                
                 Xamarin.Forms.DependencyService.Get<IAndroidService>().StartService();
             }
             catch (Exception e)
@@ -72,8 +71,8 @@ namespace HomeCare.Droid
             if (Android.OS.Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.M) return;
             if (Android.Provider.Settings.CanDrawOverlays(global::Android.App.Application.Context)) return;
             var intent = new Intent(Android.Provider.Settings.ActionManageOverlayPermission);
-            intent.SetPackage(PackageName);
             intent.SetData(Android.Net.Uri.Parse("package:" + PackageName));
+            intent.SetFlags(ActivityFlags.NewTask);
             StartActivity(intent);
         }
         protected override void OnStart()
