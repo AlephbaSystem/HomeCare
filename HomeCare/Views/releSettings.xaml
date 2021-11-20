@@ -27,10 +27,10 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="مدت زمان رله لحظه ای" HorizontalTextAlignment="Center" Margin="0, 10, 0, 0" />
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="مدت زمان رله لحظه ای" HorizontalTextAlignment="Center" Margin="0, 10, 0, 0" FontAttributes="Bold" />
                     <Slider Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"  Maximum="100" Margin="20, 0" />
-                    <Button Grid.Row="2" Grid.Column="0" Margin="30, 10, 5, 10" Text="استعلام" BackgroundColor="#083D77" TextColor="White" FontAttributes="bold"/>
-                    <Button Grid.Row="2" Grid.Column="1" Margin="5, 10, 30, 10" Text="ارسال" BackgroundColor="#04724d" TextColor="White" FontAttributes="bold"/>
+                    <Button Grid.Row="2" Grid.Column="0" Margin="30, 10, 5, 10" Text="استعلام" BackgroundColor="#1F9AFF" TextColor="White" FontAttributes="bold" CornerRadius="10"/>
+                    <Button Grid.Row="2" Grid.Column="1" Margin="5, 10, 30, 10" Text="ارسال" BackgroundColor="#06d6a0" TextColor="White" FontAttributes="bold" CornerRadius="10"/>
                 </Grid>
             </Frame>
 
@@ -67,17 +67,17 @@
                 <Frame Grid.Row="0" Grid.Column="0" Margin="10, 0, 0, 0" Padding="0">
                     <Entry Placeholder="رله۳" HorizontalTextAlignment="Center" />
                 </Frame>
-                <Label Grid.Row="0" Grid.Column="1" Text="نام رله ۱:" HorizontalTextAlignment="End" />
+                <Label Grid.Row="0" Grid.Column="1" Text="نام رله ۱:" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
 
                 <Frame Grid.Row="1" Grid.Column="0" Margin="10, 0, 0, 0" Padding="0">
                     <Entry Placeholder="رله۳" HorizontalTextAlignment="Center" />
                 </Frame>
-                <Label Grid.Row="1" Grid.Column="1" Text="نام رله۲:" HorizontalTextAlignment="End" />
+                <Label Grid.Row="1" Grid.Column="1" Text="نام رله۲:" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
 
                 <Frame Grid.Row="2" Grid.Column="0" Margin="10, 0, 0, 0" Padding="0">
                     <Entry Placeholder="رله۳" HorizontalTextAlignment="Center" />
                 </Frame>
-                <Label Grid.Row="2" Grid.Column="1" Text="نام رله ۳:" HorizontalTextAlignment="End" />
+                <Label Grid.Row="2" Grid.Column="1" Text="نام رله ۳:" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Grid>
 
             <Grid Margin="40, 40, 40, 40" Padding="0">
@@ -86,18 +86,12 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Frame Grid.Column="0" BackgroundColor="#04724d" Padding="0" HeightRequest="50">
-                    <Button Text="ذخیره" TextColor="#fcfffc" FontAttributes="Bold" BackgroundColor="Transparent"  />
-                </Frame>
-
-                <Frame Grid.Column="1" BackgroundColor="#e5383b" Padding="0" HeightRequest="50">
-                    <Button Grid.Column="0" Text="بازگشت" TextColor="#fcfffc" BackgroundColor="Transparent" FontAttributes="Bold" />
-                </Frame>
+                <Button Grid.Column="0" Text="ذخیره" TextColor="#fcfffc" FontAttributes="Bold" BackgroundColor="#06d6a0"  FontSize="Small" CornerRadius="10" />
+                <Button Grid.Column="1"  Text="بازگشت" TextColor="#fcfffc" BackgroundColor="#e5383b" FontAttributes="Bold" FontSize="Small" CornerRadius="10" />
+  
             </Grid>
 
-            <Label/>
-            <Label/>
-            <Label/>
+
 
         </StackLayout>
         
