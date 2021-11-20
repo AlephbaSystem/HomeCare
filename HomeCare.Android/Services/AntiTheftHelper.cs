@@ -51,5 +51,39 @@ namespace HomeCare.Droid.Services
             }
             if (notificationManager != null) notificationManager.Notify(notificationId, notifBuilder.Build());
         }
+        public Notification ReturnNotif()
+        {
+            var manager = (NotificationManager)context.GetSystemService(Context.NotificationService);
+
+            var intent = context.PackageManager.GetLaunchIntentForPackage(context.PackageName);
+            intent.AddFlags(ActivityFlags.ClearTop);
+
+            var pendingIntent = PendingIntent.GetActivity(context, 0, intent, PendingIntentFlags.OneShot);
+
+            var notifBuilder = new Notification.Builder(context, Constants.FOREGROUND_CHANNEL_ID)
+                .SetContentTitle("Hymax Burglar")
+                .SetContentText("Your properties are safe with us")
+                .SetSmallIcon(Resource.Mipmap.icon)
+                .SetOngoing(true)
+                .SetAutoCancel(true)
+                .SetContentIntent(pendingIntent);
+            if (global::Android.OS.Build.VERSION.SdkInt >= BuildVersionCodes.O)
+            {
+                NotificationChannel notificationChannel = new NotificationChannel(Constants.FOREGROUND_CHANNEL_ID, "HomeCare", NotificationImportance.High);
+                notificationChannel.Importance = NotificationImportance.High;
+                notificationChannel.EnableLights(true);
+                notificationChannel.SetShowBadge(true);
+                notificationChannel.EnableVibration(false);
+
+                var notifManager = context.GetSystemService(Context.NotificationService) as NotificationManager;
+                if (notifManager != null)
+                {
+                    notifBuilder.SetChannelId(Constants.FOREGROUND_CHANNEL_ID);
+                    notifManager.CreateNotificationChannel(notificationChannel);
+                }
+            }
+            return notifBuilder.Build();
+        }
+
     }
 }
