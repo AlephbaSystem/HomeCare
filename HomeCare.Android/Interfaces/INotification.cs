@@ -12,7 +12,8 @@ using System.Text;
 namespace HomeCare.Droid.Interfaces
 {
     public interface INotification
-    { 
+    {
         void ShowAlert(string title, string body, Intent intent);
+        Notification ReturnNotif();
     }
 }
