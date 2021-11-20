@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HomeCare.Views.AddNewDevice">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Icon="" Order="Primary" Clicked="ToolbarItem_Clicked" /> 
+        <ToolbarItem Text="افزودن دستگاه" Icon="" Order="Primary" Clicked="ToolbarItem_Clicked" /> 
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
@@ -41,7 +41,7 @@
                                 <MenuItem Clicked="OnDelete" CommandParameter="{Binding Name}" Text="Delete" IsDestructive="True" />
                             </ViewCell.ContextActions>
 
-                            <Grid BackgroundColor="#94d2bd" Padding="0" Margin="5, 0">
+                            <Grid BackgroundColor="#EFF7F6" Padding="0" Margin="5, 0">
 
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="4*" />
