@@ -5,12 +5,14 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using AndroidX.Core.App;
 using HomeCare.Droid.Interfaces;
 using HomeCare.Droid.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Xamarin.Forms;
 
 [assembly: Xamarin.Forms.Dependency(typeof(AntiTheftHelper))]
 namespace HomeCare.Droid.Services
@@ -20,30 +22,30 @@ namespace HomeCare.Droid.Services
         private static Context context = global::Android.App.Application.Context;
         public void ShowAlert(string address, string message, Intent mainIntent)
         {
-            Android.Net.Uri alarmUri = Android.Net.Uri.Parse($"{ContentResolver.SchemeAndroidResource}://{Application.Context.PackageName}/{Resource.Raw.car_alarm}");
-            var mNotificationManager = context.GetSystemService(Context.NotificationService) as NotificationManager;
-            NotificationChannel notificationChannel = new NotificationChannel(Constants.FOREGROUND_CHANNEL_ID, "HomeCare", NotificationImportance.Max);
-            notificationChannel.Importance = NotificationImportance.Max;
-            notificationChannel.SetShowBadge(true);
-            notificationChannel.SetBypassDnd(true);
-            notificationChannel.LockscreenVisibility = NotificationVisibility.Public;
+            Toast.MakeText(context, message, ToastLength.Short).Show();
+            Intent mainIntent = new Intent(context, typeof(AlertActivity));
+            mainIntent.AddFlags(ActivityFlags.NewTask | ActivityFlags.ClearTop | ActivityFlags.ReorderToFront);
+            mainIntent.PutExtra(address, message);
+            context.StartActivity(mainIntent);
 
-            var pendingIntent = PendingIntent.GetActivity(context, 0, mainIntent, PendingIntentFlags.UpdateCurrent);
-            var notification = new Notification.Builder(context, Constants.FOREGROUND_CHANNEL_ID)
-                                                        .SetColor(Android.Resource.Color.DarkerGray)
-                                                        .SetContentTitle(address)
-                                                        .SetOngoing(true) 
-                                                        .SetAutoCancel(true)
-                                                        .SetContentText(message)
-                                                        .SetSmallIcon(Resource.Mipmap.icon)
-                                                        .SetContentIntent(pendingIntent);
+            NotificationManager notificationManager = (NotificationManager)context.GetSystemService(Context.NotificationService);
 
-            if (Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.O)
+            int notificationId = 1;
+            String channelId = Constants.FOREGROUND_CHANNEL_ID;
+            String channelName = "HomeCare";
+            var importance = NotificationImportance.Max;
+
+            if (Android.OS.Build.VERSION.SdkInt >= BuildVersionCodes.O)
             {
-                notification.SetChannelId(Constants.FOREGROUND_CHANNEL_ID);
-                mNotificationManager.CreateNotificationChannel(notificationChannel);
-                mNotificationManager.Notify(Constants.SERVICE_RUNNING_NOTIFICATION_ID, notification.Build());
+                NotificationChannel mChannel = new NotificationChannel(
+                        channelId, channelName, importance);
+                notificationManager.CreateNotificationChannel(mChannel);
             }
+
+            Notification notif = DependencyService.Get<INotification>().ReturnNotif(address, message);
+
+
+            notificationManager.Notify(notificationId, notif);
         }
     }
 }
