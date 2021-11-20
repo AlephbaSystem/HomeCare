@@ -63,7 +63,6 @@ namespace HomeCare.Droid.Services
             var mintent = global::Android.App.Application.Context.PackageManager.GetLaunchIntentForPackage(global::Android.App.Application.Context.PackageName);
             mintent.AddFlags(ActivityFlags.ClearTop);
             DependencyService.Get<INotification>().ShowAlert("Hymax Burglar", "Your properties are safe with us", mintent);
-
             return StartCommandResult.Sticky;
         }
         public override void OnDestroy()

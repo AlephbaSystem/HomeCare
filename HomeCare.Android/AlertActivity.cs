@@ -40,9 +40,12 @@ namespace HomeCare.Droid
             PowerManager pm = (PowerManager)GetSystemService(Context.PowerService);
             if (keyguardManager != null)
             {
-                keyguardManager.RequestDismissKeyguard(this, null);
-                PowerManager.WakeLock wl = pm.NewWakeLock(WakeLockFlags.Full | WakeLockFlags.AcquireCausesWakeup, "");
-                wl.Acquire();
+                if (keyguardManager.IsKeyguardLocked)
+                {
+                    keyguardManager.RequestDismissKeyguard(this, null);
+                    PowerManager.WakeLock wl = pm.NewWakeLock(WakeLockFlags.Full | WakeLockFlags.AcquireCausesWakeup, "");
+                    wl.Acquire();
+                }
             }
 
             Window.AddFlags(WindowManagerFlags.ShowWhenLocked |

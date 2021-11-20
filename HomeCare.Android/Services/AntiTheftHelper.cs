@@ -42,13 +42,13 @@ namespace HomeCare.Droid.Services
                 notificationChannel.EnableLights(true);
                 notificationChannel.SetShowBadge(true);
                 notificationChannel.EnableVibration(false);
-                 
+
                 if (notificationManager != null)
                 {
                     notifBuilder.SetChannelId(channelId);
                     notificationManager.CreateNotificationChannel(notificationChannel);
                 }
-            } 
+            }
             if (notificationManager != null) notificationManager.Notify(notificationId, notifBuilder.Build());
         }
     }
