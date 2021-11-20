@@ -60,9 +60,9 @@ namespace HomeCare.Droid.Services
         }
         public override StartCommandResult OnStartCommand(Intent intent, StartCommandFlags flags, int startId)
         {
-            var mintent = global::Android.App.Application.Context.PackageManager.GetLaunchIntentForPackage(global::Android.App.Application.Context.PackageName);
-            mintent.AddFlags(ActivityFlags.ClearTop);
-            DependencyService.Get<INotification>().ShowAlert("Hymax Burglar", "Your properties are safe with us", mintent);
+            Notification notif = DependencyService.Get<INotification>().ReturnNotif();
+            StartForeground(Constants.SERVICE_RUNNING_NOTIFICATION_ID, notif);
+
             return StartCommandResult.Sticky;
         }
         public override void OnDestroy()

@@ -10,11 +10,11 @@
     <ContentPage.Content>
         <StackLayout Padding="10">
             <Label Text="نام دستگاه" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="0, 0, 10, 0"/>
-            <Entry x:Name="deviceName" Placeholder="دستگاه مدل 7X2020" HorizontalTextAlignment="Center" Margin="40, 0, 40, 0"></Entry>
+            <Entry x:Name="deviceName" Placeholder="دستگاه مدل 7X2020" HorizontalTextAlignment="Center" Margin="40, 0, 40, 0" BackgroundColor="#eff7f6"></Entry>
             <Label Text="شماره همراه" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="0, 10, 10, 0"/>
-            <Entry x:Name="devicePhone" Placeholder="09........." HorizontalTextAlignment="Center" Keyboard="Telephone" Margin="40, 0, 40, 0"></Entry>
+            <Entry x:Name="devicePhone" Placeholder="09........." HorizontalTextAlignment="Center" Keyboard="Telephone" Margin="40, 0, 40, 0" BackgroundColor="#eff7f6"></Entry>
 
-            <Button Margin="60, 15" Text="افزودن" BackgroundColor="#04724d" TextColor="White" Clicked="InsertDevice"/>
+            <Button Margin="60, 15" Text="افزودن" BackgroundColor="#06d6a0" TextColor="White" Clicked="InsertDevice" CornerRadius="10"/>
             
 
             
