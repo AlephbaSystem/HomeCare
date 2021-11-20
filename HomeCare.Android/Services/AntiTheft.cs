@@ -11,7 +11,7 @@ using Xamarin.Forms;
 namespace HomeCare.Droid.Services
 {
     [Service(Enabled = true, Label = "HymaxBurglarNotify")]
-    public class AntiTheft : Service, Android.Views.View.IOnTouchListener
+    public class AntiTheft : Service
     {
         private IWindowManager _windowManager;
         private WindowManagerLayoutParams _layoutParams;
@@ -60,9 +60,24 @@ namespace HomeCare.Droid.Services
         }
         public override StartCommandResult OnStartCommand(Intent intent, StartCommandFlags flags, int startId)
         {
-            Notification notif = DependencyService.Get<INotification>().ReturnNotif();
+            NotificationManager notificationManager = (NotificationManager)global::Android.App.Application.Context.GetSystemService(Context.NotificationService);
 
-            StartForeground(Constants.SERVICE_RUNNING_NOTIFICATION_ID, notif);
+            int notificationId = 1;
+            string channelId = Constants.FOREGROUND_CHANNEL_ID;
+            string channelName = "HomeCare";
+            var importance = NotificationImportance.Max;
+
+            if (Android.OS.Build.VERSION.SdkInt >= BuildVersionCodes.O)
+            {
+                NotificationChannel mChannel = new NotificationChannel(
+                        channelId, channelName, importance);
+                notificationManager.CreateNotificationChannel(mChannel);
+            }
+
+            Notification notif = DependencyService.Get<INotification>().ReturnNotif("Hymax Burglar", "Your properties are safe with us");
+
+
+            notificationManager.Notify(notificationId, notif);
             return StartCommandResult.Sticky;
         }
         public override void OnDestroy()
@@ -78,39 +93,5 @@ namespace HomeCare.Droid.Services
             return base.StopService(name);
         }
          
-        public bool OnTouch(Android.Views.View view, MotionEvent motion)
-        {
-            switch (motion.Action)
-            {
-                case MotionEventActions.Down:
-                    //initial position
-                    _initialX = _layoutParams.X;
-                    _initialY = _layoutParams.Y;
-
-                    //touch point
-                    _initialTouchX = motion.RawX;
-                    _initialTouchY = motion.RawY;
-                    return true;
-
-                case MotionEventActions.Move:
-                    //Calculate the X and Y coordinates of the view.
-                    _layoutParams.X = _initialX + (int)(motion.RawX - _initialTouchX);
-                    _layoutParams.Y = _initialY + (int)(motion.RawY - _initialTouchY);
-
-                    //Update the layout with new X & Y coordinate
-                    _windowManager.UpdateViewLayout(_floatingView, _layoutParams);
-                    return true;
-                case MotionEventActions.Up:
-
-                    return true;
-            }
-
-            return false;
-        }
-        private void SetTouchListener()
-        {
-            var rootContainer = _floatingView.FindViewById<Android.Widget.RelativeLayout>(Resource.Id.root);
-            rootContainer.SetOnTouchListener(this);
-        }
     }
 }

@@ -202,19 +202,25 @@ namespace HomeCare
 
         private async void onMenuCarousel_CurrentItemChanged(Xamarin.Forms.CarouselView sender, CurrentItemChangedEventArgs e)
         {
-            await Task.Delay(100);
-            var userHandler = new Services.Users.UserHandler();
-            var citem = ((Devices)sender.CurrentItem);
-            foreach (Devices item in sender.ItemsSource)
+            try
             {
-                if (item.Selected)
+                var userHandler = new Services.Users.UserHandler();
+                var citem = ((Devices)sender.CurrentItem);
+                foreach (Devices item in sender.ItemsSource)
                 {
-                    item.Selected = false;
-                    userHandler.UpdateDevice(item);
+                    if (item.Selected)
+                    {
+                        item.Selected = false;
+                        userHandler.UpdateDevice(item);
+                    }
                 }
+                citem.Selected = true;
+                userHandler.UpdateDevice(citem);
             }
-            citem.Selected = true;
-            userHandler.UpdateDevice(citem);
+            catch (Exception ex)
+            {
+                var m = ex.Message;
+            }     
         }
     }
 }

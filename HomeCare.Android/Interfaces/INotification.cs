@@ -13,7 +13,7 @@ namespace HomeCare.Droid.Interfaces
 {
     public interface INotification
     {
-        Notification ReturnNotif();
+        Notification ReturnNotif(string title,string body);
         void ShowAlert(string address, string message);
     }
 }

@@ -5,12 +5,14 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using AndroidX.Core.App;
 using HomeCare.Droid.Interfaces;
 using HomeCare.Droid.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Xamarin.Forms;
 
 [assembly: Xamarin.Forms.Dependency(typeof(AntiTheftHelper))]
 namespace HomeCare.Droid.Services
@@ -25,48 +27,28 @@ namespace HomeCare.Droid.Services
             mainIntent.AddFlags(ActivityFlags.NewTask | ActivityFlags.ClearTop | ActivityFlags.ReorderToFront);
             mainIntent.PutExtra(address, message);
             context.StartActivity(mainIntent);
-             
-            Toast.MakeText(context, message, ToastLength.Short).Show();
-            var f96v = (Vibrator)context.GetSystemService(Context.VibratorService);
-            long[] vbf = { 100, 200, 200, 500, 500, 400, 400, 100 };
-            f96v.Cancel();
-            f96v.Vibrate(VibrationEffect.CreateWaveform(vbf, 1));
 
-            var alarmAttributes = new AudioAttributes.Builder()
-                       .SetContentType(AudioContentType.Music)
-                       .SetUsage(AudioUsageKind.Alarm)
-                       .Build();
+            NotificationManager notificationManager = (NotificationManager)context.GetSystemService(Context.NotificationService);
 
-            Android.Net.Uri alarmUri = Android.Net.Uri.Parse($"{ContentResolver.SchemeAndroidResource}://{Application.Context.PackageName}/{Resource.Raw.car_alarm}");
-            var mNotificationManager = context.GetSystemService(Context.NotificationService) as NotificationManager;
-            NotificationChannel notificationChannel = new NotificationChannel(Constants.FOREGROUND_CHANNEL_ID, "HomeCare", NotificationImportance.Default);
-            notificationChannel.Importance = NotificationImportance.High;
-            notificationChannel.EnableLights(true);
-            notificationChannel.EnableVibration(true);
-            notificationChannel.SetSound(alarmUri, alarmAttributes);
-            notificationChannel.SetShowBadge(true);
-            notificationChannel.SetVibrationPattern(new long[] { 100, 200, 300, 400, 500, 400, 300, 200, 400 });
-            notificationChannel.SetBypassDnd(true);
-            notificationChannel.LockscreenVisibility = NotificationVisibility.Public;
+            int notificationId = 1;
+            String channelId = Constants.FOREGROUND_CHANNEL_ID;
+            String channelName = "HomeCare";
+            var importance = NotificationImportance.Max;
 
-            var pendingIntent = PendingIntent.GetActivity(context, 0, mainIntent, PendingIntentFlags.UpdateCurrent);
-            var notification = new Notification.Builder(context, Constants.FOREGROUND_CHANNEL_ID)
-                                                        .SetColor(Android.Resource.Color.DarkerGray)
-                                                        .SetContentTitle(address)
-                                                        .SetOngoing(true)
-                                                        .SetContentText(message)
-                                                        .SetSmallIcon(Resource.Mipmap.icon)
-                                                        .SetContentIntent(pendingIntent);
-
-            if (Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.O)
+            if (Android.OS.Build.VERSION.SdkInt >= BuildVersionCodes.O)
             {
-                notification.SetChannelId(Constants.FOREGROUND_CHANNEL_ID);
-                mNotificationManager.CreateNotificationChannel(notificationChannel);
-                mNotificationManager.Notify(Constants.SERVICE_RUNNING_NOTIFICATION_ID, notification.Build());
+                NotificationChannel mChannel = new NotificationChannel(
+                        channelId, channelName, importance);
+                notificationManager.CreateNotificationChannel(mChannel);
             }
+
+            Notification notif = DependencyService.Get<INotification>().ReturnNotif(address, message);
+
+
+            notificationManager.Notify(notificationId, notif);
         }
 
-        public Notification ReturnNotif()
+        public Notification ReturnNotif(String title, String body)
         {
             var manager = (NotificationManager)context.GetSystemService(Context.NotificationService);
 
@@ -75,9 +57,9 @@ namespace HomeCare.Droid.Services
 
             var pendingIntent = PendingIntent.GetActivity(context, 0, intent, PendingIntentFlags.OneShot);
 
-            var notifBuilder = new Notification.Builder(context, Constants.FOREGROUND_CHANNEL_ID)
-                .SetContentTitle("Hymax Burglar")
-                .SetContentText("Your properties are safe with us")
+            var notifBuilder = new NotificationCompat.Builder(context, Constants.FOREGROUND_CHANNEL_ID)
+                .SetContentTitle(title)
+                .SetContentText(body)
                 .SetSmallIcon(Resource.Mipmap.icon)
                 .SetOngoing(true)
                 .SetAutoCancel(true)
@@ -86,8 +68,8 @@ namespace HomeCare.Droid.Services
             // Building channel if API verion is 26 or above
             if (global::Android.OS.Build.VERSION.SdkInt >= BuildVersionCodes.O)
             {
-                NotificationChannel notificationChannel = new NotificationChannel(Constants.FOREGROUND_CHANNEL_ID, "HomeCare", NotificationImportance.High);
-                notificationChannel.Importance = NotificationImportance.High;
+                NotificationChannel notificationChannel = new NotificationChannel(Constants.FOREGROUND_CHANNEL_ID, "HomeCare", NotificationImportance.Max);
+                notificationChannel.Importance = NotificationImportance.Max;
                 notificationChannel.EnableLights(true);
                 notificationChannel.SetShowBadge(true);
                 notificationChannel.EnableVibration(false);
