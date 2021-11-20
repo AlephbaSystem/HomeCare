@@ -58,7 +58,7 @@ namespace HomeCare.Droid
                 f95mp.Release();
 
                 checkPermission();
-                Xamarin.Forms.DependencyService.Get<IAndroidService>().StartService();
+                if (Android.Provider.Settings.CanDrawOverlays(global::Android.App.Application.Context)) Xamarin.Forms.DependencyService.Get<IAndroidService>().StartService();
             }
             catch (Exception e)
             {

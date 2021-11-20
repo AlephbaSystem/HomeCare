@@ -60,7 +60,7 @@ namespace HomeCare.Droid.Services
 
             var pendingIntent = PendingIntent.GetActivity(context, 0, intent, PendingIntentFlags.OneShot);
 
-            var notifBuilder = new Notification.Builder(context, Constants.FOREGROUND_CHANNEL_ID)
+            var notifBuilder = new NotificationCompat.Builder(context, Constants.FOREGROUND_CHANNEL_ID)
                 .SetContentTitle("Hymax Burglar")
                 .SetContentText("Your properties are safe with us")
                 .SetSmallIcon(Resource.Mipmap.icon)
