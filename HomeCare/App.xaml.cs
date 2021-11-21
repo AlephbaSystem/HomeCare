@@ -53,7 +53,6 @@ namespace HomeCare
         }
         protected override void OnStart()
         {
-            VersionTracking.Track();
         }
 
         protected override void OnSleep()

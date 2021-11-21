@@ -10,6 +10,7 @@ using Android.Views;
 using HomeCare.Droid.Services;
 using System;
 using HomeCare.Interfaces;
+using Xamarin.Essentials;
 
 namespace HomeCare.Droid
 {
@@ -23,6 +24,7 @@ namespace HomeCare.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            
             Acr.UserDialogs.UserDialogs.Init(this);
             CarouselViewRenderer.Init();
             LoadApplication(new App());
@@ -45,7 +47,7 @@ namespace HomeCare.Droid
                             WindowManagerFlags.TurnScreenOn | WindowManagerFlags.AllowLockWhileScreenOn | WindowManagerFlags.TouchableWhenWaking);
 
         }
-         
+
         private void reset()
         {
             try
