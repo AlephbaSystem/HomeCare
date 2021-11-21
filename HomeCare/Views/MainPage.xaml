@@ -99,7 +99,7 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Image Grid.Row="0" Source="silence.png" HorizontalOptions="Center" Aspect="AspectFit" />
-                    <Button BackgroundColor="Transparent" Grid.Row="1" Text="سکوت" HorizontalOptions="Center" TextColor="#1d3557"/>
+                    <Button BackgroundColor="Transparent" Grid.Row="1" Text="سکوت" HorizontalOptions="Center" TextColor="#1d3557" FontSize="Small"/>
                 </Grid>
             </Frame>
 
@@ -127,7 +127,7 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Image Grid.Row="0" Source="hearing.png" HorizontalOptions="Center" Aspect="AspectFit" />
-                    <Button BackgroundColor="Transparent" Grid.Row="1" Text="شنود" HorizontalOptions="Center" TextColor="#1d3557" />
+                    <Button BackgroundColor="Transparent" Grid.Row="1" Text="شنود" HorizontalOptions="Center" TextColor="#1d3557" FontSize="Small" />
                 </Grid>
             </Frame>
 
@@ -141,13 +141,13 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Image Grid.Row="0" Source="settings.png" HorizontalOptions="Center" Aspect="AspectFit" />
-                    <Button BackgroundColor="Transparent" Grid.Row="1" Text="تنظیمات" HorizontalOptions="Center" TextColor="#1d3557" />
+                    <Button BackgroundColor="Transparent" Grid.Row="1" Text="تنظیمات" HorizontalOptions="Center" TextColor="#1d3557" FontSize="Small" />
                 </Grid>
             </Frame>
         </Grid>
 
 
-        <Grid Grid.Row="3" Margin="5, 20, 5, 0">
+        <Grid Grid.Row="3" Margin="5, 10, 5, 0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -158,15 +158,15 @@
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Close_Tapped" />
                 </Frame.GestureRecognizers>
-                <Frame x:Name="closeFrame" HasShadow="False" CornerRadius="23" BackgroundColor="White" Padding="4">
+                <Frame x:Name="closeFrame" HasShadow="False" CornerRadius="23" BackgroundColor="White" Padding="1">
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="2*" />
+                            <RowDefinition Height="1.5*" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
 
                         <Image Grid.Row="0" Source="lock.png" HorizontalOptions="Center" />
-                        <Label Grid.Row="1" Text="فعال" HorizontalTextAlignment="Center" />
+                        <Label Grid.Row="1" Text="فعال" HorizontalTextAlignment="Center" FontSize="Small"  />
                     </Grid>
                 </Frame>
 
@@ -176,30 +176,30 @@
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Partial_Tapped" />
                 </Frame.GestureRecognizers>
-                <Frame x:Name="halfFrame" HasShadow="False" CornerRadius="23" BackgroundColor="White" Padding="4">
+                <Frame x:Name="halfFrame" HasShadow="False" CornerRadius="23" BackgroundColor="White" Padding="1">
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="2*" />
+                            <RowDefinition Height="1.5*" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
                         <Image Grid.Row="0" Source="halflock.png" HorizontalOptions="Center" />
-                        <Label Grid.Row="1" Text="نیمه فعال" HorizontalTextAlignment="Center" />
+                        <Label Grid.Row="1" Text="نیمه فعال" HorizontalTextAlignment="Center" FontSize="Small" />
                     </Grid>
                 </Frame>
             </Frame>
 
             <Frame Grid.Column="2" HasShadow="False" CornerRadius="25" BackgroundColor="#eff7f6" BorderColor="#eff7f6" Margin="15, 10, 30, 10" Padding="1">
-                <Frame x:Name="openFrame" HasShadow="False" CornerRadius="23" BackgroundColor="White" Padding="4">
+                <Frame x:Name="openFrame" HasShadow="False" CornerRadius="23" BackgroundColor="White" Padding="1">
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Open_Tapped" />
                     </Frame.GestureRecognizers>
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="2*" />
+                            <RowDefinition Height="1.5*" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
                         <Image Grid.Row="0" Source="unlock.png" HorizontalOptions="Center" />
-                        <Label Grid.Row="1" Text="غیر فعال" HorizontalTextAlignment="Center" />
+                        <Label Grid.Row="1" Text="غیر فعال" HorizontalTextAlignment="Center" FontSize="Small" />
                     </Grid>
                 </Frame>
             </Frame>

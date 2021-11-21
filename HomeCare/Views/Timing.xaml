@@ -55,15 +55,15 @@
                     <Label Grid.Row="0" Text="شیفت ۱" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold"/>
                     <Grid Grid.Row="1">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0.8*" />
                             <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="0.8*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <TimePicker Grid.Column="0" Margin="5, 0, 0, 0" Time="{Binding ShiftOneExit}" HorizontalOptions="CenterAndExpand" />
+                        <TimePicker Grid.Column="0" Margin="5, 0, 0, 0" Time="{Binding ShiftOneExit}" HorizontalOptions="CenterAndExpand" FontSize="Micro" />
                         <Label Grid.Column="1" Text="ساعت خروج:" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
-                        <TimePicker Grid.Column="2" Time="{Binding ShiftOneEnter}" HorizontalOptions="Center" />
-                        <Label Grid.Column="3" Text="ساعت ورود:" HorizontalTextAlignment="End"  VerticalTextAlignment="Center"/>
+                        <TimePicker Grid.Column="2" Time="{Binding ShiftOneEnter}" HorizontalOptions="Center" FontSize="Micro" />
+                        <Label Grid.Column="3" Text="ساعت ورود:" HorizontalTextAlignment="End"  VerticalTextAlignment="Center" />
                     </Grid>
                     <Grid Grid.Row="2">
                         <Grid.RowDefinitions>
@@ -98,8 +98,8 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" Text="استعلام" VerticalOptions="Center" BackgroundColor="#1F9AFF" TextColor="White" />
-                        <Button Grid.Column="1" Text="ارسال" VerticalOptions="Center" BackgroundColor="#06d6a0" TextColor="White" Command="{Binding SendShiftOne}"/>
+                        <Button Grid.Column="0" Text="استعلام" VerticalOptions="Center" BackgroundColor="#1F9AFF" TextColor="White" CornerRadius="10" />
+                        <Button Grid.Column="1" Text="ارسال" VerticalOptions="Center" BackgroundColor="#06d6a0" TextColor="White" Command="{Binding SendShiftOne}" CornerRadius="10"/>
                     </Grid>
                 </Grid>
             </Frame>
@@ -114,14 +114,14 @@
                     <Label Grid.Row="0" Text="شیفت ۲" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold"/>
                     <Grid Grid.Row="1">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0.8*" />
                             <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="0.8*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <TimePicker Grid.Column="0" Time="{Binding ShiftTwoExit}" Format="" HorizontalOptions="Center" Margin="5, 0, 0, 0" />
+                        <TimePicker Grid.Column="0" Time="{Binding ShiftTwoExit}" Format="" HorizontalOptions="Center" Margin="5, 0, 0, 0" FontSize="Micro" />
                         <Label Grid.Column="1" Text="ساعت خروج:" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
-                        <TimePicker Grid.Column="2" Time="{Binding ShiftTwoEnter}" HorizontalOptions="Center" />
+                        <TimePicker Grid.Column="2" Time="{Binding ShiftTwoEnter}" HorizontalOptions="Center" FontSize="Micro" />
                         <Label Grid.Column="3" Text="ساعت ورود:" HorizontalTextAlignment="End"  VerticalTextAlignment="Center"/>
                     </Grid>
                     <Grid Grid.Row="2">
@@ -157,8 +157,8 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Button VerticalOptions="Center" Grid.Column="0" Text="استعلام" BackgroundColor="#1F9AFF" TextColor="White" />
-                        <Button VerticalOptions="Center" Grid.Column="1" Text="ارسال" BackgroundColor="#06d6a0" TextColor="White" Command="{Binding SendShiftTwo}" />
+                        <Button VerticalOptions="Center" Grid.Column="0" Text="استعلام" BackgroundColor="#1F9AFF" TextColor="White" CornerRadius="10" />
+                        <Button VerticalOptions="Center" Grid.Column="1" Text="ارسال" BackgroundColor="#06d6a0" TextColor="White" Command="{Binding SendShiftTwo}" CornerRadius="10" />
                     </Grid>
                 </Grid>
             </Frame>
