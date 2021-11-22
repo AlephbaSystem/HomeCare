@@ -6,17 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 	<ImageView
-        android:id="@+id/alert_car"
-        android:paddingTop="85dp"
-        android:paddingBottom="85dp"
+        android:id="@+id/alert_car" 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/alert_bg" />
 	<ImageButton
         android:id="@+id/alert_icon"
-        android:background="@null"
-        android:paddingTop="85dp"
-        android:paddingBottom="85dp"
+        android:background="@null" 
+        android:alpha="0.8"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/icon_alert_warning"
