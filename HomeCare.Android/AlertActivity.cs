@@ -73,7 +73,8 @@ namespace HomeCare.Droid
                 this.keepGoing = false;
                 this.f96v.Cancel();
                 this.f95mp.Stop();
-                this.Finish();
+                var intent = this.PackageManager.GetLaunchIntentForPackage(this.PackageName);
+                StartActivity(intent); 
             };
             var metrics = new DisplayMetrics();
             var windowManager = this.GetSystemService(Context.WindowService) as IWindowManager;

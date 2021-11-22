@@ -21,6 +21,7 @@ namespace HomeCare.Droid.Services
         private static Context context = global::Android.App.Application.Context;
         public void ShowAlert(string title, string body, Intent intent)
         {
+            return;
             NotificationManager notificationManager = (NotificationManager)context.GetSystemService(Context.NotificationService);
 
             int notificationId = 1;

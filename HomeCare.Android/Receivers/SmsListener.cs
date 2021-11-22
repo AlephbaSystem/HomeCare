@@ -39,8 +39,6 @@ namespace HomeCare.Droid.Receivers
                                 mainIntent.AddFlags(ActivityFlags.NewTask | ActivityFlags.ClearTop | ActivityFlags.ReorderToFront);
                                 mainIntent.PutExtra(address, message);
                                 context.StartActivity(mainIntent);
-
-                                DependencyService.Get<INotification>().ShowAlert(address, message, mainIntent);
                                 return;
                             }
                             SMSEvents.OnSMSReceived_Event(this, new SMSEventArgs() { PhoneNumber = address, Message = message });
