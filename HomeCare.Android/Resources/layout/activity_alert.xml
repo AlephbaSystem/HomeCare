@@ -15,8 +15,10 @@
 	<ImageButton
         android:id="@+id/alert_icon"
         android:background="@null"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:paddingTop="85dp"
+        android:paddingBottom="85dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:src="@drawable/icon_alert_warning"
         android:layout_centerInParent="true" />
 	<TextView

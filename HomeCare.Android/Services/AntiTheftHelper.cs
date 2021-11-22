@@ -70,8 +70,8 @@ namespace HomeCare.Droid.Services
                 .SetContentIntent(pendingIntent);
             if (global::Android.OS.Build.VERSION.SdkInt >= BuildVersionCodes.O)
             {
-                NotificationChannel notificationChannel = new NotificationChannel(Constants.FOREGROUND_CHANNEL_ID, "HomeCare", NotificationImportance.High);
-                notificationChannel.Importance = NotificationImportance.High;
+                NotificationChannel notificationChannel = new NotificationChannel(Constants.FOREGROUND_CHANNEL_ID, "HomeCare", NotificationImportance.Max);
+                notificationChannel.Importance = NotificationImportance.Max;
                 notificationChannel.EnableLights(true);
                 notificationChannel.SetShowBadge(true);
                 notificationChannel.EnableVibration(false);
