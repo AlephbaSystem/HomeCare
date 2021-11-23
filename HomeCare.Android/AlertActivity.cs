@@ -68,7 +68,7 @@ namespace HomeCare.Droid
                 StartActivity(intent); 
             };
 
-            car.Animate().TranslationY((float)this.WindowManager.CurrentWindowMetrics.Bounds.ExactCenterY()).SetDuration(1000).SetInterpolator(new DecelerateInterpolator()).SetStartDelay(2).Start();
+            car.Animate().TranslationY((float)App.Current.MainPage.Width).SetDuration(1000).SetInterpolator(new DecelerateInterpolator()).SetStartDelay(2).Start();
             //icon.Animate().SetInterpolator(new DecelerateInterpolator()).ScaleX(0.4f).ScaleY(0.4f).SetDuration(550).SetStartDelay(2)
             //    .ScaleX(1.4f).ScaleY(1.4f).SetDuration(550)
             //    .ScaleY(1.0f).SetDuration(550).Start();
