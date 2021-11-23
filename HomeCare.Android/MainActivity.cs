@@ -4,8 +4,7 @@ using Android.Runtime;
 using Android.OS;
 using Android;
 using Android.Content;
-using Acr.UserDialogs;
-using CarouselView.FormsPlugin.Android;
+using Acr.UserDialogs; 
 using Android.Views;
 using HomeCare.Droid.Services;
 using System;
@@ -25,8 +24,7 @@ namespace HomeCare.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             
-            Acr.UserDialogs.UserDialogs.Init(this);
-            CarouselViewRenderer.Init();
+            Acr.UserDialogs.UserDialogs.Init(this); 
             LoadApplication(new App());
 
             KeyguardManager keyguardManager = (KeyguardManager)GetSystemService(Context.KeyguardService);

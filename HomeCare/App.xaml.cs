@@ -1,5 +1,4 @@
-﻿using HomeCare.Services.SMS;
-using HomeCare.Views.Controls;
+﻿using HomeCare.Services.SMS; 
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
