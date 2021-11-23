@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HomeCare.Models
 {
-    [Table("Devices")]
+    [Table("AppSettings")]
     public class AppSettings
     {
         [PrimaryKey, AutoIncrement]

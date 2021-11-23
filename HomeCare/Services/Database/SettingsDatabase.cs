@@ -17,7 +17,7 @@ namespace HomeCare.Services.Database
         public SettingsDatabase()
         {
             conn = DependencyService.Get<ISQLite>().GetConnection();
-            conn.CreateTable<Devices>();
+            conn.CreateTable<AppSettings>();
         }
 
         //READ  

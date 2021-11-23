@@ -17,7 +17,7 @@ namespace HomeCare
             InitializeComponent();
             var stg = new Services.Database.SettingsDatabase();
             var cst = stg.GetAppSettings().ToList();
-            if (cst.Count>0)
+            if (cst.Count==0)
             {
                 stg.AddAppSetting(new Models.AppSettings() { Key = "FirstLaunch", Value = "true" });
                  MainPage = new NavigationPage(new Tutorial());
