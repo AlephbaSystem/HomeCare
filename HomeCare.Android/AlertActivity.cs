@@ -18,7 +18,7 @@ namespace HomeCare.Droid
         int howMuch = 0;
         ImageButton icon;
         private int image;
-        TextView income;
+        //TextView income;
         bool keepGoing = true;
 
         MediaPlayer f95mp = new MediaPlayer();
@@ -51,7 +51,7 @@ namespace HomeCare.Droid
 
             Toast.MakeText(this, "خطر سرقت", ToastLength.Short).Show();
             SetContentView(Resource.Layout.activity_alert);
-            income = FindViewById<TextView>(Resource.Id.alert_text);
+            //income = FindViewById<TextView>(Resource.Id.alert_text);
             icon = FindViewById<ImageButton>(Resource.Id.alert_icon);
             car = FindViewById<ImageView>(Resource.Id.alert_car);
             start();
@@ -99,7 +99,7 @@ namespace HomeCare.Droid
 
         public void updateDisplay()
         {
-            this.income.Text = this.msg;
+            //this.income.Text = this.msg;
             this.icon.SetImageDrawable(GetDrawable(Resource.Drawable.icon_alert_warning));
             showAnimationCar();
             showAnimationButton();

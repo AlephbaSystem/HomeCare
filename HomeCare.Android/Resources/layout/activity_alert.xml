@@ -1,23 +1,20 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-  <item>
-    <bitmap 
-        android:id="@+id/alert_car"
-        android:tileMode="disabled"
-        android:paddingTop="85dp"
-        android:paddingBottom="85dp"
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/mainbg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	<ImageView
+        android:id="@+id/alert_car" 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/alert_bg" />
-  </item>
-  <item>
-    <bitmap 
-        android:src="@drawable/icon_alert_warning"
-        android:tileMode="disabled"
-            android:id="@+id/alert_icon"
-        android:paddingTop="85dp"
-        android:paddingBottom="85dp"
+	<ImageButton
+        android:id="@+id/alert_icon"
+        android:background="@null" 
+        android:alpha="0.8"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-  </item>
-</layer-list>
+        android:layout_height="match_parent"
+/>
+</RelativeLayout>
