@@ -15,14 +15,14 @@ namespace HomeCare
         {
             InitializeComponent();
 
-            SMSEvents.OnSMSReceived += ReciveSMSFromDevice;
-
-            if (VersionTracking.IsFirstLaunchEver)
+            if (Preferences.ContainsKey("IsAppFirstLaunchEver"))
             {
+                Preferences.Set("IsAppFirstLaunchEver", "false");
                 MainPage = new NavigationPage(new Tutorial());
             }
             else
             {
+                SMSEvents.OnSMSReceived += ReciveSMSFromDevice;
                 MainPage = new NavigationPage(new MainPage());
             }
         }
