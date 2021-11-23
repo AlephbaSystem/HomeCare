@@ -6,6 +6,7 @@ using Xamarin.Forms.Xaml;
 using HomeCare.Views;
 using Xamarin.Essentials;
 using HomeCare.Interfaces;
+using System.Linq;
 
 namespace HomeCare
 {
@@ -14,11 +15,12 @@ namespace HomeCare
         public App()
         {
             InitializeComponent();
-
-            if (Preferences.ContainsKey("IsAppFirstLaunchEver"))
+            var stg = new Services.Database.SettingsDatabase();
+            var cst = stg.GetAppSettings().ToList();
+            if (cst.Count>0)
             {
-                Preferences.Set("IsAppFirstLaunchEver", "false");
-                MainPage = new NavigationPage(new Tutorial());
+                stg.AddAppSetting(new Models.AppSettings() { Key = "FirstLaunch", Value = "true" });
+                 MainPage = new NavigationPage(new Tutorial());
             }
             else
             {
