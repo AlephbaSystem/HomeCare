@@ -221,8 +221,6 @@ namespace HomeCare
             {
                 var m = ex.Message;
             }     
-        }
-
-       
+        } 
     }
 }

@@ -16,10 +16,6 @@ namespace HomeCare.Droid.Services
         private IWindowManager _windowManager;
         private WindowManagerLayoutParams _layoutParams;
         private Android.Views.View _floatingView;
-        private int _initialX;
-        private int _initialY;
-        private float _initialTouchX;
-        private float _initialTouchY;
         public override IBinder OnBind(Intent intent)
         {
             return null;

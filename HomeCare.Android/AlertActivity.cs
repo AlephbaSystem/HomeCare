@@ -9,7 +9,8 @@ using Android.Widget;
 
 namespace HomeCare.Droid
 {
-    [Activity(Label = "AlertActivity", Name = "com.alephbasystem.homecare.AlertActivity", AlwaysRetainTaskState = true, TurnScreenOn = true, NoHistory = true,
+    [Activity(Label = "AlertActivity", Name = "com.alephbasystem.homecare.AlertActivity", 
+        AlwaysRetainTaskState = true, TurnScreenOn = true, NoHistory = true,
     ShowForAllUsers = true, ShowWhenLocked = true,
     LaunchMode = Android.Content.PM.LaunchMode.SingleInstance)]
     internal class AlertActivity : Activity
@@ -17,7 +18,6 @@ namespace HomeCare.Droid
         ImageView car;
         int howMuch = 0;
         ImageButton icon;
-        private int image;
         TextView income;
         bool keepGoing = true;
 
@@ -46,9 +46,7 @@ namespace HomeCare.Droid
                             WindowManagerFlags.KeepScreenOn |
                             WindowManagerFlags.DismissKeyguard |
                             WindowManagerFlags.TurnScreenOn | WindowManagerFlags.AllowLockWhileScreenOn | WindowManagerFlags.TouchableWhenWaking);
-
-            // Create your application here
-
+             
             Toast.MakeText(this, "خطر سرقت", ToastLength.Short).Show();
             SetContentView(Resource.Layout.activity_alert);
             income = FindViewById<TextView>(Resource.Id.alert_text);
@@ -59,8 +57,7 @@ namespace HomeCare.Droid
         public void start()
         {
             this.f96v = (Vibrator)this.GetSystemService(Context.VibratorService);
-            this.msg = "خطر سرقت";
-            this.image = Resource.Drawable.icon_alert_warning;
+            this.msg = "خطر سرقت"; 
             updateDisplay();
             icon.Click += delegate
             {
@@ -70,10 +67,8 @@ namespace HomeCare.Droid
                 var intent = this.PackageManager.GetLaunchIntentForPackage(this.PackageName);
                 StartActivity(intent); 
             };
-            var metrics = new DisplayMetrics();
-            var windowManager = this.GetSystemService(Context.WindowService) as IWindowManager;
-            windowManager?.DefaultDisplay.GetMetrics(metrics);
-            car.Animate().TranslationY((float)metrics.HeightPixels).SetDuration(1000).SetInterpolator(new DecelerateInterpolator()).SetStartDelay(2).Start();
+
+            car.Animate().TranslationY((float)this.WindowManager.CurrentWindowMetrics.Bounds.ExactCenterY()).SetDuration(1000).SetInterpolator(new DecelerateInterpolator()).SetStartDelay(2).Start();
             //icon.Animate().SetInterpolator(new DecelerateInterpolator()).ScaleX(0.4f).ScaleY(0.4f).SetDuration(550).SetStartDelay(2)
             //    .ScaleX(1.4f).ScaleY(1.4f).SetDuration(550)
             //    .ScaleY(1.0f).SetDuration(550).Start();
