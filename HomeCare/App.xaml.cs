@@ -1,11 +1,7 @@
 ﻿using HomeCare.Services.SMS;
 using HomeCare.Views;
-
 using System.Linq;
 using Xamarin.Forms;
-using Microsoft.AppCenter;
-using Microsoft.AppCenter.Analytics;
-using Microsoft.AppCenter.Crashes;
 
 namespace HomeCare
 {
@@ -16,6 +12,7 @@ namespace HomeCare
         public App()
         {
             InitializeComponent();
+
             var stg = new Services.Database.SettingsDatabase();
             var cst = stg.GetAppSettings().ToList();
             if (cst.Count==0)
@@ -55,7 +52,6 @@ namespace HomeCare
         }
         protected override void OnStart()
         {
-            AppCenter.Start("640c2954-a569-4120-86a9-1c71252ec320", typeof(Analytics), typeof(Crashes));
         }
 
         protected override void OnSleep()
