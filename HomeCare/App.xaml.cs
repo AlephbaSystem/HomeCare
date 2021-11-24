@@ -1,17 +1,18 @@
-﻿using HomeCare.Services.SMS; 
-using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
+﻿using HomeCare.Services.SMS;
 using HomeCare.Views;
-using Xamarin.Essentials;
-using HomeCare.Interfaces;
+
 using System.Linq;
+using Xamarin.Forms;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace HomeCare
 {
     public partial class App : Application
     {
+        public object MobileCenter { get; private set; }
+
         public App()
         {
             InitializeComponent();
@@ -54,6 +55,7 @@ namespace HomeCare
         }
         protected override void OnStart()
         {
+            AppCenter.Start("640c2954-a569-4120-86a9-1c71252ec320", typeof(Analytics), typeof(Crashes));
         }
 
         protected override void OnSleep()

@@ -10,6 +10,9 @@ using HomeCare.Droid.Services;
 using System;
 using HomeCare.Interfaces;
 using Xamarin.Essentials;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace HomeCare.Droid
 {
@@ -23,6 +26,8 @@ namespace HomeCare.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+            AppCenter.Start("640c2954-a569-4120-86a9-1c71252ec320", typeof(Analytics), typeof(Crashes));
             
             Acr.UserDialogs.UserDialogs.Init(this); 
             LoadApplication(new App());

@@ -54,6 +54,7 @@ namespace HomeCare.Droid
             car = FindViewById<ImageView>(Resource.Id.alert_car);
             start();
         }
+
         public void start()
         {
             this.f96v = (Vibrator)this.GetSystemService(Context.VibratorService);

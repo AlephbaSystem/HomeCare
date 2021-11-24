@@ -16,8 +16,6 @@
 
             <Button Margin="60, 15" Text="افزودن" BackgroundColor="#06d6a0" TextColor="White" Clicked="InsertDevice" CornerRadius="10"/>
             
-
-            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

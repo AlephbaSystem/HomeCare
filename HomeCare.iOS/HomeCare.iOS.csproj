@@ -146,7 +146,6 @@
     <BundleResource Include="Resources\antenna.png" />
     <BundleResource Include="Resources\calender.png" />
     <BundleResource Include="Resources\relle.png" />
-    <BundleResource Include="Resources\remote.png" />
     <BundleResource Include="Resources\settings.png" />
     <BundleResource Include="Resources\key.png" />
     <BundleResource Include="Resources\halflock.png" />
