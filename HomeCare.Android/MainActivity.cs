@@ -7,6 +7,8 @@ using Android.Content;
 using Android.Views;
 using System;
 using HomeCare.Interfaces;
+using System.Collections.Generic;
+using Microsoft.AppCenter.Crashes;
 
 namespace HomeCare.Droid
 {
@@ -47,18 +49,31 @@ namespace HomeCare.Droid
             }
             catch (Exception e)
             {
-                var s = e.Message;
+                var properties = new Dictionary<string, string> {
+    { "Category", "MainActivity.reset" }
+  };
+                Crashes.TrackError(e, properties);
             }
         }
 
         public void checkPermission()
         {
-            if (Android.OS.Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.M) return;
-            if (Android.Provider.Settings.CanDrawOverlays(global::Android.App.Application.Context)) return;
-            var intent = new Intent(Android.Provider.Settings.ActionManageOverlayPermission);
-            intent.SetData(Android.Net.Uri.Parse("package:" + PackageName));
-            intent.SetFlags(ActivityFlags.NewTask);
-            StartActivity(intent);
+            try
+            {
+                if (Android.OS.Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.M) return;
+                if (Android.Provider.Settings.CanDrawOverlays(global::Android.App.Application.Context)) return;
+                var intent = new Intent(Android.Provider.Settings.ActionManageOverlayPermission);
+                intent.SetData(Android.Net.Uri.Parse("package:" + PackageName));
+                intent.SetFlags(ActivityFlags.NewTask);
+                StartActivity(intent);
+            }
+            catch (Exception e)
+            {
+                var properties = new Dictionary<string, string> {
+    { "Category", "MainActivity.checkPermission" }
+  };
+                Crashes.TrackError(e, properties);
+            }
         }
         protected override void OnStart()
         {

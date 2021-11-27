@@ -54,11 +54,7 @@ namespace HomeCare
 
         }
         protected override void OnStart()
-        {
-            AppCenter.Start("android=d9022536-2213-4ecd-aa85-ee65e6c1329d;" +
-                  "uwp={Your UWP App secret here};" +
-                  "ios={Your iOS App secret here}",
-                  typeof(Analytics), typeof(Crashes));
+        { 
         }
 
         protected override void OnSleep()
