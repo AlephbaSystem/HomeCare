@@ -2,6 +2,9 @@
 using HomeCare.Views;
 using System.Linq;
 using Xamarin.Forms;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace HomeCare
 {
@@ -51,7 +54,7 @@ namespace HomeCare
 
         }
         protected override void OnStart()
-        {
+        { 
         }
 
         protected override void OnSleep()

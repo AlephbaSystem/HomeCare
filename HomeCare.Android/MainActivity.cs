@@ -7,6 +7,8 @@ using Android.Content;
 using Android.Views;
 using System;
 using HomeCare.Interfaces;
+using System.Collections.Generic;
+using Microsoft.AppCenter.Crashes;
 
 namespace HomeCare.Droid
 {
@@ -23,18 +25,6 @@ namespace HomeCare.Droid
             
             Acr.UserDialogs.UserDialogs.Init(this); 
             LoadApplication(new App());
-
-            KeyguardManager keyguardManager = (KeyguardManager)GetSystemService(Context.KeyguardService);
-            PowerManager pm = (PowerManager)GetSystemService(Context.PowerService);
-            if (keyguardManager != null)
-            {
-                if (keyguardManager.IsKeyguardLocked)
-                {
-                    keyguardManager.RequestDismissKeyguard(this, null);
-                    PowerManager.WakeLock wl = pm.NewWakeLock(WakeLockFlags.Full | WakeLockFlags.AcquireCausesWakeup, "");
-                    wl.Acquire();
-                }
-            }
 
             Window.AddFlags(WindowManagerFlags.ShowWhenLocked |
                             WindowManagerFlags.KeepScreenOn |
@@ -59,22 +49,42 @@ namespace HomeCare.Droid
             }
             catch (Exception e)
             {
-                var s = e.Message;
+                var properties = new Dictionary<string, string> {
+    { "Category", "MainActivity.reset" }
+  };
+                Crashes.TrackError(e, properties);
             }
         }
 
         public void checkPermission()
         {
-            if (Android.OS.Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.M) return;
-            if (Android.Provider.Settings.CanDrawOverlays(global::Android.App.Application.Context)) return;
-            var intent = new Intent(Android.Provider.Settings.ActionManageOverlayPermission);
-            intent.SetData(Android.Net.Uri.Parse("package:" + PackageName));
-            intent.SetFlags(ActivityFlags.NewTask);
-            StartActivity(intent);
+            try
+            {
+                if (Android.OS.Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.M) return;
+                if (Android.Provider.Settings.CanDrawOverlays(global::Android.App.Application.Context)) return;
+                var intent = new Intent(Android.Provider.Settings.ActionManageOverlayPermission);
+                intent.SetData(Android.Net.Uri.Parse("package:" + PackageName));
+                intent.SetFlags(ActivityFlags.NewTask);
+                StartActivity(intent);
+            }
+            catch (Exception e)
+            {
+                var properties = new Dictionary<string, string> {
+    { "Category", "MainActivity.checkPermission" }
+  };
+                Crashes.TrackError(e, properties);
+            }
         }
         protected override void OnStart()
         {
             base.OnStart();
+
+            String str = "android.permission.WAKE_LOCK";
+            if (CheckSelfPermission(str) != Permission.Granted)
+            {
+                RequestPermissions(new String[] { str }, 1254);
+            }
+
 
             if ((int)Build.VERSION.SdkInt >= 23)
             {
@@ -101,7 +111,6 @@ namespace HomeCare.Droid
             Manifest.Permission.ForegroundService,
             Manifest.Permission.InstantAppForegroundService,
             Manifest.Permission.SystemAlertWindow,
-            Manifest.Permission.DisableKeyguard,
             Manifest.Permission.WakeLock,
             Manifest.Permission.ModifyPhoneState,
             Manifest.Permission.ModifyAudioSettings,

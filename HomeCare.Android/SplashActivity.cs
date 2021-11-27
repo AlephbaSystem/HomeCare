@@ -13,6 +13,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using HomeCare.Droid;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace FocusTherapyApp.Droid
 {
@@ -24,7 +27,8 @@ namespace FocusTherapyApp.Droid
         public override void OnCreate(Bundle savedInstanceState, PersistableBundle persistentState)
         {
             base.OnCreate(savedInstanceState, persistentState);
-            //Log.Debug(TAG, "SplashActivity.OnCreate");
+            AppCenter.Start("d9022536-2213-4ecd-aa85-ee65e6c1329d",
+                    typeof(Analytics), typeof(Crashes));
         }
 
         // Launches the startup task
@@ -39,9 +43,13 @@ namespace FocusTherapyApp.Droid
         async void SimulateStartup()
         {
             //Log.Debug(TAG, "Performing some startup work that takes a bit of time.");
-            await Task.Delay(4000); // Simulate a bit of startup work.
-            //Log.Debug(TAG, "Startup work is finished - starting MainActivity.");
-            StartActivity(new Intent(Application.Context, typeof(MainActivity)));
+            await Task.Delay(3000); // Simulate a bit of startup work.
+                                    //Log.Debug(TAG, "Startup work is finished - starting MainActivity.");
+
+            Intent intent = new Intent(Application.Context, typeof(MainActivity)); 
+            intent.SetFlags(ActivityFlags.ClearTop);
+            Bundle bundle = new Bundle();
+            StartActivity(intent); 
         }
-    }
+}
 }

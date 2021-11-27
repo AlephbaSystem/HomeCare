@@ -6,6 +6,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using HomeCare.Droid.Interfaces;
+using Microsoft.AppCenter.Crashes;
+using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace HomeCare.Droid.Services
@@ -24,48 +26,85 @@ namespace HomeCare.Droid.Services
         {
             base.OnCreate();
 
-            if (Android.Provider.Settings.CanDrawOverlays(this))
+            try
             {
                 widget();
+            }
+            catch (System.Exception e)
+            {
+                var properties = new Dictionary<string, string> {
+    { "Category", "AntiTheft.OnCreate" }
+  };
+                Crashes.TrackError(e, properties);
             }
         }
         private void widget()
         {
-
-            _floatingView = LayoutInflater.From(this).Inflate(Resource.Layout.widget, null);
-
-            WindowManagerTypes FLG = WindowManagerTypes.ApplicationOverlay;
-
-            if (Android.OS.Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.O)
+            try
             {
-                FLG = WindowManagerTypes.Phone;
+                _floatingView = LayoutInflater.From(this).Inflate(Resource.Layout.widget, null);
+
+                WindowManagerTypes FLG = WindowManagerTypes.ApplicationOverlay;
+
+                if (Android.OS.Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.O)
+                {
+                    FLG = WindowManagerTypes.Phone;
+                }
+
+                _layoutParams = new WindowManagerLayoutParams(
+                    ViewGroup.LayoutParams.WrapContent,
+                    ViewGroup.LayoutParams.WrapContent,
+                    FLG,
+                    WindowManagerFlags.NotFocusable | WindowManagerFlags.NotTouchable | WindowManagerFlags.LayoutInScreen,
+                    Format.Translucent)
+                {
+                    Gravity = GravityFlags.Left | GravityFlags.Top
+                };
+
+                _windowManager = GetSystemService(WindowService).JavaCast<IWindowManager>();
+                _windowManager.AddView(_floatingView, _layoutParams);
             }
-
-            _layoutParams = new WindowManagerLayoutParams(
-                ViewGroup.LayoutParams.WrapContent,
-                ViewGroup.LayoutParams.WrapContent,
-                FLG,
-                WindowManagerFlags.NotFocusable | WindowManagerFlags.NotTouchable | WindowManagerFlags.LayoutInScreen,
-                Format.Translucent)
+            catch (System.Exception e)
             {
-                Gravity = GravityFlags.Left | GravityFlags.Top
-            };
-
-            _windowManager = GetSystemService(WindowService).JavaCast<IWindowManager>();
-            _windowManager.AddView(_floatingView, _layoutParams);
+                var properties = new Dictionary<string, string> {
+    { "Category", "AntiTheft.widget" }
+  };
+                Crashes.TrackError(e, properties);
+            } 
         }
         public override StartCommandResult OnStartCommand(Intent intent, StartCommandFlags flags, int startId)
         {
-            Notification notif = DependencyService.Get<INotification>().ReturnNotif();
-            StartForeground(Constants.SERVICE_RUNNING_NOTIFICATION_ID, notif);
+            try
+            {
+                //Notification notif = DependencyService.Get<INotification>().ReturnNotif();
+                //StartForeground(Constants.SERVICE_RUNNING_NOTIFICATION_ID, notif);
 
+                return StartCommandResult.Sticky;
+            }
+            catch (System.Exception e)
+            {
+                var properties = new Dictionary<string, string> {
+    { "Category", "AntiTheft.OnStartCommand" }
+  };
+                Crashes.TrackError(e, properties);
+            }
             return StartCommandResult.Sticky;
         }
         public override void OnDestroy()
         {
-            if (_floatingView != null)
+            try
+            { 
+                if (_floatingView != null)
+                {
+                    _windowManager.RemoveView(_floatingView);
+                }
+            }
+            catch (System.Exception e)
             {
-                _windowManager.RemoveView(_floatingView);
+                var properties = new Dictionary<string, string> {
+    { "Category", "AntiTheft.OnDestroy" }
+  };
+                Crashes.TrackError(e, properties);
             }
             base.OnDestroy();
         }

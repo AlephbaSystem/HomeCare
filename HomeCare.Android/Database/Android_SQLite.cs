@@ -6,6 +6,7 @@ using Android.Views;
 using Android.Widget;
 using HomeCare.Droid.Database;
 using HomeCare.Services.Database;
+using Microsoft.AppCenter.Crashes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,11 +20,22 @@ namespace HomeCare.Droid.Database
     {
         public SQLite.SQLiteConnection GetConnection()
         {
-            var dbName = "HomeCare.sqlite";
-            var dbPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData);
-            var path = System.IO.Path.Combine(dbPath, dbName);
-            var conn = new SQLite.SQLiteConnection(path);
-            return conn;
+            try
+            {
+                var dbName = "HomeCare.sqlite";
+                var dbPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData);
+                var path = System.IO.Path.Combine(dbPath, dbName);
+                var conn = new SQLite.SQLiteConnection(path);
+                return conn;
+            }
+            catch (Exception e)
+            {
+                var properties = new Dictionary<string, string> {
+    { "Category", "Android_SQLite.GetConnection" }
+  };
+                Crashes.TrackError(e, properties);
+            }
+            return null;
         }
     }
 }
