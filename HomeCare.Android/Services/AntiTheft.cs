@@ -76,9 +76,12 @@ namespace HomeCare.Droid.Services
         {
             try
             {
-                //Notification notif = DependencyService.Get<INotification>().ReturnNotif();
-                //StartForeground(Constants.SERVICE_RUNNING_NOTIFICATION_ID, notif);
-
+               
+                if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.R)
+                {
+                    Notification notif = DependencyService.Get<INotification>().ReturnNotif();
+                    StartForeground(Constants.SERVICE_RUNNING_NOTIFICATION_ID, notif);
+                }
                 return StartCommandResult.Sticky;
             }
             catch (System.Exception e)
