@@ -29,19 +29,6 @@ namespace HomeCare.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
-            KeyguardManager keyguardManager = (KeyguardManager)GetSystemService(Context.KeyguardService);
-            PowerManager pm = (PowerManager)GetSystemService(Context.PowerService);
-            if (keyguardManager != null)
-            {
-                if (keyguardManager.IsKeyguardLocked)
-                {
-                    keyguardManager.RequestDismissKeyguard(this, null);
-                    PowerManager.WakeLock wl = pm.NewWakeLock(WakeLockFlags.Full | WakeLockFlags.AcquireCausesWakeup, "");
-                    wl.Acquire();
-                }
-            }
-
             Window.AddFlags(WindowManagerFlags.ShowWhenLocked |
                             WindowManagerFlags.KeepScreenOn |
                             WindowManagerFlags.DismissKeyguard |

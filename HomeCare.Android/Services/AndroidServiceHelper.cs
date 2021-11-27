@@ -38,7 +38,7 @@ namespace HomeCare.Droid.Services
             var intentS = new Intent(context, typeof(AntiTheft));
             if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.O)
             {
-                context.StartForegroundService(intentS);
+                context.StartService(intentS);
             }
             else
             {

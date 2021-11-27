@@ -59,7 +59,7 @@ namespace HomeCare.Droid.Services
             Notification notif = DependencyService.Get<INotification>().ReturnNotif();
             StartForeground(Constants.SERVICE_RUNNING_NOTIFICATION_ID, notif);
 
-            return StartCommandResult.Sticky;
+            return StartCommandResult.NotSticky;
         }
         public override void OnDestroy()
         {

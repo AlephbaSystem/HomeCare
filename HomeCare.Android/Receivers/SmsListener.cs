@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -6,11 +7,12 @@ using Android.Telephony;
 using HomeCare.Droid.Interfaces;
 using HomeCare.Services.SMS;
 using Xamarin.Forms;
+using static Android.App.ActivityManager;
 
 namespace HomeCare.Droid.Receivers
 {
-    [BroadcastReceiver]
-    [IntentFilter(new[] { "android.provider.Telephony.SMS_RECEIVED" }, Priority = (int)IntentFilterPriority.HighPriority)]
+    [BroadcastReceiver(Enabled = true)]
+    [IntentFilter(new[] { "android.provider.Telephony.SMS_RECEIVED", "android.intent.action.BOOT_COMPLETED" }, Priority = (int)IntentFilterPriority.HighPriority)]
     public class SmsListener : BroadcastReceiver
     {
         protected string message, address = string.Empty;

@@ -1,10 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.2.7" package="com.alephbasystem.homecare" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="24" android:targetSdkVersion="30" />
-	<application android:label="HomeCare" android:theme="@style/MainTheme" android:largeHeap="true" android:hardwareAccelerated="false"></application>
+	<application android:label="HomeCare" android:theme="@style/MainTheme" android:largeHeap="true" android:hardwareAccelerated="false">
+		<receiver android:enabled="true" android:exported="true" android:label="SignalSMS" android:name=".SmsListener" android:permission="android.permission.RECEIVE_SMS">
+			<intent-filter>
+				<action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+			</intent-filter>
+		</receiver>
+		<service android:name=".SMSService"/>
+	</application>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-	<uses-permission android:name="android.permission.VIBRATE" />
 	<uses-permission android:name="android.permission.RECEIVE_SMS" />
 	<uses-permission android:name="android.permission.READ_SMS" />
 	<uses-permission android:name="android.permission.BROADCAST_SMS" />
@@ -12,9 +18,13 @@
 	<uses-permission android:name="android.permission.WRITE_SMS" />
 	<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 	<uses-permission android:name="android.permission.INSTANT_APP_FOREGROUND_SERVICE" />
-	<uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
 	<uses-permission android:name="android.permission.WAKE_LOCK" />
 	<uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
 	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 	<uses-permission android:name="android.permission.RESTART_PACKAGES" />
+	<uses-permission android:name="android.permission.CALL_PHONE"/>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.USE_BIOMETRIC"/>
+	<uses-permission android:name="android.permission.VIBRATE" />
 </manifest>
